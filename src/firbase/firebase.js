@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 // import { getFirestore } from '@firebase/firestore';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-
+import { getAuth } from "firebase/auth";
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCeicjQkX-urjh_t8leap8yl7L5QAY0CL8",
@@ -18,14 +18,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-
+export const auth = getAuth(app);
 // firebase.initializeApp(firebaseConfig);
 // var db = firebase.firestore();
 // export default db;
 
-export const getProductData = async () => {
-    const productData = collection(db, "products");
-    const productSnapshot = await getDocs(productData);
-    const products = productSnapshot.docs.map((doc) => doc.data());
-    return products;
-};
+// export const getProductData = async () => {
+//     const productData = collection(db, "products");
+//     const productSnapshot = await getDocs(productData);
+//     const products = productSnapshot.docs.map((doc) => doc.data());
+//     return products;
+// };
