@@ -4,15 +4,17 @@ const changingBorder = {
     variants: {
         filled: {
             field: {
-                // backgroundColor: 'brand.200',
+                backgroundColor: 'brand.400',
                 borderColor: 'brand.100',
                 rounded: 'md',
+                color: "brand.300",
                 _hover: 'disabled',
                 _focus: {
                     borderColor: 'brand.600',
                 }
             }
         },
+
     }
 }
 const Theme = extendTheme({
@@ -21,10 +23,10 @@ const Theme = extendTheme({
         brand: {
             100: "#0660fd", //blue
             200: "#1cd237", //green
-            300: "#121212", //dark black
+            300: "#000000", //dark black
             400: "#FFFFFF", //white
             500: "#FFFF00", //yellow
-            600: "#5BD7FC", //light blue
+            600: "#377ffd", //light blue
             700: "#86FFA3", //light green
             800: "#3c3c3c", //light gray
         }
@@ -39,13 +41,26 @@ const Theme = extendTheme({
 
         Button: {
             variants: {
+                SimpleWhite: (props) => ({
+                    rounded: "md",
+                    _focus: {
+                        ring: 2,
+                        ringColor: "brand.600"
+                    },
+                    borderBottom: "1px solid",
+                    borderColor: mode("brand.600", "brand.600")(props),
+                    backgroundColor: mode("brand.400", "brand.300")(props),
+                    color: mode("brand.600", "brand.600")(props),
+                    // _hover :{
+                    // }
+                }),
                 SimpleBlue: (props) => ({
                     rounded: "md",
                     _focus: {
                         ring: 2,
-                        ringColor: "brand.300"
+                        ringColor: "brand.600"
                     },
-                    backgroundColor: mode("brand.200", "brand.200")(props),
+                    backgroundColor: mode("brand.600", "brand.600")(props),
                     color: mode("brand.400", "brand.400")(props),
                     // _hover :{
                     // }
