@@ -9,13 +9,22 @@ import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import Theme from './Theme';
 
+//Parmeshwar
+import { ContextApi } from './Parmeshwar/Contex/ContextApi';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ChakraProvider theme={Theme}>
     <Provider store={store}>
+
       <BrowserRouter >
-        <App />
+
+        <ContextApi>
+          <App />
+        </ContextApi>
+
       </BrowserRouter>
+
     </Provider>
   </ChakraProvider>
 );
