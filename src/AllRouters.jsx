@@ -7,6 +7,8 @@ function AllRouters() {
     <Routes>
       <Route path="/" element={<h1>Home</h1>}></Route>
       <Route path="/products" element={<ProductsPage />}></Route>
+      
+
     </Routes>
   );
 }
