@@ -6,10 +6,9 @@ export const Temp = () => {
   const [info, setInfo] = useState([]);
   const dispatch = useDispatch();
   const data = useSelector((store) => store.productReducer.products);
-  console.log(data);
 
   useEffect(() => {
     dispatch(getProductData());
   }, []);
-  return <div>Temp</div>;
+  return <div></div>;
 };
