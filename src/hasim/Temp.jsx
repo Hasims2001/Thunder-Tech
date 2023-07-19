@@ -10,5 +10,7 @@ export const Temp = () => {
   useEffect(() => {
     dispatch(getProductData());
   }, []);
+
   return <div></div>;
+
 };
