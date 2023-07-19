@@ -5,13 +5,11 @@ import AllRouters from './AllRouters';
 import { SignInPage } from './hasim/SignInPage';
 import { AdminHeader } from './hasim/AdminHeader';
 import { AdminPage } from './hasim/AdminPage';
+import { ProductList } from './Ranvijay/ProductList';
 function App() {
   return (
     <div className="App">
-      {/* <Temp />
-      <AdminPage /> */}
-      <SignInPage />
-      {/* <AllRouters /> */}
+      
     </div>
   );
 }
