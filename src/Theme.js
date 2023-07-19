@@ -28,7 +28,8 @@ const Theme = extendTheme({
             500: "#FFFF00", //yellow
             600: "#377ffd", //light blue
             700: "#86FFA3", //light green
-            800: "#3c3c3c", //light gray
+            800: "#f5f5f5", //light gray
+            900: "#2e2e2e", //light black
         }
     },
     fonts: {
@@ -71,7 +72,7 @@ const Theme = extendTheme({
                     //     ring:2,
                     //     ringColor : "brand.400"
                     // },
-                    backgroundColor: mode("brand.100", "brand.600")(props),
+                    backgroundColor: mode("brand.200", "brand.600")(props),
                     color: mode("brand.400", "brand.100")(props),
                     // _hover :{
                     // }
@@ -117,10 +118,7 @@ const Theme = extendTheme({
         Checkbox: {
             baseStyle: {
                 control: {
-                    _focus: {
-                        ring: 2,
-                        ringColor: "brand.600"
-                    }
+                    borderColor: 'brand.900',
                 }
             }
         }
