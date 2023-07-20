@@ -18,29 +18,27 @@ import { AllRoutes } from './Parmeshwar/Pages/AllRoutes';
 
 function App() {
 
-  const {theme} = useContext(AppContent)
+  const { theme } = useContext(AppContent)
 
   return (
     // <DIV className="App" theme={theme}>
     //   <div className='nav'>
     //   <Navbar />
     // </div>
-    
+
     // <div className='allRoutes'>
 
-  
+
     // <AllRoutes />
     // </div>
-     
+
     //   <Footer />
     // </DIV>
     <div className="App">
-      
-     
 
     </div>
 
-    
+
   );
 }
 
