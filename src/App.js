@@ -34,9 +34,13 @@ function App() {
      
     //   <Footer />
     // </DIV>
-
     <div className="App">
+
+adcadc
+
     </div>
+
+    
   );
 }
 
