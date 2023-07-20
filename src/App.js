@@ -8,6 +8,10 @@ import { AdminPage } from './hasim/AdminPage';
 function App() {
   return (
     <div className="App">
+      <Temp />
+      <AdminPage />
+      {/* <SignInPage /> */}
+      {/* <AllRouters /> */}
     </div>
   );
 }
