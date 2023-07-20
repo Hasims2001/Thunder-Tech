@@ -24,7 +24,6 @@ import {
 import { CopyPlus, SearchCheck } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import "./Style/buttonAnimation.css";
 const init = {
   type: "",
   searchVal: "",
@@ -37,6 +36,7 @@ export const AdminProductsPage = () => {
   const [checkedItems, setCheckedItems] = useState([{}]);
   const allChecked = checkedItems.every(Boolean);
   const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(info);
@@ -68,7 +68,11 @@ export const AdminProductsPage = () => {
 
   return (
     <Flex flexDir={"column"} mt={"1rem"} w={"100%"}>
-      <Flex justifyContent={"space-between"} alignItems={"center"}>
+      <Flex
+        flexDir={["column", "column", "column", "row", "row"]}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+      >
         <Heading as={"h4"} fontSize={"xl"} fontWeight={"normal"}>
           Products
         </Heading>
@@ -157,7 +161,11 @@ export const AdminProductsPage = () => {
           </AccordionItem>
         </Accordion>
       </Flex>
-      <TableContainer p={"1.5rem 2rem"}>
+      <TableContainer
+        margin={"auto"}
+        mt={"3rem"}
+        maxW={["84vw", "84vw", "84vw", "84vw", "90vw"]}
+      >
         <Table colorScheme="brand.100">
           <Thead bg={"brand.800"}>
             <Tr>
@@ -206,3 +214,18 @@ export const AdminProductsPage = () => {
     </Flex>
   );
 };
+
+// data = useSelector();
+
+// let company = searchparam.getAll("company");
+
+// let filteredData;
+// const filtercompany = () => {
+//   if (company !== null) {
+//     for (let i = 0; i < company.length; i++) {
+//       let filtered = data.filter((item) => item.company === company[i]);
+//       setFilterData(...filteredData, filtered);
+//     }
+//     setProdcutList(filteredData);
+//   }
+// };

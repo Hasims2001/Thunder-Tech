@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../firbase/firebase";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductData } from "../redux/productRedux/action";
 export const Temp = () => {
@@ -10,5 +9,6 @@ export const Temp = () => {
   useEffect(() => {
     dispatch(getProductData());
   }, []);
+
   return <div></div>;
 };
