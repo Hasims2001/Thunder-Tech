@@ -28,7 +28,7 @@ export const AdminSideMenu = ({ isOpen }) => {
     <div
       style={{
         height: "90vh",
-        // backgroundColor: "#cccccc",
+        backgroundColor: "#cccccc",
         borderRadius: "10px",
       }}
     >
