@@ -29,3 +29,5 @@ export const auth = getAuth(app);
 //     const products = productSnapshot.docs.map((doc) => doc.data());
 //     return products;
 // };
+
+
