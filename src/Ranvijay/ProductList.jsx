@@ -6,15 +6,20 @@ import { styled } from "styled-components";
 
 import { getProductData } from "../redux/productRedux/action";
 import Sidebar from "./Sidebar";
+import { useSearchParams } from "react-router-dom/dist";
 
 
 export const ProductList = () => {
-  
+  const [searchparams]=useSearchParams()
   const dispatch = useDispatch()
   const data = useSelector((store) => store.productReducer.products);
  console.log(data)
 
-
+   let params={
+    category:searchparams.getAll("category"),
+    company:searchparams.getAll("company")
+    
+   }
  
 
  useEffect(() => {
