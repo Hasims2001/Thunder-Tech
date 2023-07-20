@@ -5,7 +5,9 @@ import { useContext } from 'react'
 import { AppContent } from '../Contex/ContextApi'
 import { Temp } from '../../hasim/Temp'
 import headphone from "../Images/headphone.png"
+import specialOffer from "../Images/specialOffer.png"
 import { ImageCardComp } from '../Components/ImageCardComp'
+import { SlideShowComponent } from '../Components/SlideShowComponent'
 
 export const Home = () => {
   const {theme} = useContext(AppContent)
@@ -79,9 +81,16 @@ export const Home = () => {
         <img src="https://cdn.mos.cms.futurecdn.net/nfp35ACuuzXXDUn7tFixDE-1200-80.jpg.webp" alt="" />
       </div> */}
 
+      <div >
+        <img src={specialOffer} alt=""  />
+      </div>
+
+
       <div>
       <ImageCardComp />
       </div>
+
+      
      
     </DIV>
   )
