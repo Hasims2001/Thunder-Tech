@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import { HamburgerIcon } from "@chakra-ui/icons";
-export const AdminHeader = ({ setIsOpen }) => {
+import { X } from "lucide-react";
+export const AdminHeader = ({ setIsOpen, isOpen }) => {
   const links = [
     { name: "Home", path: "/admin" },
     { name: "Sales", path: "/sales" },
@@ -11,15 +12,20 @@ export const AdminHeader = ({ setIsOpen }) => {
     { name: "Logout", path: "/logout" },
   ];
   return (
-    <Box p={"1rem 4rem"}>
+    <Box p={".5rem 1.5rem"}>
       <Flex justifyContent={"space-between"}>
         <Flex gap={"1rem"} alignItems={"center"}>
-          <HamburgerIcon
-            boxSize={7}
-            cursor={"pointer"}
-            onClick={() => setIsOpen((prev) => !prev)}
-          />
-          <Image src={logo} width={"3rem"} />
+          {!isOpen && (
+            <HamburgerIcon
+              boxSize={7}
+              cursor={"pointer"}
+              onClick={() => setIsOpen((prev) => !prev)}
+            />
+          )}
+          {isOpen && (
+            <X cursor={"pointer"} onClick={() => setIsOpen((prev) => !prev)} />
+          )}
+          {/* <Image src={logo} width={"3rem"} /> */}
           <Heading fontWeight={"medium"}>Thunder Tech</Heading>
         </Flex>
         <Flex alignItems={"center"} gap={"2rem"} fontSize={"lg"}>
