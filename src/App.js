@@ -36,10 +36,6 @@ function App() {
     // </DIV>
     <div className="App">
 
-      <Temp />
-      <AdminPage />
-      {/* <SignInPage /> */}
-
     </div>
 
 
@@ -71,7 +67,7 @@ background-color: ${props => (props.theme === "lightTheme" ? "#e8e8e8" : "#21212
 .allRoutes{
   padding: 16px;
   /* margin-top: 30px; */
-  height: 1500px; 
+  height: 2500px; 
 }
 
 `
