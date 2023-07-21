@@ -18,7 +18,7 @@ export const FeaturedProducts = () => {
     return (
         <DIV>
              
-             <div>
+             <div className='featuredProducts'>
             <div class="container">
                 <div class="card_box">
                     <span></span>
@@ -31,7 +31,7 @@ export const FeaturedProducts = () => {
             </div>
 
 
-            <div>
+            <div  className='featuredProducts'>
             <div class="container">
                 <div class="card_box">
                     <span></span>
@@ -42,7 +42,7 @@ export const FeaturedProducts = () => {
             <CartComponent text={"vivo V27 5G"} price={"32,999"}/>
             </div>
 
-           <div>
+           <div  className='featuredProducts'>
             <div class="container">
                 <div class="card_box">
                     <span></span>
@@ -53,7 +53,7 @@ export const FeaturedProducts = () => {
             <CartComponent text={"iPhone 14 Pro"} price={"1,20,999"}/>
             </div>
             
-            <div>
+            <div  className='featuredProducts'>
             <div class="container">
                 <div class="card_box">
                    
@@ -65,7 +65,7 @@ export const FeaturedProducts = () => {
             </div>
 
 
-            <div>
+            <div  className='featuredProducts'>
             <div class="container">
                 <div class="card_box">
                     <span></span>
@@ -77,7 +77,7 @@ export const FeaturedProducts = () => {
             </div>
 
 
-            <div>
+            <div  className='featuredProducts'>
             <div class="container">
                 <div class="card_box">
                     
@@ -90,27 +90,6 @@ export const FeaturedProducts = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </DIV>
     )
 }
@@ -120,12 +99,15 @@ const DIV = styled.div`
 /* border: 2px solid black; */
 /* display: grid; */
 display: flex;
-justify-content: space-around;
-/* grid-template-columns: repeat(5, 1fr); */
-
-/* gap: 5px; */
+justify-content: space-evenly;
+flex-wrap: wrap;
 background-color: white;
 padding: 10px;
+
+.featuredProducts{
+    margin-bottom: 30px;
+
+}
 
 img{
     width: 100%;
@@ -144,9 +126,9 @@ img{
   width: 200px;
   height: 250px;
   border-radius: 20px;
-  background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+  
   position: relative;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+  /* box-shadow: 0 25px 50px rgba(0,0,0,0.55); */
   cursor: pointer;
   transition: all .3s;
 }

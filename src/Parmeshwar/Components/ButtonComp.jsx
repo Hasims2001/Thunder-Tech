@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import { AppContent } from '../Contex/ContextApi'
 import { useContext } from 'react'
+import { AboutModal } from './AboutModal'
 
 
 
@@ -38,7 +39,7 @@ button:after {
  content: " ";
  width: 0%;
  height: 100%;
- background: #FFD401;
+
  position: absolute;
  transition: all 0.4s ease-in-out;
  right: 0;

@@ -14,7 +14,7 @@ import { SignInPage } from './hasim/SignInPage';
 import { AdminHeader } from './hasim/AdminHeader';
 import { AdminPage } from './hasim/AdminPage';
 
-import { ProductList } from './Ranvijay/ProductList';
+// import { ProductList } from './Ranvijay/ProductList';
 import { Footer } from './Parmeshwar/Components/Footer';
 import { Navbar } from './Parmeshwar/Pages/Navbar';
 //Parmeshwar
@@ -22,6 +22,7 @@ import { useContext } from 'react';
 import { AppContent } from './Parmeshwar/Contex/ContextApi';
 import styled from "styled-components"
 import { AllRoutes } from './Parmeshwar/Pages/AllRoutes';
+import { AboutModal } from './Parmeshwar/Components/AboutModal';
 
 
 
@@ -35,17 +36,21 @@ function App() {
     //   <Navbar />
     // </div>
 
+    
+    
+
     // <div className='allRoutes'>
 
 
     // <AllRoutes />
     // </div>
 
+
     //   <Footer />
     // </DIV>
     <div className="App">
 
-      {/* <ProductList/> */}
+     
 
 
 
@@ -80,7 +85,7 @@ background-color: ${props => (props.theme === "lightTheme" ? "#e8e8e8" : "#21212
 .allRoutes{
   padding: 16px;
   /* margin-top: 30px; */
-  height: 2500px; 
+  /* height: 3500px;  */
 }
 
 `
