@@ -20,23 +20,45 @@ import {
   Tr,
   Checkbox,
   Button,
+  Image,
+  AlertDialogFooter,
+  AlertDialogBody,
+  AlertDialogHeader,
+  AlertDialogContent,
+  AlertDialogOverlay,
+  AlertDialog,
+  useDisclosure,
 } from "@chakra-ui/react";
-import { CopyPlus, SearchCheck } from "lucide-react";
+import { ArrowUpFromLine, CopyPlus, SearchCheck } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useToast } from "@chakra-ui/react";
+import { deleteProduct } from "../redux/adminRedux/action";
+import { Link, useNavigate } from "react-router-dom";
 const init = {
   type: "",
   searchVal: "",
 };
 export const AdminProductsPage = () => {
-  const data = useSelector((store) => store.productReducer.products);
+  const data = useSelector((store) => store.adminReducer.products);
   const [productData, setProductData] = useState([]);
   const [info, setInfo] = useState(init);
   const { type, searchVal } = info;
-  const [checkedItems, setCheckedItems] = useState([{}]);
+  const [checkedItems, setCheckedItems] = useState([]);
+  const [checkedData, setCheckedData] = useState([]);
   const allChecked = checkedItems.every(Boolean);
   const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
+  const toast = useToast();
+  const navigate = useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
+  const dispatch = useDispatch();
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(info);
@@ -62,12 +84,76 @@ export const AdminProductsPage = () => {
       setProductData(filtered);
     }
   };
+  const handleChange = (e) => {
+    if (e.target.checked && !checkedItems.includes(+e.target.id)) {
+      setCheckedItems([...checkedItems, Number(e.target.id)]);
+    } else {
+      let temp = checkedItems.filter((item) => item !== +e.target.id);
+      setCheckedItems(temp);
+    }
+  };
+  const handleAllChange = (e) => {
+    if (e.target.checked) {
+      let temp = data.map((item) => {
+        return +item.id;
+      });
+      setCheckedItems(temp);
+    } else {
+      setCheckedItems([]);
+    }
+  };
+  const handleDelete = () => {
+    if (checkedItems.length > 0) {
+      checkedItems.map((id) => {
+        dispatch(deleteProduct(id));
+      });
+      toast({
+        title: `${checkedItems} products deleted!`,
+        status: "error",
+        isClosable: true,
+      });
+      setCheckedItems([]);
+    } else {
+      toast({
+        title: `Please select at least one product!`,
+        status: "error",
+        isClosable: true,
+      });
+    }
+    onClose();
+  };
+  const handleAddNew = () => {
+    navigate("/adminproducts/new");
+  };
+  const handleEdit = (id) => {
+    navigate(`/adminproducts/edit/${id}`);
+  };
   useEffect(() => {
     setProductData(data);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [data]);
 
   return (
-    <Flex flexDir={"column"} mt={"1rem"} w={"100%"}>
+    <Flex flexDir={"column"} id="top" mt={"1rem"} w={"100%"}>
+      {scrollPosition > 500 && (
+        <a href="#top">
+          <Box
+            bg={"brand.100"}
+            padding={"1rem"}
+            rounded={"full"}
+            position="fixed"
+            bottom="20px"
+            right={["16px", "84px"]}
+            zIndex={1}
+          >
+            <ArrowUpFromLine color="#fff" />
+          </Box>
+        </a>
+      )}
       <Flex
         flexDir={["column", "column", "column", "row", "row"]}
         justifyContent={"space-between"}
@@ -77,13 +163,47 @@ export const AdminProductsPage = () => {
           Products
         </Heading>
         <Flex gap={".7rem"}>
-          <button className="addnewbtn">
+          <button className="addnewbtn" onClick={handleAddNew}>
             <Flex gap={".5rem"} alignItems={"center"}>
               <CopyPlus />
               Add New
             </Flex>
           </button>
-          <button className="deletebtn">Delete (selected)</button>
+          <button
+            className="deletebtn"
+            onClick={() => {
+              checkedItems.length > 0 && onOpen();
+            }}
+          >
+            Delete (selected)
+          </button>
+
+          <AlertDialog
+            isOpen={isOpen}
+            leastDestructiveRef={cancelRef}
+            onClose={onClose}
+          >
+            <AlertDialogOverlay>
+              <AlertDialogContent>
+                <AlertDialogHeader fontSize="lg" fontWeight="bold">
+                  Delete Product
+                </AlertDialogHeader>
+
+                <AlertDialogBody>
+                  Are you sure to delete {checkedItems.join(",")} products?
+                </AlertDialogBody>
+
+                <AlertDialogFooter>
+                  <Button colorScheme="blue" ref={cancelRef} onClick={onClose}>
+                    Cancel
+                  </Button>
+                  <Button colorScheme="red" onClick={handleDelete} ml={3}>
+                    Delete
+                  </Button>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialogOverlay>
+          </AlertDialog>
         </Flex>
       </Flex>
 
@@ -94,7 +214,7 @@ export const AdminProductsPage = () => {
         margin={"1rem auto"}
         p={"1rem"}
       >
-        <Accordion defaultIndex={[0]} allowMultiple minW={"80vw"} maxW={"80vw"}>
+        <Accordion defaultIndex={[0]} allowMultiple minW={"70vw"} maxW={"80vw"}>
           <AccordionItem>
             <h2>
               <AccordionButton>
@@ -133,7 +253,7 @@ export const AdminProductsPage = () => {
                   </Select>
                   <Input
                     type="text"
-                    placeholder="Product Name"
+                    placeholder="Search..."
                     value={searchVal}
                     onChange={(e) => {
                       setInfo({ ...info, searchVal: e.target.value });
@@ -171,8 +291,10 @@ export const AdminProductsPage = () => {
             <Tr>
               <Th>
                 <Checkbox
-                  isIndeterminate={isIndeterminate}
-                  colorScheme="green"
+                  onChange={(e) => {
+                    handleAllChange(e);
+                  }}
+                  colorScheme="red"
                 ></Checkbox>
               </Th>
               <Th>Id</Th>
@@ -189,9 +311,11 @@ export const AdminProductsPage = () => {
                 <Tr key={product.id} borderColor={"1px solid black"}>
                   <Td>
                     <Checkbox
-                      key={product.id}
-                      value={product.id}
-                      // onChange={(e) => {}}
+                      id={product.id}
+                      onChange={(e) => {
+                        handleChange(e);
+                      }}
+                      checked={checkedItems.includes(product.id) ? true : false}
                       colorScheme="red"
                     ></Checkbox>
                   </Td>
@@ -201,7 +325,10 @@ export const AdminProductsPage = () => {
                   <Td>{product.company}</Td>
                   <Td isNumeric>{product.price}</Td>
                   <Td>
-                    <button className="animatedbtn">
+                    <button
+                      className="animatedbtn"
+                      onClick={() => handleEdit(product.id)}
+                    >
                       <span>Edit</span>
                     </button>
                   </Td>

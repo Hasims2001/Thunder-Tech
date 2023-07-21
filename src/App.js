@@ -22,7 +22,11 @@ import { useContext } from 'react';
 import { AppContent } from './Parmeshwar/Contex/ContextApi';
 import styled from "styled-components"
 import { AllRoutes } from './Parmeshwar/Pages/AllRoutes';
+
 import { AboutModal } from './Parmeshwar/Components/AboutModal';
+
+import { AdminRouter } from './hasim/Component/AdminRouter';
+
 
 
 
@@ -33,8 +37,8 @@ function App() {
   return (
     // <DIV className="App" theme={theme}>
     //   <div className='nav'>
-    //   <Navbar />
-    // </div>
+    //     <Navbar />
+    //   </div>
 
     
     
@@ -42,15 +46,14 @@ function App() {
     // <div className='allRoutes'>
 
 
-    // <AllRoutes />
-    // </div>
+    //     <AllRoutes />
+    //   </div>
 
 
     //   <Footer />
     // </DIV>
     <div className="App">
 
-     
 
 
 
