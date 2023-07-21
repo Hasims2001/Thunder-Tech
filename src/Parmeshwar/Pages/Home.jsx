@@ -14,6 +14,7 @@ import phoneFlashSale from "../Images/phoneFlashSale.png"
 import watchesBanners from "../Images/watchesBanners.png"
 import { WatchComp } from '../Components/WatchComp'
 import gadgets from "../Images/gadgets.png"
+import { Review } from '../Components/Review'
 
 export const Home = () => {
   const {theme} = useContext(AppContent)
@@ -123,6 +124,8 @@ export const Home = () => {
       <div style={{marginBottom: "50px"}}>
         <img src={gadgets} alt="" />
       </div>
+
+      <Review />
 
 
       {/* <div>
