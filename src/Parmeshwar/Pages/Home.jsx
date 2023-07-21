@@ -8,6 +8,13 @@ import headphone from "../Images/headphone.png"
 import specialOffer from "../Images/specialOffer.png"
 import { ImageCardComp } from '../Components/ImageCardComp'
 import { SlideShowComponent } from '../Components/SlideShowComponent'
+import { FeaturedProducts } from '../Components/FeaturedProducts'
+import { Text } from '@chakra-ui/layout'
+import phoneFlashSale from "../Images/phoneFlashSale.png"
+import watchesBanners from "../Images/watchesBanners.png"
+import { WatchComp } from '../Components/WatchComp'
+import gadgets from "../Images/gadgets.png"
+import { Review } from '../Components/Review'
 
 export const Home = () => {
   const {theme} = useContext(AppContent)
@@ -81,14 +88,49 @@ export const Home = () => {
         <img src="https://cdn.mos.cms.futurecdn.net/nfp35ACuuzXXDUn7tFixDE-1200-80.jpg.webp" alt="" />
       </div> */}
 
-      <div >
+      {/* <div >
         <img src={specialOffer} alt=""  />
+      </div> */}
+
+      <div style={{marginBottom: "50px"}}>
+        <SlideShowComponent />
+      </div>
+
+      <div style={{width: "80%", margin: "auto", marginBottom: "50px"}}>
+        <img src={phoneFlashSale} alt="" />
+      </div>
+        
+
+     <div style={{marginBottom: "50px"}}>
+     <FeaturedProducts />
+     </div>
+
+
+     <div style={{width: "80%", margin: "auto", marginBottom: "50px"}}>
+        <img src={watchesBanners} alt="" />
+      </div>
+
+      <div className='watchComp'>
+        <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/e/b/a/-original-imagrdzfqsjsv4v6.jpeg?q=70"} />
+        <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/a/k/e/-original-imagnydrewxe5qeg.jpeg?q=70"} />
+        <WatchComp image={"https://rukminim2.flixcart.com/image/2000/2000/xif0q/watch/n/d/w/-original-imagrk9smhqfrndu.jpeg?q=70"} />
+        <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/l/6/7/-original-imagrk9sggffgvdg.jpeg?q=70"} />
+        <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/x/d/u/1-jxrm2119-jaxer-men-original-imagr2dwpr2upfqk.jpeg?q=70"} />
+        <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/k/1/g/-original-imagrdzezm63ms83.jpeg?q=70"} />
+        <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/f/l/c/-original-imagz4wu525dxzmg.jpeg?q=70"} />
       </div>
 
 
-      <div>
+      <div style={{marginBottom: "50px"}}>
+        <img src={gadgets} alt="" />
+      </div>
+
+      <Review />
+
+
+      {/* <div>
       <ImageCardComp />
-      </div>
+      </div> */}
 
       
      
@@ -144,4 +186,11 @@ h3{
   text-align: center;
   color:  ${props => (props.theme === "lightTheme" ? "" : " #fff")};;
 }
+
+.watchComp{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
 `

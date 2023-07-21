@@ -2,6 +2,8 @@ import React from 'react'
 import styled from "styled-components";
 
 export const ImageCardComp = () => {
+
+  
   return (
     <DIV>
         <div class="card-container">
@@ -36,10 +38,12 @@ export const ImageCardComp = () => {
 
 const DIV = styled.div`
     .card-container {
-  width: 900px;
-  /* height: 400px; */
+  /* width: 900px; */
+  height: 520px;
   position: relative;
   /* border-radius: 10px; */
+  
+  margin: auto;
 }
 
 .card-container::before {
@@ -118,6 +122,11 @@ const DIV = styled.div`
 
 .card:hover .img-content svg {
   fill: transparent;
+}
+
+.img-content > img{
+  width: 100%;
+  height: 100%;
 }
 
 `
