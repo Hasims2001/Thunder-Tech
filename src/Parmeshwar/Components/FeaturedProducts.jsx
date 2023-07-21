@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getProductData } from '../../redux/productRedux/action';
 import styled from "styled-components"
 import { Card, CardHeader, CardBody, CardFooter, Text, Divider, ButtonGroup, Button, Stack, Heading, Image, Flex } from '@chakra-ui/react'
+import { CartComponent } from './CartComponent';
 
 export const FeaturedProducts = () => {
     const dispatch = useDispatch();
@@ -16,15 +17,21 @@ export const FeaturedProducts = () => {
     console.log("data", data)
     return (
         <DIV>
-
+             
+             <div>
             <div class="container">
                 <div class="card_box">
                     <span></span>
 
                     <img src="https://m.media-amazon.com/images/I/71DCZOdq92S._AC_UY327_FMwebp_QL65_.jpg" alt="" />
                 </div>
+                
+            </div>
+            <CartComponent text = {"OnePlus Nord 200"} price={"12,587"} />
             </div>
 
+
+            <div>
             <div class="container">
                 <div class="card_box">
                     <span></span>
@@ -32,24 +39,33 @@ export const FeaturedProducts = () => {
                     <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/b/f/m/-original-imagna3ezkdusyrz.jpeg?q=70" alt="" />
                 </div>
             </div>
-
-
-            <div class="container">
-                <div class="card_box">
-                    
-
-                    <img src="https://m.media-amazon.com/images/I/81fRAoUL-fL._AC_UL600_FMwebp_QL65_.jpg" alt="" />
-                </div>
+            <CartComponent text={"vivo V27 5G"} price={"32,999"}/>
             </div>
 
+           <div>
+            <div class="container">
+                <div class="card_box">
+                    <span></span>
+
+                    <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/l/8/r/-original-imaghxemnnnkd8bg.jpeg?q=70" alt="" />
+                </div>
+            </div>
+            <CartComponent text={"iPhone 14 Pro"} price={"1,20,999"}/>
+            </div>
+            
+            <div>
             <div class="container">
                 <div class="card_box">
                    
 
-                    <img src="https://m.media-amazon.com/images/I/71DCZOdq92S._AC_UY327_FMwebp_QL65_.jpg" alt="" />
+                    <img src="https://m.media-amazon.com/images/I/616uMtIWiiL._AC_UL600_FMwebp_QL65_.jpg" alt="" />
                 </div>
             </div>
+            <CartComponent text={"OnePlus Nord N30 5G"} price={"24,529"}/>
+            </div>
 
+
+            <div>
             <div class="container">
                 <div class="card_box">
                     <span></span>
@@ -57,7 +73,11 @@ export const FeaturedProducts = () => {
                     <img src="https://m.media-amazon.com/images/I/71SHVwlDf6L._AC_UY327_FMwebp_QL65_.jpg" alt="" />
                 </div>
             </div>
+            <CartComponent text={"iPhone 13"} price={"89,000"}/>
+            </div>
 
+
+            <div>
             <div class="container">
                 <div class="card_box">
                     
@@ -65,8 +85,8 @@ export const FeaturedProducts = () => {
                     <img src="https://m.media-amazon.com/images/I/71jvbxyQ2TL._AC_UY327_FMwebp_QL65_.jpg" alt="" />
                 </div>
             </div>
-
-
+            <CartComponent  text = {"OnePlus 11 5G"} price={"65,587"}/>
+            </div>
 
 
 
@@ -104,6 +124,8 @@ justify-content: space-around;
 /* grid-template-columns: repeat(5, 1fr); */
 
 /* gap: 5px; */
+background-color: white;
+padding: 10px;
 
 img{
     width: 100%;
@@ -115,6 +137,7 @@ img{
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
 
 .card_box {
