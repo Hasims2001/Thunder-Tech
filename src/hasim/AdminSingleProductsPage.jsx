@@ -9,34 +9,50 @@ import {
   TableContainer,
   Tbody,
   Td,
+  Toast,
   Tr,
+  useToast,
 } from "@chakra-ui/react";
 import { color } from "framer-motion";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Option } from "./Component/Option";
 import { styled } from "styled-components";
+import { postEditProduct, postNewProduct } from "../redux/adminRedux/action";
+import { useNavigate, useParams } from "react-router-dom";
 
 const init = {
+  id: 0,
   name: "",
   category: "",
   price: "",
   color: "",
-  review: "",
   company: "",
-  highlights: "",
+  Highlights: "",
   image: "",
 };
-export const AdminSingleProductsPage = () => {
+export const AdminSingleProductsPage = ({ text }) => {
   const [data, setData] = useState(init);
-  const reduxdata = useSelector((store) => store.productReducer.products);
+  const dispatch = useDispatch();
+  const param = useParams();
+
+  const reduxdata = useSelector((store) => store.adminReducer.products);
   const [productData, setProductData] = useState([]);
   const [category, setCategory] = useState([]);
   const [color, setColor] = useState([]);
   const [company, setCompany] = useState([]);
-
+  const navigate = useNavigate();
+  const toast = useToast();
+  const handleCancel = () => {
+    navigate("/adminproducts");
+  };
   useEffect(() => {
     setProductData(reduxdata);
+    if (param.id) {
+      setData(reduxdata[param.id - 1]);
+    } else {
+      setData({ ...data, id: reduxdata.length + 1 });
+    }
     let temp = category;
     let temp_color = color;
     let temp_company = company;
@@ -77,16 +93,27 @@ export const AdminSingleProductsPage = () => {
     // });
     // setColors(temp);
   }, [reduxdata]);
-  console.log(company);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    if (text === "Edit") {
+      console.log(data);
+      dispatch(postEditProduct(data));
+    } else {
+      dispatch(postNewProduct(data));
+    }
+    toast({
+      title: `${text} Product Successfully!`,
+      status: "success",
+      isClosable: true,
+    });
+    navigate("/adminproducts");
   };
   return (
     <Flex m={"1rem 0"} flexDir={"column"} w={"100%"}>
       <Box>
         <Heading as={"h6"} fontSize={"lg"}>
-          Add New Product
+          {text} Product
         </Heading>
       </Box>
       <Flex alignItems={"center"} justifyContent={"center"} fontSize={"lg"}>
@@ -104,7 +131,22 @@ export const AdminSingleProductsPage = () => {
                     colSpan={2}
                     textAlign={"center"}
                   >
-                    Add New Product
+                    {text} Product
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Product Id:</Td>
+                  <Td>
+                    <Input
+                      border="1px solid black"
+                      type="number"
+                      value={data.id}
+                      disabled
+                      name="id"
+                      _focus={{
+                        border: "1px solid black",
+                      }}
+                    />
                   </Td>
                 </Tr>
                 <Tr>
@@ -114,6 +156,7 @@ export const AdminSingleProductsPage = () => {
                       border="1px solid black"
                       type="text"
                       name="name"
+                      value={data.name}
                       onChange={(e) => {
                         setData({ ...data, name: e.target.value });
                       }}
@@ -176,7 +219,7 @@ export const AdminSingleProductsPage = () => {
                     <Select
                       border={"1px solid black"}
                       _focus={"1px solid black"}
-                      value={data.color}
+                      value={data.color[0]}
                       onChange={(e) =>
                         setData({ ...data, color: e.target.value })
                       }
@@ -200,8 +243,9 @@ export const AdminSingleProductsPage = () => {
                       border="1px solid black"
                       type="text"
                       name="name"
+                      value={data.Highlights}
                       onChange={(e) => {
-                        setData({ ...data, highlights: e.target.value });
+                        setData({ ...data, Highlights: e.target.value });
                       }}
                       placeholder="Product Highlights..."
                       _focus={{
@@ -216,7 +260,8 @@ export const AdminSingleProductsPage = () => {
                     <Input
                       border="1px solid black"
                       type="text"
-                      name="name"
+                      value={data.image}
+                      name="image"
                       onChange={(e) => {
                         setData({ ...data, image: e.target.value });
                       }}
@@ -233,9 +278,10 @@ export const AdminSingleProductsPage = () => {
                     <Input
                       border="1px solid black"
                       type="text"
-                      name="name"
+                      name="price"
+                      value={data.price}
                       onChange={(e) => {
-                        setData({ ...data, name: e.target.value });
+                        setData({ ...data, price: e.target.value });
                       }}
                       placeholder="Product Price..."
                       _focus={{
@@ -246,7 +292,14 @@ export const AdminSingleProductsPage = () => {
                 </Tr>
                 <Tr>
                   <Td border={"none"} colSpan={2} textAlign={"center"}>
-                    <Button type="submit" variant={"SimpleBlue"}>
+                    <Button
+                      onClick={handleCancel}
+                      marginRight="1.5rem"
+                      variant={"SimpleBlue"}
+                    >
+                      Cancel
+                    </Button>
+                    <Button type="submit" variant={"SimpleGreen"}>
                       Submit
                     </Button>
                   </Td>

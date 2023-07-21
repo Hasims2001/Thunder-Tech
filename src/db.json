@@ -1,1205 +1,1208 @@
-[
-    {
-        "id": 1,
-        "name": "Apple iPhone 13 Pro",
-        "category": "smartphone",
-        "price": 799,
-        "company": "Apple",
-        "image": [
-            "https://rukminim2.flixcart.com/image/416/416/ktketu80/mobile/a/e/g/iphone-13-pro-mlvw3hn-a-apple-original-imag6vpcvspnzyfy.jpeg?q=70"
-        ],
-        "color": [
-            "black",
-            "white",
-            "Rose Pink"
-        ],
-        "Highlights": [
-            "128 GB ROM",
-            "15.49 cm (6.1 inch) Super Retina XDR Display",
-            "12MP + 12MP + 12MP | 12MP Front Camera",
-            "A15 Bionic Chip Processor"
-        ],
-        "review": [
-            {
-                "reviewid": 101,
-                "name": "John Doe",
-                "text": "Best phone available at this price point. Camera is comparable with entry-level DSLR (marvelous dynamic range). The performance is unmatchable. Shifted to iOS after 10 years of premium Android smartphones. Go for it without any second thought.",
-                "rating": 5
-            },
-            {
-                "reviewid": 102,
-                "name": "Weeky",
-                "text": "Love this phone...",
-                "rating": 4
-            },
-            {
-                "reviewid": 103,
-                "name": "Anthony",
-                "text": "Awesome phone. Excellent camera quality.",
-                "rating": 5
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Samsung Galaxy S21 Ultra",
-        "category": "smartphone",
-        "price": 1099,
-        "company": "Samsung",
-        "image": [
-            "https://example.com/samsung-s21-ultra.jpg"
-        ],
-        "color": [
-            "phantom black",
-            "phantom silver",
-            "phantom titanium",
-            "phantom navy",
-            "phantom brown"
-        ],
-        "Highlights": [
-            "256 GB ROM",
-            "17.45 cm (6.9 inch) Quad HD+ Dynamic AMOLED 2X Display",
-            "108MP + 12MP + 10MP + 10MP | 40MP Front Camera",
-            "Exynos 2100 Processor"
-        ],
-        "review": [
-            {
-                "reviewid": 201,
-                "name": "Emily",
-                "text": "The camera quality is exceptional, and the large display is perfect for multimedia. The battery life is also impressive.",
-                "rating": 5
-            },
-            {
-                "reviewid": 202,
-                "name": "Michael",
-                "text": "I love the design and the overall performance of the phone. Highly recommended.",
-                "rating": 4
-            },
-            {
-                "reviewid": 203,
-                "name": "Sarah",
-                "text": "The phone is great, but the price is a bit high. However, it's worth it for the features it offers.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Sony PlayStation 5",
-        "category": "gaming console",
-        "price": 499,
-        "company": "Sony",
-        "image": [
-            "https://example.com/sony-ps5.jpg"
-        ],
-        "color": [
-            "white",
-            "black"
-        ],
-        "Highlights": [
-            "AMD Ryzen Zen 2 Processor",
-            "16GB GDDR6 RAM",
-            "825GB SSD Storage",
-            "Ray Tracing Support"
-        ],
-        "review": [
-            {
-                "reviewid": 301,
-                "name": "David",
-                "text": "The PS5 is a powerhouse console with amazing graphics. The load times are incredibly fast, and the DualSense controller adds a new level of immersion.",
-                "rating": 5
-            },
-            {
-                "reviewid": 302,
-                "name": "Rachel",
-                "text": "I'm very impressed with the graphics and performance of the PS5. It's a must-have for any gaming enthusiast.",
-                "rating": 5
-            },
-            {
-                "reviewid": 303,
-                "name": "Daniel",
-                "text": "The PlayStation 5 offers a seamless gaming experience with stunning visuals. The adaptive triggers on the controller are a game-changer.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 4,
-        "name": "Dell XPS 15",
-        "category": "laptop",
-        "price": 1599,
-        "company": "Dell",
-        "image": [
-            "https://example.com/dell-xps-15.jpg"
-        ],
-        "color": [
-            "silver",
-            "black"
-        ],
-        "Highlights": [
-            "Intel Core i7 Processor",
-            "16GB RAM",
-            "512GB SSD",
-            "NVIDIA GeForce GTX Graphics"
-        ],
-        "review": [
-            {
-                "reviewid": 401,
-                "name": "Olivia",
-                "text": "The Dell XPS 15 is a powerful laptop with a stunning display. It's perfect for both work and entertainment.",
-                "rating": 5
-            },
-            {
-                "reviewid": 402,
-                "name": "Ethan",
-                "text": "I'm impressed by the performance and build quality of the XPS 15. It's worth every penny.",
-                "rating": 4
-            },
-            {
-                "reviewid": 403,
-                "name": "Sophia",
-                "text": "The XPS 15 is a great laptop for multitasking. The display is vibrant and the keyboard is comfortable to type on.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 5,
-        "name": "Canon EOS R5",
-        "category": "camera",
-        "price": 3899,
-        "company": "Canon",
-        "image": [
-            "https://example.com/canon-eos-r5.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "45MP Full-Frame CMOS Sensor",
-            "8K Video Recording",
-            "5-Axis Image Stabilization",
-            "Wi-Fi and Bluetooth Connectivity"
-        ],
-        "review": [
-            {
-                "reviewid": 501,
-                "name": "Liam",
-                "text": "The Canon EOS R5 is a professional-grade camera with outstanding image quality. The 8K video capabilities are impressive.",
-                "rating": 5
-            },
-            {
-                "reviewid": 502,
-                "name": "Ava",
-                "text": "I'm extremely happy with the performance of the EOS R5. It's a versatile camera that excels in both photo and video.",
-                "rating": 5
-            },
-            {
-                "reviewid": 503,
-                "name": "Noah",
-                "text": "The image stabilization on the R5 is incredible. It's a game-changer for handheld shooting.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 6,
-        "name": "LG OLED CX Series",
-        "category": "television",
-        "price": 1999,
-        "company": "LG",
-        "image": [
-            "https://example.com/lg-oled-cx.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "55-inch OLED Display",
-            "4K UHD Resolution",
-            "Dolby Vision IQ and Dolby Atmos Support",
-            "WebOS Smart Platform"
-        ],
-        "review": [
-            {
-                "reviewid": 601,
-                "name": "Mia",
-                "text": "The LG OLED CX offers the best picture quality I've ever seen. The blacks are deep, and the colors are vibrant.",
-                "rating": 5
-            },
-            {
-                "reviewid": 602,
-                "name": "Liam",
-                "text": "The CX series is a fantastic television with stunning visuals and great sound quality. The smart features are also convenient to use.",
-                "rating": 4
-            },
-            {
-                "reviewid": 603,
-                "name": "Ella",
-                "text": "I'm impressed with the OLED technology on the CX. The contrast and color accuracy are excellent.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 7,
-        "name": "Fitbit Charge 5",
-        "category": "wearable",
-        "price": 179,
-        "company": "Fitbit",
-        "image": [
-            "https://example.com/fitbit-charge-5.jpg"
-        ],
-        "color": [
-            "graphite",
-            "gold",
-            "silver"
-        ],
-        "Highlights": [
-            "Advanced Health Metrics",
-            "Built-In GPS",
-            "AMOLED Display",
-            "Water-Resistant"
-        ],
-        "review": [
-            {
-                "reviewid": 701,
-                "name": "Oliver",
-                "text": "The Fitbit Charge 5 is a great fitness tracker. The sleep tracking and heart rate monitoring features are accurate.",
-                "rating": 4
-            },
-            {
-                "reviewid": 702,
-                "name": "Isabella",
-                "text": "I love the design of the Charge 5. The AMOLED display is clear and easy to read.",
-                "rating": 4
-            },
-            {
-                "reviewid": 703,
-                "name": "Leo",
-                "text": "The fitness features on the Fitbit Charge 5 are impressive. It's a reliable companion for tracking workouts.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 8,
-        "name": "Bose QuietComfort 35 II",
-        "category": "headphones",
-        "price": 299,
-        "company": "Bose",
-        "image": [
-            "https://example.com/bose-quietcomfort-35-ii.jpg"
-        ],
-        "color": [
-            "black",
-            "silver",
-            "rose gold"
-        ],
-        "Highlights": [
-            "Noise-Canceling Technology",
-            "Alexa and Google Assistant Integration",
-            "20-Hour Battery Life",
-            "Wireless Bluetooth Connectivity"
-        ],
-        "review": [
-            {
-                "reviewid": 801,
-                "name": "Henry",
-                "text": "The Bose QuietComfort 35 II headphones provide excellent noise cancellation. The sound quality is also top-notch.",
-                "rating": 5
-            },
-            {
-                "reviewid": 802,
-                "name": "Grace",
-                "text": "I use these headphones for studying, and they help me stay focused by blocking out external noise.",
-                "rating": 4
-            },
-            {
-                "reviewid": 803,
-                "name": "Mason",
-                "text": "The battery life on the QC35 II is impressive. I can use them for several days without charging.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 9,
-        "name": "GoPro Hero 9 Black",
-        "category": "action camera",
-        "price": 349,
-        "company": "GoPro",
-        "image": [
-            "https://example.com/gopro-hero-9-black.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "5K Video Recording",
-            "Waterproof up to 33 Feet",
-            "20MP Photo Resolution",
-            "Front-Facing Display"
-        ],
-        "review": [
-            {
-                "reviewid": 901,
-                "name": "Sophia",
-                "text": "The GoPro Hero 9 Black is a versatile action camera with excellent video quality. The front-facing display is useful for vlogging.",
-                "rating": 5
-            },
-            {
-                "reviewid": 902,
-                "name": "Benjamin",
-                "text": "I've taken this camera on multiple adventures, and it has never disappointed me. It captures stunning footage.",
-                "rating": 4
-            },
-            {
-                "reviewid": 903,
-                "name": "Emma",
-                "text": "The Hero 9 Black is a great upgrade from the previous model. The stabilization is much improved.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 10,
-        "name": "Amazon Echo Dot (4th Gen)",
-        "category": "smart speaker",
-        "price": 49,
-        "company": "Amazon",
-        "image": [
-            "https://example.com/amazon-echo-dot-4th-gen.jpg"
-        ],
-        "color": [
-            "charcoal",
-            "glacier white",
-            "twilight blue"
-        ],
-        "Highlights": [
-            "Alexa Voice Assistant",
-            "Compact Design",
-            "Built-In Zigbee Hub",
-            "Stream Music and Podcasts"
-        ],
-        "review": [
-            {
-                "reviewid": 1001,
-                "name": "Oliver",
-                "text": "The Echo Dot is a great smart speaker for its price. It responds quickly to voice commands.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1002,
-                "name": "Ava",
-                "text": "I love having Alexa at my fingertips. The Echo Dot is a convenient device for controlling my smart home.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1003,
-                "name": "Noah",
-                "text": "The sound quality on the Echo Dot is surprisingly good. It's a great addition to any room.",
-                "rating": 3
-            }
-        ]
-    },
-    {
-        "id": 11,
-        "name": "HP Spectre x360",
-        "category": "laptop",
-        "price": 1299,
-        "company": "HP",
-        "image": [
-            "https://example.com/hp-spectre-x360.jpg"
-        ],
-        "color": [
-            "nightfall black",
-            "poseidon blue",
-            "silver"
-        ],
-        "Highlights": [
-            "Intel Core i7 Processor",
-            "16GB RAM",
-            "512GB SSD",
-            "13.3-inch 4K UHD Touchscreen"
-        ],
-        "review": [
-            {
-                "reviewid": 1101,
-                "name": "Ethan",
-                "text": "The HP Spectre x360 is a sleek and powerful laptop. The 4K touchscreen is vibrant and responsive.",
-                "rating": 5
-            },
-            {
-                "reviewid": 1102,
-                "name": "Isabella",
-                "text": "I'm impressed with the build quality and performance of the Spectre x360. It's a great choice for both work and entertainment.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1103,
-                "name": "Leo",
-                "text": "The battery life on the x360 is excellent. I can use it for a full day without needing to recharge.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 12,
-        "name": "Sony WH-1000XM4",
-        "category": "headphones",
-        "price": 349,
-        "company": "Sony",
-        "image": [
-            "https://example.com/sony-wh-1000xm4.jpg"
-        ],
-        "color": [
-            "black",
-            "silver"
-        ],
-        "Highlights": [
-            "Industry-Leading Noise Cancellation",
-            "30-Hour Battery Life",
-            "Bluetooth 5.0 Connectivity",
-            "Touch Sensor Controls"
-        ],
-        "review": [
-            {
-                "reviewid": 1201,
-                "name": "Henry",
-                "text": "The Sony WH-1000XM4 headphones are the best in class when it comes to noise cancellation. The sound quality is also exceptional.",
-                "rating": 5
-            },
-            {
-                "reviewid": 1202,
-                "name": "Grace",
-                "text": "I use these headphones for work, and they help me focus by blocking out distractions. The battery life is impressive as well.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1203,
-                "name": "Mason",
-                "text": "The touch controls on the WH-1000XM4 are intuitive and easy to use. The sound is immersive and clear.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 13,
-        "name": "Nintendo Switch",
-        "category": "gaming console",
-        "price": 299,
-        "company": "Nintendo",
-        "image": [
-            "https://example.com/nintendo-switch.jpg"
-        ],
-        "color": [
-            "neon red/neon blue",
-            "gray"
-        ],
-        "Highlights": [
-            "Handheld and TV Mode",
-            "Joy-Con Controllers",
-            "Nintendo eShop",
-            "Wide Selection of Games"
-        ],
-        "review": [
-            {
-                "reviewid": 1301,
-                "name": "Olivia",
-                "text": "The Nintendo Switch is a versatile console that offers both handheld and TV gaming. The selection of games is fantastic.",
-                "rating": 5
-            },
-            {
-                "reviewid": 1302,
-                "name": "Isabella",
-                "text": "I love playing games on the Switch. The Joy-Con controllers are comfortable to hold, and the graphics are impressive.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1303,
-                "name": "Leo",
-                "text": "The portability of the Switch is a game-changer. I can play my favorite games on the go.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 14,
-        "name": "Samsung Galaxy Watch 4",
-        "category": "smartwatch",
-        "price": 249,
-        "company": "Samsung",
-        "image": [
-            "https://example.com/samsung-galaxy-watch-4.jpg"
-        ],
-        "color": [
-            "black",
-            "silver",
-            "pink"
-        ],
-        "Highlights": [
-            "Advanced Health Monitoring",
-            "Built-In GPS",
-            "1.4-inch AMOLED Display",
-            "Water-Resistant"
-        ],
-        "review": [
-            {
-                "reviewid": 1401,
-                "name": "Oliver",
-                "text": "The Galaxy Watch 4 is a great smartwatch with accurate health monitoring features. The display is vibrant and easy to read.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1402,
-                "name": "Ava",
-                "text": "I love the design of the Watch 4. It's comfortable to wear, and the battery life is decent.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1403,
-                "name": "Noah",
-                "text": "The fitness tracking on the Galaxy Watch 4 is impressive. It motivates me to stay active throughout the day.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 15,
-        "name": "Microsoft Surface Pro 7",
-        "category": "tablet",
-        "price": 899,
-        "company": "Microsoft",
-        "image": [
-            "https://example.com/microsoft-surface-pro-7.jpg"
-        ],
-        "color": [
-            "platinum",
-            "black"
-        ],
-        "Highlights": [
-            "10th Gen Intel Core Processor",
-            "12.3-inch PixelSense Display",
-            "8GB RAM",
-            "128GB SSD Storage"
-        ],
-        "review": [
-            {
-                "reviewid": 1501,
-                "name": "Ethan",
-                "text": "The Surface Pro 7 is a powerful tablet that can replace your laptop. The build quality is excellent, and the display is sharp.",
-                "rating": 5
-            },
-            {
-                "reviewid": 1502,
-                "name": "Isabella",
-                "text": "I use the Surface Pro 7 for work, and it's been a great device. The battery life is impressive, and it's lightweight for portability.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1503,
-                "name": "Leo",
-                "text": "The versatility of the Surface Pro 7 is its biggest strength. It's great for both productivity and entertainment.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 16,
-        "name": "Sony A7 III",
-        "category": "camera",
-        "price": 1999,
-        "company": "Sony",
-        "image": [
-            "https://example.com/sony-a7-iii.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "24.2MP Full-Frame Exmor R CMOS Sensor",
-            "4K Video Recording",
-            "5-Axis Image Stabilization",
-            "693-Point Phase-Detection Autofocus"
-        ],
-        "review": [
-            {
-                "reviewid": 1601,
-                "name": "Liam",
-                "text": "The Sony A7 III is a professional-grade camera with outstanding image quality. The autofocus system is fast and accurate.",
-                "rating": 5
-            },
-            {
-                "reviewid": 1602,
-                "name": "Ava",
-                "text": "I'm extremely happy with the performance of the A7 III. It's a versatile camera that excels in both photo and video.",
-                "rating": 5
-            },
-            {
-                "reviewid": 1603,
-                "name": "Noah",
-                "text": "The image stabilization on the A7 III is incredible. It's a game-changer for handheld shooting.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 17,
-        "name": "Apple iPad Pro",
-        "category": "tablet",
-        "price": 1099,
-        "company": "Apple",
-        "image": [
-            "https://example.com/apple-ipad-pro.jpg"
-        ],
-        "color": [
-            "space gray",
-            "silver"
-        ],
-        "Highlights": [
-            "M1 Chip",
-            "Liquid Retina XDR Display",
-            "5G Connectivity",
-            "Face ID"
-        ],
-        "review": [
-            {
-                "reviewid": 1701,
-                "name": "Olivia",
-                "text": "The iPad Pro is a powerful tablet that can handle demanding tasks. The display is stunning, and the M1 chip is blazing fast.",
-                "rating": 5
-            },
-            {
-                "reviewid": 1702,
-                "name": "Isabella",
-                "text": "I use the iPad Pro for both work and entertainment. It's great for multitasking, and the Apple Pencil support is fantastic.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1703,
-                "name": "Leo",
-                "text": "The iPad Pro is a premium tablet with top-notch performance. The 5G connectivity is a nice addition.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 18,
-        "name": "Samsung QLED Q90T",
-        "category": "television",
-        "price": 1999,
-        "company": "Samsung",
-        "image": [
-            "https://example.com/samsung-qled-q90t.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "55-inch QLED Display",
-            "4K UHD Resolution",
-            "Direct Full Array 16X",
-            "Quantum HDR 16X"
-        ],
-        "review": [
-            {
-                "reviewid": 1801,
-                "name": "Mia",
-                "text": "The Samsung Q90T offers stunning picture quality. The colors are vibrant, and the contrast is excellent.",
-                "rating": 5
-            },
-            {
-                "reviewid": 1802,
-                "name": "Liam",
-                "text": "The Q90T is a fantastic television with impressive visuals. The smart features are easy to navigate.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1803,
-                "name": "Ella",
-                "text": "I'm impressed with the QLED technology on the Q90T. The picture quality is excellent in both bright and dark scenes.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 19,
-        "name": "Fitbit Versa 3",
-        "category": "smartwatch",
-        "price": 229,
-        "company": "Fitbit",
-        "image": [
-            "https://example.com/fitbit-versa-3.jpg"
-        ],
-        "color": [
-            "black",
-            "pink clay",
-            "midnight blue/gold"
-        ],
-        "Highlights": [
-            "Built-In GPS",
-            "24/7 Heart Rate Monitoring",
-            "AMOLED Display",
-            "6+ Day Battery Life"
-        ],
-        "review": [
-            {
-                "reviewid": 1901,
-                "name": "Oliver",
-                "text": "The Fitbit Versa 3 is a reliable smartwatch with accurate fitness tracking features. The display is crisp and bright.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1902,
-                "name": "Isabella",
-                "text": "I love the design of the Versa 3. It's comfortable to wear all day, and the battery life is impressive.",
-                "rating": 4
-            },
-            {
-                "reviewid": 1903,
-                "name": "Leo",
-                "text": "The fitness features on the Versa 3 are great for tracking workouts. The sleep tracking is particularly useful.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 20,
-        "name": "Bose SoundLink Revolve+",
-        "category": "portable speaker",
-        "price": 299,
-        "company": "Bose",
-        "image": [
-            "https://example.com/bose-soundlink-revolve-plus.jpg"
-        ],
-        "color": [
-            "triple black",
-            "lux gray"
-        ],
-        "Highlights": [
-            "360-Degree Sound",
-            "Up to 16-Hour Battery Life",
-            "Water-Resistant",
-            "Built-In Speakerphone"
-        ],
-        "review": [
-            {
-                "reviewid": 2001,
-                "name": "Henry",
-                "text": "The Bose SoundLink Revolve+ is a portable speaker that delivers impressive 360-degree sound. The battery life is great for outdoor use.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2002,
-                "name": "Grace",
-                "text": "I use this speaker for parties, and it fills the room with rich sound. The build quality is excellent as well.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2003,
-                "name": "Mason",
-                "text": "The SoundLink Revolve+ is easy to carry around, and the sound is fantastic. The battery life is more than sufficient.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 21,
-        "name": "Xbox Series X",
-        "category": "gaming console",
-        "price": 499,
-        "company": "Microsoft",
-        "image": [
-            "https://example.com/xbox-series-x.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "4K Gaming",
-            "120fps Support",
-            "1TB SSD Storage",
-            "Quick Resume Feature"
-        ],
-        "review": [
-            {
-                "reviewid": 2101,
-                "name": "Olivia",
-                "text": "The Xbox Series X is a powerful console that delivers impressive 4K gaming. The load times are incredibly fast.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2102,
-                "name": "Isabella",
-                "text": "I'm very impressed with the performance and graphics of the Series X. It's a great console for gaming enthusiasts.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2103,
-                "name": "Leo",
-                "text": "The quick resume feature on the Series X is a game-changer. I can switch between games seamlessly.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 22,
-        "name": "Nikon D850",
-        "category": "camera",
-        "price": 2799,
-        "company": "Nikon",
-        "image": [
-            "https://example.com/nikon-d850.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "45.7MP Full-Frame CMOS Sensor",
-            "4K UHD Video Recording",
-            "153-Point Autofocus System",
-            "7fps Continuous Shooting"
-        ],
-        "review": [
-            {
-                "reviewid": 2201,
-                "name": "Liam",
-                "text": "The Nikon D850 is a professional-grade camera with exceptional image quality. The autofocus system is fast and accurate.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2202,
-                "name": "Ava",
-                "text": "I'm extremely happy with the performance of the D850. It's a versatile camera that excels in both photo and video.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2203,
-                "name": "Noah",
-                "text": "The dynamic range and detail captured by the D850 are outstanding. It's a top choice for landscape photography.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 23,
-        "name": "Lenovo ThinkPad X1 Carbon",
-        "category": "laptop",
-        "price": 1699,
-        "company": "Lenovo",
-        "image": [
-            "https://example.com/lenovo-thinkpad-x1-carbon.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "Intel Core i7 Processor",
-            "16GB RAM",
-            "512GB SSD",
-            "14-inch WQHD Display"
-        ],
-        "review": [
-            {
-                "reviewid": 2301,
-                "name": "Ethan",
-                "text": "The ThinkPad X1 Carbon is a lightweight and powerful laptop. The keyboard is comfortable to type on, and the display is sharp.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2302,
-                "name": "Isabella",
-                "text": "I use the X1 Carbon for work, and it's been a reliable device. The build quality is excellent, and the battery life is impressive.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2303,
-                "name": "Leo",
-                "text": "The ThinkPad X1 Carbon is a great choice for professionals. It offers a perfect balance of performance and portability.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 24,
-        "name": "JBL Charge 5",
-        "category": "portable speaker",
-        "price": 179,
-        "company": "JBL",
-        "image": [
-            "https://example.com/jbl-charge-5.jpg"
-        ],
-        "color": [
-            "black",
-            "blue",
-            "red"
-        ],
-        "Highlights": [
-            "20 Hours of Playtime",
-            "Waterproof",
-            "Powerbank Function",
-            "JBL Pro Sound"
-        ],
-        "review": [
-            {
-                "reviewid": 2401,
-                "name": "Henry",
-                "text": "The JBL Charge 5 is a portable speaker with impressive sound quality. The battery life is great for outdoor use.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2402,
-                "name": "Grace",
-                "text": "I love taking this speaker to the beach. It's waterproof and the sound is loud and clear.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2403,
-                "name": "Mason",
-                "text": "The Charge 5 is my go-to speaker for outdoor gatherings. It's easy to carry around and the sound fills the space.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 25,
-        "name": "Google Pixel 6 Pro",
-        "category": "smartphone",
-        "price": 899,
-        "company": "Google",
-        "image": [
-            "https://example.com/google-pixel-6-pro.jpg"
-        ],
-        "color": [
-            "stormy black",
-            "cloudy white",
-            "sorta sunny"
-        ],
-        "Highlights": [
-            "128GB ROM",
-            "6.7-inch QHD+ OLED Display",
-            "50MP + 12MP Dual Rear Camera",
-            "8GB RAM"
-        ],
-        "review": [
-            {
-                "reviewid": 2501,
-                "name": "Olivia",
-                "text": "The Google Pixel 6 Pro is a fantastic smartphone with a stunning display and great camera capabilities.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2502,
-                "name": "Isabella",
-                "text": "I love the stock Android experience on the Pixel 6 Pro. The camera quality is exceptional.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2503,
-                "name": "Leo",
-                "text": "The Pixel 6 Pro offers flagship performance at a more affordable price. The battery life is impressive as well.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 26,
-        "name": "Apple AirPods Pro",
-        "category": "wireless earbuds",
-        "price": 249,
-        "company": "Apple",
-        "image": [
-            "https://example.com/apple-airpods-pro.jpg"
-        ],
-        "color": [
-            "white"
-        ],
-        "Highlights": [
-            "Active Noise Cancellation",
-            "Transparency Mode",
-            "Customizable Fit",
-            "Sweat and Water-Resistant"
-        ],
-        "review": [
-            {
-                "reviewid": 2601,
-                "name": "Oliver",
-                "text": "The AirPods Pro are the best wireless earbuds I've used. The noise cancellation is excellent, and the sound quality is impressive.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2602,
-                "name": "Ava",
-                "text": "I love the convenience and comfort of the AirPods Pro. The transparency mode is great for staying aware of my surroundings.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2603,
-                "name": "Noah",
-                "text": "The AirPods Pro offer a seamless user experience with Apple devices. The audio quality is superb.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 27,
-        "name": "DJI Mavic Air 2",
-        "category": "drone",
-        "price": 799,
-        "company": "DJI",
-        "image": [
-            "https://example.com/dji-mavic-air-2.jpg"
-        ],
-        "color": [
-            "gray"
-        ],
-        "Highlights": [
-            "4K Video Recording",
-            "48MP Photo Resolution",
-            "34-Minute Max Flight Time",
-            "Obstacle Avoidance"
-        ],
-        "review": [
-            {
-                "reviewid": 2701,
-                "name": "Sophia",
-                "text": "The DJI Mavic Air 2 is an impressive drone with outstanding image and video quality. The flight time is also excellent.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2702,
-                "name": "Benjamin",
-                "text": "I've captured stunning aerial footage with the Mavic Air 2. The obstacle avoidance system is reliable.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2703,
-                "name": "Emma",
-                "text": "The Mavic Air 2 is easy to fly and offers a great range of features. The camera quality is exceptional.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 28,
-        "name": "Amazon Kindle Paperwhite",
-        "category": "e-reader",
-        "price": 129,
-        "company": "Amazon",
-        "image": [
-            "https://example.com/amazon-kindle-paperwhite.jpg"
-        ],
-        "color": [
-            "black",
-            "plum",
-            "sage",
-            "twilight blue"
-        ],
-        "Highlights": [
-            "High-Resolution Display",
-            "Waterproof",
-            "Built-In Adjustable Light",
-            "Weeks of Battery Life"
-        ],
-        "review": [
-            {
-                "reviewid": 2801,
-                "name": "Oliver",
-                "text": "The Kindle Paperwhite is a great e-reader with a high-resolution display. The waterproof feature is a bonus.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2802,
-                "name": "Ava",
-                "text": "I love reading on the Paperwhite. The adjustable light makes it comfortable to read in any lighting conditions.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2803,
-                "name": "Noah",
-                "text": "The battery life on the Kindle Paperwhite is impressive. I can go weeks without needing to recharge.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 29,
-        "name": "Sony WH-1000XM3",
-        "category": "headphones",
-        "price": 349,
-        "company": "Sony",
-        "image": [
-            "https://example.com/sony-wh-1000xm3.jpg"
-        ],
-        "color": [
-            "black",
-            "silver"
-        ],
-        "Highlights": [
-            "Industry-Leading Noise Cancellation",
-            "30-Hour Battery Life",
-            "Bluetooth 5.0 Connectivity",
-            "Touch Sensor Controls"
-        ],
-        "review": [
-            {
-                "reviewid": 2901,
-                "name": "Henry",
-                "text": "The Sony WH-1000XM3 headphones provide excellent noise cancellation. The sound quality is also top-notch.",
-                "rating": 5
-            },
-            {
-                "reviewid": 2902,
-                "name": "Grace",
-                "text": "I use these headphones for studying, and they help me stay focused by blocking out external noise.",
-                "rating": 4
-            },
-            {
-                "reviewid": 2903,
-                "name": "Mason",
-                "text": "The battery life on the WH-1000XM3 is impressive. I can use them for several days without charging.",
-                "rating": 4
-            }
-        ]
-    },
-    {
-        "id": 30,
-        "name": "Razer Blade 15",
-        "category": "gaming laptop",
-        "price": 1999,
-        "company": "Razer",
-        "image": [
-            "https://example.com/razer-blade-15.jpg"
-        ],
-        "color": [
-            "black"
-        ],
-        "Highlights": [
-            "Intel Core i7 Processor",
-            "16GB RAM",
-            "512GB SSD",
-            "NVIDIA GeForce RTX 3070"
-        ],
-        "review": [
-            {
-                "reviewid": 3001,
-                "name": "Ethan",
-                "text": "The Razer Blade 15 is a high-performance gaming laptop with impressive graphics. The build quality is excellent.",
-                "rating": 5
-            },
-            {
-                "reviewid": 3002,
-                "name": "Isabella",
-                "text": "I use the Blade 15 for gaming, and it handles demanding titles with ease. The display is vibrant and smooth.",
-                "rating": 4
-            },
-            {
-                "reviewid": 3003,
-                "name": "Leo",
-                "text": "The slim design of the Blade 15 is great for portability. The keyboard is comfortable to use for long gaming sessions.",
-                "rating": 4
-            }
-        ]
-    }
-]
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Apple iPhone 13 Pro",
+            "category": "smartphone",
+            "price": 799,
+            "company": "Apple",
+            "image": [
+                "https://rukminim2.flixcart.com/image/416/416/ktketu80/mobile/a/e/g/iphone-13-pro-mlvw3hn-a-apple-original-imag6vpcvspnzyfy.jpeg?q=70"
+            ],
+            "color": [
+                "black",
+                "white",
+                "Rose Pink"
+            ],
+            "Highlights": [
+                "128 GB ROM",
+                "15.49 cm (6.1 inch) Super Retina XDR Display",
+                "12MP + 12MP + 12MP | 12MP Front Camera",
+                "A15 Bionic Chip Processor"
+            ],
+            "review": [
+                {
+                    "reviewid": 101,
+                    "name": "John Doe",
+                    "text": "Best phone available at this price point. Camera is comparable with entry-level DSLR (marvelous dynamic range). The performance is unmatchable. Shifted to iOS after 10 years of premium Android smartphones. Go for it without any second thought.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 102,
+                    "name": "Weeky",
+                    "text": "Love this phone...",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 103,
+                    "name": "Anthony",
+                    "text": "Awesome phone. Excellent camera quality.",
+                    "rating": 5
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Samsung Galaxy S21 Ultra",
+            "category": "smartphone",
+            "price": 1099,
+            "company": "Samsung",
+            "image": [
+                "https://example.com/samsung-s21-ultra.jpg"
+            ],
+            "color": [
+                "phantom black",
+                "phantom silver",
+                "phantom titanium",
+                "phantom navy",
+                "phantom brown"
+            ],
+            "Highlights": [
+                "256 GB ROM",
+                "17.45 cm (6.9 inch) Quad HD+ Dynamic AMOLED 2X Display",
+                "108MP + 12MP + 10MP + 10MP | 40MP Front Camera",
+                "Exynos 2100 Processor"
+            ],
+            "review": [
+                {
+                    "reviewid": 201,
+                    "name": "Emily",
+                    "text": "The camera quality is exceptional, and the large display is perfect for multimedia. The battery life is also impressive.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 202,
+                    "name": "Michael",
+                    "text": "I love the design and the overall performance of the phone. Highly recommended.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 203,
+                    "name": "Sarah",
+                    "text": "The phone is great, but the price is a bit high. However, it's worth it for the features it offers.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Sony PlayStation 5",
+            "category": "gaming console",
+            "price": 499,
+            "company": "Sony",
+            "image": [
+                "https://example.com/sony-ps5.jpg"
+            ],
+            "color": [
+                "white",
+                "black"
+            ],
+            "Highlights": [
+                "AMD Ryzen Zen 2 Processor",
+                "16GB GDDR6 RAM",
+                "825GB SSD Storage",
+                "Ray Tracing Support"
+            ],
+            "review": [
+                {
+                    "reviewid": 301,
+                    "name": "David",
+                    "text": "The PS5 is a powerhouse console with amazing graphics. The load times are incredibly fast, and the DualSense controller adds a new level of immersion.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 302,
+                    "name": "Rachel",
+                    "text": "I'm very impressed with the graphics and performance of the PS5. It's a must-have for any gaming enthusiast.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 303,
+                    "name": "Daniel",
+                    "text": "The PlayStation 5 offers a seamless gaming experience with stunning visuals. The adaptive triggers on the controller are a game-changer.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Dell XPS 15",
+            "category": "laptop",
+            "price": 1599,
+            "company": "Dell",
+            "image": [
+                "https://example.com/dell-xps-15.jpg"
+            ],
+            "color": [
+                "silver",
+                "black"
+            ],
+            "Highlights": [
+                "Intel Core i7 Processor",
+                "16GB RAM",
+                "512GB SSD",
+                "NVIDIA GeForce GTX Graphics"
+            ],
+            "review": [
+                {
+                    "reviewid": 401,
+                    "name": "Olivia",
+                    "text": "The Dell XPS 15 is a powerful laptop with a stunning display. It's perfect for both work and entertainment.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 402,
+                    "name": "Ethan",
+                    "text": "I'm impressed by the performance and build quality of the XPS 15. It's worth every penny.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 403,
+                    "name": "Sophia",
+                    "text": "The XPS 15 is a great laptop for multitasking. The display is vibrant and the keyboard is comfortable to type on.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Canon EOS R5",
+            "category": "camera",
+            "price": 3899,
+            "company": "Canon",
+            "image": [
+                "https://example.com/canon-eos-r5.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "45MP Full-Frame CMOS Sensor",
+                "8K Video Recording",
+                "5-Axis Image Stabilization",
+                "Wi-Fi and Bluetooth Connectivity"
+            ],
+            "review": [
+                {
+                    "reviewid": 501,
+                    "name": "Liam",
+                    "text": "The Canon EOS R5 is a professional-grade camera with outstanding image quality. The 8K video capabilities are impressive.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 502,
+                    "name": "Ava",
+                    "text": "I'm extremely happy with the performance of the EOS R5. It's a versatile camera that excels in both photo and video.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 503,
+                    "name": "Noah",
+                    "text": "The image stabilization on the R5 is incredible. It's a game-changer for handheld shooting.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "LG OLED CX Series",
+            "category": "television",
+            "price": 1999,
+            "company": "LG",
+            "image": [
+                "https://example.com/lg-oled-cx.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "55-inch OLED Display",
+                "4K UHD Resolution",
+                "Dolby Vision IQ and Dolby Atmos Support",
+                "WebOS Smart Platform"
+            ],
+            "review": [
+                {
+                    "reviewid": 601,
+                    "name": "Mia",
+                    "text": "The LG OLED CX offers the best picture quality I've ever seen. The blacks are deep, and the colors are vibrant.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 602,
+                    "name": "Liam",
+                    "text": "The CX series is a fantastic television with stunning visuals and great sound quality. The smart features are also convenient to use.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 603,
+                    "name": "Ella",
+                    "text": "I'm impressed with the OLED technology on the CX. The contrast and color accuracy are excellent.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "name": "Fitbit Charge 5",
+            "category": "wearable",
+            "price": 179,
+            "company": "Fitbit",
+            "image": [
+                "https://example.com/fitbit-charge-5.jpg"
+            ],
+            "color": [
+                "graphite",
+                "gold",
+                "silver"
+            ],
+            "Highlights": [
+                "Advanced Health Metrics",
+                "Built-In GPS",
+                "AMOLED Display",
+                "Water-Resistant"
+            ],
+            "review": [
+                {
+                    "reviewid": 701,
+                    "name": "Oliver",
+                    "text": "The Fitbit Charge 5 is a great fitness tracker. The sleep tracking and heart rate monitoring features are accurate.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 702,
+                    "name": "Isabella",
+                    "text": "I love the design of the Charge 5. The AMOLED display is clear and easy to read.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 703,
+                    "name": "Leo",
+                    "text": "The fitness features on the Fitbit Charge 5 are impressive. It's a reliable companion for tracking workouts.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Bose QuietComfort 35 II",
+            "category": "headphones",
+            "price": 299,
+            "company": "Bose",
+            "image": [
+                "https://example.com/bose-quietcomfort-35-ii.jpg"
+            ],
+            "color": [
+                "black",
+                "silver",
+                "rose gold"
+            ],
+            "Highlights": [
+                "Noise-Canceling Technology",
+                "Alexa and Google Assistant Integration",
+                "20-Hour Battery Life",
+                "Wireless Bluetooth Connectivity"
+            ],
+            "review": [
+                {
+                    "reviewid": 801,
+                    "name": "Henry",
+                    "text": "The Bose QuietComfort 35 II headphones provide excellent noise cancellation. The sound quality is also top-notch.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 802,
+                    "name": "Grace",
+                    "text": "I use these headphones for studying, and they help me stay focused by blocking out external noise.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 803,
+                    "name": "Mason",
+                    "text": "The battery life on the QC35 II is impressive. I can use them for several days without charging.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 9,
+            "name": "GoPro Hero 9 Black",
+            "category": "action camera",
+            "price": 349,
+            "company": "GoPro",
+            "image": [
+                "https://example.com/gopro-hero-9-black.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "5K Video Recording",
+                "Waterproof up to 33 Feet",
+                "20MP Photo Resolution",
+                "Front-Facing Display"
+            ],
+            "review": [
+                {
+                    "reviewid": 901,
+                    "name": "Sophia",
+                    "text": "The GoPro Hero 9 Black is a versatile action camera with excellent video quality. The front-facing display is useful for vlogging.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 902,
+                    "name": "Benjamin",
+                    "text": "I've taken this camera on multiple adventures, and it has never disappointed me. It captures stunning footage.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 903,
+                    "name": "Emma",
+                    "text": "The Hero 9 Black is a great upgrade from the previous model. The stabilization is much improved.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Amazon Echo Dot (4th Gen)",
+            "category": "smart speaker",
+            "price": 49,
+            "company": "Amazon",
+            "image": [
+                "https://example.com/amazon-echo-dot-4th-gen.jpg"
+            ],
+            "color": [
+                "charcoal",
+                "glacier white",
+                "twilight blue"
+            ],
+            "Highlights": [
+                "Alexa Voice Assistant",
+                "Compact Design",
+                "Built-In Zigbee Hub",
+                "Stream Music and Podcasts"
+            ],
+            "review": [
+                {
+                    "reviewid": 1001,
+                    "name": "Oliver",
+                    "text": "The Echo Dot is a great smart speaker for its price. It responds quickly to voice commands.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1002,
+                    "name": "Ava",
+                    "text": "I love having Alexa at my fingertips. The Echo Dot is a convenient device for controlling my smart home.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1003,
+                    "name": "Noah",
+                    "text": "The sound quality on the Echo Dot is surprisingly good. It's a great addition to any room.",
+                    "rating": 3
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name": "HP Spectre x360",
+            "category": "laptop",
+            "price": 1299,
+            "company": "HP",
+            "image": [
+                "https://example.com/hp-spectre-x360.jpg"
+            ],
+            "color": [
+                "nightfall black",
+                "poseidon blue",
+                "silver"
+            ],
+            "Highlights": [
+                "Intel Core i7 Processor",
+                "16GB RAM",
+                "512GB SSD",
+                "13.3-inch 4K UHD Touchscreen"
+            ],
+            "review": [
+                {
+                    "reviewid": 1101,
+                    "name": "Ethan",
+                    "text": "The HP Spectre x360 is a sleek and powerful laptop. The 4K touchscreen is vibrant and responsive.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 1102,
+                    "name": "Isabella",
+                    "text": "I'm impressed with the build quality and performance of the Spectre x360. It's a great choice for both work and entertainment.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1103,
+                    "name": "Leo",
+                    "text": "The battery life on the x360 is excellent. I can use it for a full day without needing to recharge.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Sony WH-1000XM4",
+            "category": "headphones",
+            "price": 349,
+            "company": "Sony",
+            "image": [
+                "https://example.com/sony-wh-1000xm4.jpg"
+            ],
+            "color": [
+                "black",
+                "silver"
+            ],
+            "Highlights": [
+                "Industry-Leading Noise Cancellation",
+                "30-Hour Battery Life",
+                "Bluetooth 5.0 Connectivity",
+                "Touch Sensor Controls"
+            ],
+            "review": [
+                {
+                    "reviewid": 1201,
+                    "name": "Henry",
+                    "text": "The Sony WH-1000XM4 headphones are the best in class when it comes to noise cancellation. The sound quality is also exceptional.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 1202,
+                    "name": "Grace",
+                    "text": "I use these headphones for work, and they help me focus by blocking out distractions. The battery life is impressive as well.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1203,
+                    "name": "Mason",
+                    "text": "The touch controls on the WH-1000XM4 are intuitive and easy to use. The sound is immersive and clear.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Nintendo Switch",
+            "category": "gaming console",
+            "price": 299,
+            "company": "Nintendo",
+            "image": [
+                "https://example.com/nintendo-switch.jpg"
+            ],
+            "color": [
+                "neon red/neon blue",
+                "gray"
+            ],
+            "Highlights": [
+                "Handheld and TV Mode",
+                "Joy-Con Controllers",
+                "Nintendo eShop",
+                "Wide Selection of Games"
+            ],
+            "review": [
+                {
+                    "reviewid": 1301,
+                    "name": "Olivia",
+                    "text": "The Nintendo Switch is a versatile console that offers both handheld and TV gaming. The selection of games is fantastic.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 1302,
+                    "name": "Isabella",
+                    "text": "I love playing games on the Switch. The Joy-Con controllers are comfortable to hold, and the graphics are impressive.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1303,
+                    "name": "Leo",
+                    "text": "The portability of the Switch is a game-changer. I can play my favorite games on the go.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Samsung Galaxy Watch 4",
+            "category": "smartwatch",
+            "price": 249,
+            "company": "Samsung",
+            "image": [
+                "https://example.com/samsung-galaxy-watch-4.jpg"
+            ],
+            "color": [
+                "black",
+                "silver",
+                "pink"
+            ],
+            "Highlights": [
+                "Advanced Health Monitoring",
+                "Built-In GPS",
+                "1.4-inch AMOLED Display",
+                "Water-Resistant"
+            ],
+            "review": [
+                {
+                    "reviewid": 1401,
+                    "name": "Oliver",
+                    "text": "The Galaxy Watch 4 is a great smartwatch with accurate health monitoring features. The display is vibrant and easy to read.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1402,
+                    "name": "Ava",
+                    "text": "I love the design of the Watch 4. It's comfortable to wear, and the battery life is decent.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1403,
+                    "name": "Noah",
+                    "text": "The fitness tracking on the Galaxy Watch 4 is impressive. It motivates me to stay active throughout the day.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Microsoft Surface Pro 7",
+            "category": "tablet",
+            "price": 899,
+            "company": "Microsoft",
+            "image": [
+                "https://example.com/microsoft-surface-pro-7.jpg"
+            ],
+            "color": [
+                "platinum",
+                "black"
+            ],
+            "Highlights": [
+                "10th Gen Intel Core Processor",
+                "12.3-inch PixelSense Display",
+                "8GB RAM",
+                "128GB SSD Storage"
+            ],
+            "review": [
+                {
+                    "reviewid": 1501,
+                    "name": "Ethan",
+                    "text": "The Surface Pro 7 is a powerful tablet that can replace your laptop. The build quality is excellent, and the display is sharp.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 1502,
+                    "name": "Isabella",
+                    "text": "I use the Surface Pro 7 for work, and it's been a great device. The battery life is impressive, and it's lightweight for portability.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1503,
+                    "name": "Leo",
+                    "text": "The versatility of the Surface Pro 7 is its biggest strength. It's great for both productivity and entertainment.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Sony A7 III",
+            "category": "camera",
+            "price": 1999,
+            "company": "Sony",
+            "image": [
+                "https://example.com/sony-a7-iii.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "24.2MP Full-Frame Exmor R CMOS Sensor",
+                "4K Video Recording",
+                "5-Axis Image Stabilization",
+                "693-Point Phase-Detection Autofocus"
+            ],
+            "review": [
+                {
+                    "reviewid": 1601,
+                    "name": "Liam",
+                    "text": "The Sony A7 III is a professional-grade camera with outstanding image quality. The autofocus system is fast and accurate.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 1602,
+                    "name": "Ava",
+                    "text": "I'm extremely happy with the performance of the A7 III. It's a versatile camera that excels in both photo and video.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 1603,
+                    "name": "Noah",
+                    "text": "The image stabilization on the A7 III is incredible. It's a game-changer for handheld shooting.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Apple iPad Pro",
+            "category": "tablet",
+            "price": 1099,
+            "company": "Apple",
+            "image": [
+                "https://example.com/apple-ipad-pro.jpg"
+            ],
+            "color": [
+                "space gray",
+                "silver"
+            ],
+            "Highlights": [
+                "M1 Chip",
+                "Liquid Retina XDR Display",
+                "5G Connectivity",
+                "Face ID"
+            ],
+            "review": [
+                {
+                    "reviewid": 1701,
+                    "name": "Olivia",
+                    "text": "The iPad Pro is a powerful tablet that can handle demanding tasks. The display is stunning, and the M1 chip is blazing fast.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 1702,
+                    "name": "Isabella",
+                    "text": "I use the iPad Pro for both work and entertainment. It's great for multitasking, and the Apple Pencil support is fantastic.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1703,
+                    "name": "Leo",
+                    "text": "The iPad Pro is a premium tablet with top-notch performance. The 5G connectivity is a nice addition.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "name": "Samsung QLED Q90T",
+            "category": "television",
+            "price": 1999,
+            "company": "Samsung",
+            "image": [
+                "https://example.com/samsung-qled-q90t.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "55-inch QLED Display",
+                "4K UHD Resolution",
+                "Direct Full Array 16X",
+                "Quantum HDR 16X"
+            ],
+            "review": [
+                {
+                    "reviewid": 1801,
+                    "name": "Mia",
+                    "text": "The Samsung Q90T offers stunning picture quality. The colors are vibrant, and the contrast is excellent.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 1802,
+                    "name": "Liam",
+                    "text": "The Q90T is a fantastic television with impressive visuals. The smart features are easy to navigate.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1803,
+                    "name": "Ella",
+                    "text": "I'm impressed with the QLED technology on the Q90T. The picture quality is excellent in both bright and dark scenes.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Fitbit Versa 3",
+            "category": "smartwatch",
+            "price": 229,
+            "company": "Fitbit",
+            "image": [
+                "https://example.com/fitbit-versa-3.jpg"
+            ],
+            "color": [
+                "black",
+                "pink clay",
+                "midnight blue/gold"
+            ],
+            "Highlights": [
+                "Built-In GPS",
+                "24/7 Heart Rate Monitoring",
+                "AMOLED Display",
+                "6+ Day Battery Life"
+            ],
+            "review": [
+                {
+                    "reviewid": 1901,
+                    "name": "Oliver",
+                    "text": "The Fitbit Versa 3 is a reliable smartwatch with accurate fitness tracking features. The display is crisp and bright.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1902,
+                    "name": "Isabella",
+                    "text": "I love the design of the Versa 3. It's comfortable to wear all day, and the battery life is impressive.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 1903,
+                    "name": "Leo",
+                    "text": "The fitness features on the Versa 3 are great for tracking workouts. The sleep tracking is particularly useful.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "name": "Bose SoundLink Revolve+",
+            "category": "portable speaker",
+            "price": 299,
+            "company": "Bose",
+            "image": [
+                "https://example.com/bose-soundlink-revolve-plus.jpg"
+            ],
+            "color": [
+                "triple black",
+                "lux gray"
+            ],
+            "Highlights": [
+                "360-Degree Sound",
+                "Up to 16-Hour Battery Life",
+                "Water-Resistant",
+                "Built-In Speakerphone"
+            ],
+            "review": [
+                {
+                    "reviewid": 2001,
+                    "name": "Henry",
+                    "text": "The Bose SoundLink Revolve+ is a portable speaker that delivers impressive 360-degree sound. The battery life is great for outdoor use.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2002,
+                    "name": "Grace",
+                    "text": "I use this speaker for parties, and it fills the room with rich sound. The build quality is excellent as well.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2003,
+                    "name": "Mason",
+                    "text": "The SoundLink Revolve+ is easy to carry around, and the sound is fantastic. The battery life is more than sufficient.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "name": "Xbox Series X",
+            "category": "gaming console",
+            "price": 499,
+            "company": "Microsoft",
+            "image": [
+                "https://example.com/xbox-series-x.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "4K Gaming",
+                "120fps Support",
+                "1TB SSD Storage",
+                "Quick Resume Feature"
+            ],
+            "review": [
+                {
+                    "reviewid": 2101,
+                    "name": "Olivia",
+                    "text": "The Xbox Series X is a powerful console that delivers impressive 4K gaming. The load times are incredibly fast.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2102,
+                    "name": "Isabella",
+                    "text": "I'm very impressed with the performance and graphics of the Series X. It's a great console for gaming enthusiasts.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2103,
+                    "name": "Leo",
+                    "text": "The quick resume feature on the Series X is a game-changer. I can switch between games seamlessly.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 22,
+            "name": "Nikon D850",
+            "category": "camera",
+            "price": 2799,
+            "company": "Nikon",
+            "image": [
+                "https://example.com/nikon-d850.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "45.7MP Full-Frame CMOS Sensor",
+                "4K UHD Video Recording",
+                "153-Point Autofocus System",
+                "7fps Continuous Shooting"
+            ],
+            "review": [
+                {
+                    "reviewid": 2201,
+                    "name": "Liam",
+                    "text": "The Nikon D850 is a professional-grade camera with exceptional image quality. The autofocus system is fast and accurate.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2202,
+                    "name": "Ava",
+                    "text": "I'm extremely happy with the performance of the D850. It's a versatile camera that excels in both photo and video.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2203,
+                    "name": "Noah",
+                    "text": "The dynamic range and detail captured by the D850 are outstanding. It's a top choice for landscape photography.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 23,
+            "name": "Lenovo ThinkPad X1 Carbon",
+            "category": "laptop",
+            "price": 1699,
+            "company": "Lenovo",
+            "image": [
+                "https://example.com/lenovo-thinkpad-x1-carbon.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "Intel Core i7 Processor",
+                "16GB RAM",
+                "512GB SSD",
+                "14-inch WQHD Display"
+            ],
+            "review": [
+                {
+                    "reviewid": 2301,
+                    "name": "Ethan",
+                    "text": "The ThinkPad X1 Carbon is a lightweight and powerful laptop. The keyboard is comfortable to type on, and the display is sharp.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2302,
+                    "name": "Isabella",
+                    "text": "I use the X1 Carbon for work, and it's been a reliable device. The build quality is excellent, and the battery life is impressive.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2303,
+                    "name": "Leo",
+                    "text": "The ThinkPad X1 Carbon is a great choice for professionals. It offers a perfect balance of performance and portability.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 24,
+            "name": "JBL Charge 5",
+            "category": "portable speaker",
+            "price": 179,
+            "company": "JBL",
+            "image": [
+                "https://example.com/jbl-charge-5.jpg"
+            ],
+            "color": [
+                "black",
+                "blue",
+                "red"
+            ],
+            "Highlights": [
+                "20 Hours of Playtime",
+                "Waterproof",
+                "Powerbank Function",
+                "JBL Pro Sound"
+            ],
+            "review": [
+                {
+                    "reviewid": 2401,
+                    "name": "Henry",
+                    "text": "The JBL Charge 5 is a portable speaker with impressive sound quality. The battery life is great for outdoor use.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2402,
+                    "name": "Grace",
+                    "text": "I love taking this speaker to the beach. It's waterproof and the sound is loud and clear.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2403,
+                    "name": "Mason",
+                    "text": "The Charge 5 is my go-to speaker for outdoor gatherings. It's easy to carry around and the sound fills the space.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 25,
+            "name": "Google Pixel 6 Pro",
+            "category": "smartphone",
+            "price": 899,
+            "company": "Google",
+            "image": [
+                "https://example.com/google-pixel-6-pro.jpg"
+            ],
+            "color": [
+                "stormy black",
+                "cloudy white",
+                "sorta sunny"
+            ],
+            "Highlights": [
+                "128GB ROM",
+                "6.7-inch QHD+ OLED Display",
+                "50MP + 12MP Dual Rear Camera",
+                "8GB RAM"
+            ],
+            "review": [
+                {
+                    "reviewid": 2501,
+                    "name": "Olivia",
+                    "text": "The Google Pixel 6 Pro is a fantastic smartphone with a stunning display and great camera capabilities.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2502,
+                    "name": "Isabella",
+                    "text": "I love the stock Android experience on the Pixel 6 Pro. The camera quality is exceptional.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2503,
+                    "name": "Leo",
+                    "text": "The Pixel 6 Pro offers flagship performance at a more affordable price. The battery life is impressive as well.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 26,
+            "name": "Apple AirPods Pro",
+            "category": "wireless earbuds",
+            "price": 249,
+            "company": "Apple",
+            "image": [
+                "https://example.com/apple-airpods-pro.jpg"
+            ],
+            "color": [
+                "white"
+            ],
+            "Highlights": [
+                "Active Noise Cancellation",
+                "Transparency Mode",
+                "Customizable Fit",
+                "Sweat and Water-Resistant"
+            ],
+            "review": [
+                {
+                    "reviewid": 2601,
+                    "name": "Oliver",
+                    "text": "The AirPods Pro are the best wireless earbuds I've used. The noise cancellation is excellent, and the sound quality is impressive.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2602,
+                    "name": "Ava",
+                    "text": "I love the convenience and comfort of the AirPods Pro. The transparency mode is great for staying aware of my surroundings.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2603,
+                    "name": "Noah",
+                    "text": "The AirPods Pro offer a seamless user experience with Apple devices. The audio quality is superb.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 27,
+            "name": "DJI Mavic Air 2",
+            "category": "drone",
+            "price": 799,
+            "company": "DJI",
+            "image": [
+                "https://example.com/dji-mavic-air-2.jpg"
+            ],
+            "color": [
+                "gray"
+            ],
+            "Highlights": [
+                "4K Video Recording",
+                "48MP Photo Resolution",
+                "34-Minute Max Flight Time",
+                "Obstacle Avoidance"
+            ],
+            "review": [
+                {
+                    "reviewid": 2701,
+                    "name": "Sophia",
+                    "text": "The DJI Mavic Air 2 is an impressive drone with outstanding image and video quality. The flight time is also excellent.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2702,
+                    "name": "Benjamin",
+                    "text": "I've captured stunning aerial footage with the Mavic Air 2. The obstacle avoidance system is reliable.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2703,
+                    "name": "Emma",
+                    "text": "The Mavic Air 2 is easy to fly and offers a great range of features. The camera quality is exceptional.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 28,
+            "name": "Amazon Kindle Paperwhite",
+            "category": "e-reader",
+            "price": 129,
+            "company": "Amazon",
+            "image": [
+                "https://example.com/amazon-kindle-paperwhite.jpg"
+            ],
+            "color": [
+                "black",
+                "plum",
+                "sage",
+                "twilight blue"
+            ],
+            "Highlights": [
+                "High-Resolution Display",
+                "Waterproof",
+                "Built-In Adjustable Light",
+                "Weeks of Battery Life"
+            ],
+            "review": [
+                {
+                    "reviewid": 2801,
+                    "name": "Oliver",
+                    "text": "The Kindle Paperwhite is a great e-reader with a high-resolution display. The waterproof feature is a bonus.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2802,
+                    "name": "Ava",
+                    "text": "I love reading on the Paperwhite. The adjustable light makes it comfortable to read in any lighting conditions.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2803,
+                    "name": "Noah",
+                    "text": "The battery life on the Kindle Paperwhite is impressive. I can go weeks without needing to recharge.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 29,
+            "name": "Sony WH-1000XM3",
+            "category": "headphones",
+            "price": 349,
+            "company": "Sony",
+            "image": [
+                "https://example.com/sony-wh-1000xm3.jpg"
+            ],
+            "color": [
+                "black",
+                "silver"
+            ],
+            "Highlights": [
+                "Industry-Leading Noise Cancellation",
+                "30-Hour Battery Life",
+                "Bluetooth 5.0 Connectivity",
+                "Touch Sensor Controls"
+            ],
+            "review": [
+                {
+                    "reviewid": 2901,
+                    "name": "Henry",
+                    "text": "The Sony WH-1000XM3 headphones provide excellent noise cancellation. The sound quality is also top-notch.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 2902,
+                    "name": "Grace",
+                    "text": "I use these headphones for studying, and they help me stay focused by blocking out external noise.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 2903,
+                    "name": "Mason",
+                    "text": "The battery life on the WH-1000XM3 is impressive. I can use them for several days without charging.",
+                    "rating": 4
+                }
+            ]
+        },
+        {
+            "id": 30,
+            "name": "Razer Blade 15",
+            "category": "gaming laptop",
+            "price": 1999,
+            "company": "Razer",
+            "image": [
+                "https://example.com/razer-blade-15.jpg"
+            ],
+            "color": [
+                "black"
+            ],
+            "Highlights": [
+                "Intel Core i7 Processor",
+                "16GB RAM",
+                "512GB SSD",
+                "NVIDIA GeForce RTX 3070"
+            ],
+            "review": [
+                {
+                    "reviewid": 3001,
+                    "name": "Ethan",
+                    "text": "The Razer Blade 15 is a high-performance gaming laptop with impressive graphics. The build quality is excellent.",
+                    "rating": 5
+                },
+                {
+                    "reviewid": 3002,
+                    "name": "Isabella",
+                    "text": "I use the Blade 15 for gaming, and it handles demanding titles with ease. The display is vibrant and smooth.",
+                    "rating": 4
+                },
+                {
+                    "reviewid": 3003,
+                    "name": "Leo",
+                    "text": "The slim design of the Blade 15 is great for portability. The keyboard is comfortable to use for long gaming sessions.",
+                    "rating": 4
+                }
+            ]
+        }
+    ],
+    "sales": []
+}
