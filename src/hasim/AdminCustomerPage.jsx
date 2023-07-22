@@ -37,15 +37,14 @@ import {
   deleteProduct,
   getCustomer,
   getProduct,
-  getSales,
 } from "../redux/adminRedux/action";
 import { Link, useNavigate } from "react-router-dom";
 const init = {
   type: "",
   searchVal: "",
 };
-export const AdminSalesPage = () => {
-  const data = useSelector((store) => store.adminReducer.sales);
+export const AdminCustomerPage = () => {
+  const data = useSelector((store) => store.adminReducer.customers);
   const [info, setInfo] = useState(init);
   const { type, searchVal } = info;
   const [checkedItems, setCheckedItems] = useState([]);
@@ -131,15 +130,15 @@ export const AdminSalesPage = () => {
     navigate(`/adminproducts/edit/${id}`);
   };
   useEffect(() => {
-    dispatch(getSales());
-    let filtered = data.filter((item) => item.status === "Delivered");
-    setProductData(filtered);
+    dispatch(getCustomer());
+    setProductData(data);
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <Flex flexDir={"column"} id="top" mt={"1rem"} w={"100%"}>
       {scrollPosition > 500 && (
@@ -301,10 +300,9 @@ export const AdminSalesPage = () => {
                 ></Checkbox>
               </Th>
               <Th>Id</Th>
-              <Th>User Id</Th>
-              <Th>User Email</Th>
-              <Th>Order Item Id</Th>
-              <Th>order Item</Th>
+              <Th>Name</Th>
+              <Th>Email</Th>
+              <Th>address</Th>
               <Th>Edit</Th>
             </Tr>
           </Thead>
@@ -323,10 +321,9 @@ export const AdminSalesPage = () => {
                     ></Checkbox>
                   </Td>
                   <Td>{product.id}</Td>
-                  <Td>{product.userId}</Td>
-                  <Td>{product.userEmail}</Td>
-                  <Td>{product.orderItemId}</Td>
-                  <Td>{product.orderItem}</Td>
+                  <Td>{product.name}</Td>
+                  <Td>{product.email}</Td>
+                  <Td>{product.address}</Td>
                   <Td>
                     <button
                       className="animatedbtn"

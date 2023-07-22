@@ -18,3 +18,10 @@ export const ERROR_ADD_PRODUCTS = "ERROR_ADD_PRODUCTS";
 export const ADD_PRODUCTS = "ADD_PRODUCTS";
 export const EDIT_PRODUCTS = "EDIT_PRODUCTS";
 export const DELETE_PRODUCT = "DELETE_PRODUCT";
+
+export const GET_SALES = "GET_SALES";
+export const DELETE_SALES = "DELETE_SALES";
+
+
+export const GET_CUSTOMERS = "GET_CUSTOMERS";
+export const DELETE_CUSTOMERS = "DELETE_CUSTOMERS";

@@ -7,6 +7,8 @@ import { Flex } from "@chakra-ui/react";
 import { AdminHeader } from "../AdminHeader";
 import { AdminSingleProductsPage } from "../AdminSingleProductsPage";
 import { postData } from "../../firbase/firebase";
+import { AdminCustomerPage } from "../AdminCustomerPage";
+import { AdminSalesPage } from "../AdminSalesPage";
 
 export const AdminRouter = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +22,8 @@ export const AdminRouter = () => {
         <Routes>
           <Route path="/admin" element={<AdminPage />}></Route>
           <Route path="/adminproducts" element={<AdminProductsPage />}></Route>
+          <Route path="/adminsales" element={<AdminSalesPage />}></Route>
+          <Route path="/admincustomers" element={<AdminCustomerPage />}></Route>
           <Route
             path="/adminproducts/new"
             element={<AdminSingleProductsPage text="Add New" />}
