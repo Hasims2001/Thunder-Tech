@@ -12,8 +12,12 @@ import {
   } from '@chakra-ui/react'
 import { ButtonComp } from './ButtonComp'
 import { About } from '../Pages/About'
+import styled from "styled-components"
+import { useContext } from 'react'
+import { AppContent } from '../Contex/ContextApi'
 
 export const AboutModal = ({text}) => {
+  const {theme} = useContext(AppContent)
 
     const { isOpen, onOpen, onClose } = useDisclosure()
   const [size, setSize] = React.useState('md')
@@ -26,7 +30,7 @@ export const AboutModal = ({text}) => {
   const sizes = ['full']
 
   return (
-    <div>
+    <DIV theme={theme}>
        {sizes.map((size) => (
         <Button
           onClick={() => handleSizeClick(size)}
@@ -45,12 +49,20 @@ export const AboutModal = ({text}) => {
         <ModalContent>
        
           <ModalCloseButton fontSize={"25px"} fontWeight={"700"} color={"black"}/>
-          <ModalBody>
+          <ModalBody className='body'>
            <About />
             
           </ModalBody>
         </ModalContent>
       </Modal>
-    </div>
+    </DIV>
   )
 }
+
+const DIV = styled.div`
+ 
+ .body{
+  background-color: ${props => (props.theme === "lightTheme" ? "#f9f9f9" : "#1d1a1a")};
+ }
+
+`
