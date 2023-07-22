@@ -33,7 +33,7 @@ import { ArrowUpFromLine, CopyPlus, SearchCheck } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useToast } from "@chakra-ui/react";
-import { deleteProduct } from "../redux/adminRedux/action";
+import { deleteProduct, getProduct } from "../redux/adminRedux/action";
 import { Link, useNavigate } from "react-router-dom";
 const init = {
   type: "",
@@ -45,9 +45,6 @@ export const AdminProductsPage = () => {
   const [info, setInfo] = useState(init);
   const { type, searchVal } = info;
   const [checkedItems, setCheckedItems] = useState([]);
-  const [checkedData, setCheckedData] = useState([]);
-  const allChecked = checkedItems.every(Boolean);
-  const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
   const toast = useToast();
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -129,14 +126,16 @@ export const AdminProductsPage = () => {
     navigate(`/adminproducts/edit/${id}`);
   };
   useEffect(() => {
+    dispatch(getProduct());
     setProductData(data);
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [data]);
+  }, []);
 
+  console.log(productData);
   return (
     <Flex flexDir={"column"} id="top" mt={"1rem"} w={"100%"}>
       {scrollPosition > 500 && (
@@ -175,7 +174,7 @@ export const AdminProductsPage = () => {
               checkedItems.length > 0 && onOpen();
             }}
           >
-            Delete (selected)
+            Delete ({checkedItems.length} selected)
           </button>
 
           <AlertDialog

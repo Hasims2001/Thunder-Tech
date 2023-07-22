@@ -48,7 +48,7 @@ export const getProduct=(params)=> async(dispatch)=>{
 
 
 
-//}
+
 // export const getProductData = () => async (dispatch) => {
 //   dispatch({ type: LOADING_PRODUCTS });
 //   try {
