@@ -37,7 +37,7 @@ function App() {
     // </DIV>
     <div className="App">
 
-
+      <AdminRouter />
     </div>
 
 
