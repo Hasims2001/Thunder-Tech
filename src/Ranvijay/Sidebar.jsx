@@ -22,7 +22,7 @@ const Sidebar = () => {
         let params={
             category:category,
             company:company,
-            ...obj2
+            
         }
 
         setSearchparams(params)

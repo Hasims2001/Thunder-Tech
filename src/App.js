@@ -53,7 +53,8 @@ function App() {
     //   <Footer />
     // </DIV>
     <div className="App">
-
+      <AllRouters/>
+   {/* <ProductList/> */}
       
 
 

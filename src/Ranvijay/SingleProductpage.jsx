@@ -1,41 +1,99 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { styled } from 'styled-components'
+import { useParams } from 'react-router'
+import { useDispatch,useSelector } from 'react-redux'
+import { async } from '@firebase/util'
+import { productAPI } from '../redux/api'
+import axios from 'axios'
 
 const SingleProductpage = () => {
-    const [index,setindex]=useState(0)
+    const {id}=useParams()
+    const [images,setImages]=useState([])
+    console.log(id,"idd")
+    
+    // const data=useSelector((store)=>store.productReducer.products)
+    // console.log(data,"singledata")
+    const [data,setData]=useState()
 
+
+    const [index,setindex]=useState(0)
+    
+    const finding_data=async(id)=>{
+        try {
+            
+            let res = await axios.get(`${productAPI}/${id}`);
+
+            console.log(`${productAPI}/${id}`,"api")
+            res = await res.data;
+           console.log(res,"res")
+           setData(res)
+           store_images(res.category)
+        } catch (error) {
+            console.log(error,"err")
+            
+        }
+        
+        
+
+        
+    }
+    
+
+    const store_images=(category)=>{
+        let arr = [];
+        for(let i=0; i<4;i++){
+            let a=`https://source.unsplash.com/featured/600x600?${category},products${i}`
+            arr.push(a);
+        }
+        setImages(arr);
+
+    }
+    console.log(images,"images")
     const handletab=(index)=>{
         setindex(index)
-    }
+    } 
+// dfdfjdl
+
+
+    useEffect(()=>{
+        
+       finding_data(id)
+      
+       
+        
+
+    },[id])
+   // const {name,category,company,price,color,Highlights}=single_data
+   
   return (
     <DIV>
-      {ProductCard.map((item)=>(
-        <div className='details' key={item.id}>
+      {data &&
+        <div className='details'>
             <div className='big-img'>
-                <img src={item.src[index]} alt="" />
+                <img src={images[index]} alt="" />
             </div>
 
             <div className='box'>
                 <div className='row'>
-                    <h2>{item.name}</h2>
-                    <span>${item.price}</span>
+                    <h2>{data.name}</h2>
+                    <span>${data.price}</span>
                 </div>
                 <div className='colors'>
-                    {item.colors.map((color,index)=>(
-                        <button style={{background:color}} key={index}></button>
+                    {data.color.map((colo,index)=>(
+                        <button style={{background:colo}} key={index}></button>
                     ))}
-                </div> 
-                <p>{item.description}</p>
+                </div>  
+                 <p>{data.Highlights}</p>
                 {/* add p for content */}
                 <div className='thumb'>
                     {
-                        item.src.map((img,index)=>(<img src={img} key={index} alt="" onClick={()=>handletab(index)} />))
+                        images.map((img,index)=>(<img src={img} key={index} alt="" onClick={()=>handletab(index)} />))
                     }
                 </div>
                 <button className='cart'>Add to Cart</button>
             </div>
-        </div>
-      )) }  
+        </div>}
+      
       
      </DIV>
   )

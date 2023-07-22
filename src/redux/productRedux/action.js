@@ -17,6 +17,7 @@ import axios from "axios";
 // };
 
 import { productAPI } from "../api";
+import { async } from "@firebase/util";
 
 
 
@@ -32,18 +33,22 @@ export const getProductData = () => async (disptach) => {
 
 };
 
-export const getProduct=(params)=>(dispatch)=>{
-  dispatch({type:LOADING_PRODUCTS})
-  axios.get(`https://thunder-tech-onzx.onrender.com/products`,params)
-  .then((res)=>{
-   console.log(res,"getproduct")
-   return dispatch({type:GET_PRODUCTS,payload:res.data})})
-   .catch(()=>dispatch({type:ERROR_PRODUCTS}))
+export const getProduct=(params)=> async(dispatch)=>{
+  dispatch({ type: LOADING_PRODUCTS })
+  try {
+    let res = await axios.get(productAPI, params);
+    res = await res.data;
+    console.log(res);
+    dispatch({ type: GET_PRODUCTS, payload: res })
+  } catch (error) {
+    dispatch({ type: ERROR_PRODUCTS, payload: error.message })
+  }
+
 }
 
 
 
-}
+//}
 // export const getProductData = () => async (dispatch) => {
 //   dispatch({ type: LOADING_PRODUCTS });
 //   try {
