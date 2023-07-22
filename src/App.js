@@ -1,12 +1,20 @@
 import logo from './logo.svg';
 // import './App.css';
+
+// import { Temp } from './hasim/Temp';
+// import AllRouters from './AllRouters';
+// import { SignInPage } from './hasim/SignInPage';
+// import { AdminHeader } from './hasim/AdminHeader';
+// import { AdminPage } from './hasim/AdminPage';
+ import { ProductList } from './Ranvijay/ProductList';
+
 import { Temp } from './hasim/Temp';
 import AllRouters from './AllRouters';
 import { SignInPage } from './hasim/SignInPage';
 import { AdminHeader } from './hasim/AdminHeader';
 import { AdminPage } from './hasim/AdminPage';
 
-import { ProductList } from './Ranvijay/ProductList';
+// import { ProductList } from './Ranvijay/ProductList';
 import { Footer } from './Parmeshwar/Components/Footer';
 import { Navbar } from './Parmeshwar/Pages/Navbar';
 //Parmeshwar
@@ -14,7 +22,13 @@ import { useContext } from 'react';
 import { AppContent } from './Parmeshwar/Contex/ContextApi';
 import styled from "styled-components"
 import { AllRoutes } from './Parmeshwar/Pages/AllRoutes';
+
+import { AboutModal } from './Parmeshwar/Components/AboutModal';
+
 import { AdminRouter } from './hasim/Component/AdminRouter';
+import { Payment } from './Parmeshwar/Pages/Payment';
+
+
 
 
 function App() {
@@ -27,17 +41,20 @@ function App() {
     //     <Navbar />
     //   </div>
 
-    //   <div className='allRoutes'>
+    
+    
+
+    // <div className='allRoutes'>
 
 
     //     <AllRoutes />
     //   </div>
 
+
     //   <Footer />
     // </DIV>
     <div className="App">
 
-      <AdminRouter />
     </div>
 
 
@@ -69,7 +86,7 @@ background-color: ${props => (props.theme === "lightTheme" ? "#e8e8e8" : "#21212
 .allRoutes{
   padding: 16px;
   /* margin-top: 30px; */
-  height: 1500px; 
+  /* height: 3500px;  */
 }
 
 `
