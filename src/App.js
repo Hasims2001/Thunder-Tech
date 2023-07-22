@@ -26,6 +26,7 @@ import { AllRoutes } from './Parmeshwar/Pages/AllRoutes';
 import { AboutModal } from './Parmeshwar/Components/AboutModal';
 
 import { AdminRouter } from './hasim/Component/AdminRouter';
+import { Payment } from './Parmeshwar/Pages/Payment';
 
 
 
@@ -54,7 +55,7 @@ function App() {
     // </DIV>
     <div className="App">
 
-      
+      {/* <Payment /> */}
 
 
 
