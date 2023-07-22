@@ -3,12 +3,16 @@ import { useEffect } from "react";
 import { styled } from "styled-components";
 
 export const ProductCard = ({name,image, price, company,category,color}) =>{
-    console.log(color,"color")
-  
-  
+     console.log(color,"color")
+  let disc=0;
+  useEffect(()=>{
     const rand=Math.random()
-    const dis=rand*100;
+    const dis=rand*30;
     const discount=Math.floor(price*dis/100);
+    disc=discount
+
+  },[])
+    
 
 
   return (
@@ -18,10 +22,10 @@ export const ProductCard = ({name,image, price, company,category,color}) =>{
 <div class="card">
     
     <div class="card__body">
-    <img src={image} alt="" className='product-image'/>
+    <img src={`https://source.unsplash.com/featured/600x600?${category},products`} alt="name" className='product-image'/>
        <h3 className ='product-title'>{name}</h3>
        <p className='product-brand'>{company}</p>
-       <p className='product-price'>{discount}-{price}-{Math.ceil(rand)}</p>
+       <p className='product-price'>{disc}-{price}</p>
        <p className='product-discount'>{category}</p>
     </div>
     <span>View Details</span>
