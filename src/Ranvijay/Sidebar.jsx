@@ -10,16 +10,23 @@ const Sidebar = () => {
     
     const [category,setcategory]=useState(initialcategory||[])
     const [company,setcompany]=useState(initialcompany||[])
-
+    const [order,setorder]=useState("")
 
     useEffect(()=>{
+        let obj2={
+
+        }
+        if(order){
+            obj2={order}
+        }
         let params={
             category:category,
             company:company,
+            ...obj2
         }
 
         setSearchparams(params)
-    },[category,company])
+    },[category,company,order])
 
     const handlechangcategory=(e)=>{
         const {value}=e.target
@@ -47,10 +54,35 @@ const Sidebar = () => {
 
     }
 
+    const handleorder=(e)=>{
+        const {value}=e.target;
+        setorder(value)
+
+    }
+
 
   return (
     <div>
        <Accordion defaultIndex={[1]} allowMultiple>
+
+       <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box as="span" flex='1' textAlign='left'>
+          Sort By Price
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2> 
+    <AccordionPanel pb={4}>
+    <input onChange={handleorder} value={"asc"} type="radio" name="sort" />
+    <label>Ascending</label>
+    </AccordionPanel>
+    <AccordionPanel pb={4}>
+    <input onChange={handleorder} value={"desc"} type="radio" name="sort" />
+                <label>Descending</label>
+    </AccordionPanel>
+  </AccordionItem>
   <AccordionItem>
     <h2>
       <AccordionButton>
