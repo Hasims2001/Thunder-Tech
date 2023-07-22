@@ -22,11 +22,13 @@ export const ProductList = () => {
 //     _order: searchparams.get("order")
 //    })
 
-   let params={
+   let paramsObj={
+    params:{
     category:searchparams.getAll("category"),
     company:searchparams.getAll("company"),
-    _sort: searchparams.get("order") && "price",
-    _order: searchparams.get("order")
+    // _sort: searchparams.get("order") && "price",
+    // _order: searchparams.get("order")
+     }
    }
  
 
@@ -37,8 +39,8 @@ export const ProductList = () => {
     //     _sort: searchparams.get("order") && "price",
     //     _order: searchparams.get("order")
     //    })
-  
-    dispatch(getProduct(params));
+    // console.log(params);
+    dispatch(getProduct(paramsObj));
 
   }, [searchparams]);
 
