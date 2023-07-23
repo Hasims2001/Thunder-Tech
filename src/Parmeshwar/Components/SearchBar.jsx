@@ -5,9 +5,7 @@ import styled from "styled-components";
 export const SearchBar = () => {
   return (
     <DIV>
-      <div>
-
-      </div>
+     
       <div className='search'>
           <form class="form">
       <button>
@@ -121,11 +119,14 @@ input:not(:placeholder-shown) ~ .reset {
   
 }
 
-@media screen and (max-width: 509px) {
+@media screen and (max-width: 550px) {
 
   .search{
-    display: none;
+    margin-left: 70px;
+  
   }
+  
+ 
   
 }
 

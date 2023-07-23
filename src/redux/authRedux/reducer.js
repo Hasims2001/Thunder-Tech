@@ -4,6 +4,7 @@ const init = {
     products: [],
     isLoading: false,
     isError: "",
+    isAuth: false
 };
 
 export const reducer = (state = init, { type, payload }) => {
