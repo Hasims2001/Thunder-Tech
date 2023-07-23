@@ -1,8 +1,93 @@
-const initial={cartproduct:[],
-cartAmount:0}
+import { ADD_TO_CART, CART_TOTAL, CLEAR_CART, DECREASE_QUANTITY, DELETE_ITEM, INCREASE_QUANTITY } from "./actionType"
 
-const reducer=(state=initial,{type,payload})=>{
-    switch(type){
-        default:return state
+
+
+
+const initState = {
+    cartproduct: [],
+    cartAmount: 0
+}
+
+
+
+export const reducer = (state = initState, { type, payload, id, quantity }) => {
+    switch (type) {
+
+        case ADD_TO_CART: {
+            console.log(payload,"reducer cart")
+            return {
+                ...state,
+                cartproduct:[...state.cartproduct, payload]
+            };
+        }
+
+        case INCREASE_QUANTITY: {
+            let dataafterinccrese = state.cartproduct.map((element, index) => {
+                if (element.id === id) {
+                    console.log(quantity, "inside fikter")
+                    console.log(element.id, "hereid")
+                    return { ...element, quantity }
+                } else {
+                    return element
+                }
+            })
+            console.log(dataafterinccrese, "here")
+            return {
+                ...state,
+                cartproduct: dataafterinccrese
+            }
+        }
+
+        case DECREASE_QUANTITY: {
+            let dataafterdecrease = state.cartproduct.map((element, index) => {
+                if (element.id === id) {
+                    console.log(quantity, "inside fikter")
+                    console.log(element.id, "hereid")
+                    return { ...element, quantity }
+                } else {
+                    return element
+                }
+            })
+            console.log(dataafterdecrease, "here")
+            return {
+                ...state,
+                cartproduct: dataafterdecrease
+            }
+        }
+
+        case DELETE_ITEM: {
+            let filtertered = state.cartproduct.filter((ele) => {
+                if (ele.id === id) {
+                    return false
+                } else {
+                    return true
+                }
+            })
+
+            return {
+                ...state,
+                cartproduct: filtertered
+            }
+        }
+
+        case CART_TOTAL: {
+            return {
+                ...state,
+                cartAmount: payload
+            }
+        }
+
+        case CLEAR_CART: {
+
+            return {
+                ...state,
+                cartproduct: [],
+                cartAmount: 0
+            }
+        }
+
+        default: {
+            return state
+        }
     }
 }
