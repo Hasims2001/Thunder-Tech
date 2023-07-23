@@ -12,7 +12,7 @@ export const AdminHeader = ({ setIsOpen, isOpen }) => {
     { name: "Logout", path: "/logout" },
   ];
   return (
-    <Box p={".5rem 1.5rem"}>
+    <Box p={".5rem 1.5rem"} bg={"brand.800"}>
       <Flex justifyContent={"space-between"}>
         <Flex gap={"1rem"} alignItems={"center"}>
           {!isOpen && (
@@ -36,7 +36,7 @@ export const AdminHeader = ({ setIsOpen, isOpen }) => {
           ))} */}
           <Text>Welcome, Admin!</Text>
           <Text _hover={{ borderBottom: "1px solid blue" }}>
-            <Link to={""}>Logout</Link>
+            <Link to={"/admin"}>Logout</Link>
           </Text>
         </Flex>
       </Flex>

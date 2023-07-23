@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 export const AdminSideMenu = ({ isOpen }) => {
   const links = [
-    { iconName: "LayoutDashboard", name: "Dashboard", path: "/admin" },
+    { iconName: "LayoutDashboard", name: "Dashboard", path: "/adminorders" },
     { iconName: "PackageSearch", name: "Catalog", path: "/adminproducts" },
     { iconName: "ShoppingCart", name: "Sales", path: "/adminsales" },
     { iconName: "User", name: "Customers", path: "/admincustomers" },
@@ -27,9 +27,9 @@ export const AdminSideMenu = ({ isOpen }) => {
   return (
     <div
       style={{
-        height: "90vh",
-        // backgroundColor: "#cccccc",
-        borderRadius: "10px",
+        height: "100%",
+        padding: "1rem 0",
+        backgroundColor: "#f5f5f5",
       }}
     >
       {links.map(({ iconName, name, path }) => {
@@ -42,9 +42,10 @@ export const AdminSideMenu = ({ isOpen }) => {
             fontWeight={"medium"}
             gap=".7rem"
             _hover={{
-              backgroundColor: "brand.800",
+              backgroundColor: "brand.400",
             }}
             p={".5rem .5rem"}
+            pl={"1rem"}
             alignItems={"center"}
           >
             {!isOpen && <IconComponent />}

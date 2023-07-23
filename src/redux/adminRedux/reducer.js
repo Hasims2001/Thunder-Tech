@@ -1,12 +1,13 @@
 import React from 'react'
-import { ADD_PRODUCTS, DELETE_PRODUCT, DELETE_SALES, EDIT_PRODUCTS, ERROR_PRODUCTS, GET_CUSTOMERS, GET_PRODUCTS, GET_SALES, LOADING_PRODUCTS } from '../actionType'
+import { ADD_PRODUCTS, ADMIN_LOGIN, ADMIN_LOGOUT, DELETE_CUSTOMERS, DELETE_PRODUCT, DELETE_SALES, EDIT_PRODUCTS, ERROR_PRODUCTS, GET_CUSTOMERS, GET_PRODUCTS, GET_SALES, LOADING_PRODUCTS, UPDATE_SALES } from '../actionType'
 
 const init = {
     isLoading: false,
     isError: "",
     products: [],
     sales: [],
-    customers: []
+    customers: [],
+    isAuth: false,
 }
 export const reducer = (state = init, { type, payload }) => {
     switch (type) {
@@ -70,12 +71,40 @@ export const reducer = (state = init, { type, payload }) => {
                 isError: "",
                 products: state.products.filter((product) => product.id !== payload),
             }
+        case UPDATE_SALES:
+            return {
+                ...state,
+                isLoading: false,
+                isError: "",
+                sales: state.sales.map((sales) => {
+                    if (sales.id === payload.id) {
+                        sales.status = payload.status;
+                    }
+                }),
+            }
         case DELETE_SALES:
             return {
                 ...state,
                 isLoading: false,
                 isError: "",
                 sales: state.sales.filter((sales) => sales.id !== payload),
+            }
+        case DELETE_CUSTOMERS:
+            return {
+                ...state,
+                isLoading: false,
+                isError: "",
+                customers: state.customers.filter((customer) => customer.id !== payload),
+            }
+        case ADMIN_LOGIN:
+            return {
+                ...state,
+                isAuth: true,
+            }
+        case ADMIN_LOGOUT:
+            return {
+                ...state,
+                isAuth: false,
             }
         default: return state;
     }

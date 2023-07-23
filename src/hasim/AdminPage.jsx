@@ -33,10 +33,24 @@ import {
   Table,
   useToast,
 } from "@chakra-ui/react";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 import { AdminSingleProductsPage } from "./AdminSingleProductsPage";
 import "./Style/buttonAnimation.css";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteSales, getProduct, getSales } from "../redux/adminRedux/action";
+import {
+  deleteSales,
+  getProduct,
+  getSales,
+  updateSales,
+} from "../redux/adminRedux/action";
 import { ArrowUpFromLine, CopyPlus, SearchCheck } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -44,8 +58,14 @@ const init = {
   type: "",
   searchVal: "",
 };
+
 export const AdminPage = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const {
+    onOpen: onEditOpen,
+    isOpen: isEditOpen,
+    onClose: onEditClose,
+  } = useDisclosure();
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -53,11 +73,13 @@ export const AdminPage = () => {
   const dispatch = useDispatch();
   const sales = useSelector((store) => store.adminReducer.sales);
   const [checkedItems, setCheckedItems] = useState([]);
+  const [status, setStatus] = useState({ id: 0, currstatus: null });
   const toast = useToast();
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [changeStatus, setChangeStatus] = useState(status.currstatus || "");
+
   const cancelRef = React.useRef();
-  const data = useSelector((store) => store.adminReducer.products);
   const [productData, setProductData] = useState(sales);
   const [info, setInfo] = useState(init);
   const { type, searchVal } = info;
@@ -100,7 +122,7 @@ export const AdminPage = () => {
     let { type, searchVal } = info;
 
     if (searchVal === "") {
-      setProductData(data);
+      setProductData(sales);
     } else {
       if (type === "") {
         type = "name";
@@ -131,7 +153,7 @@ export const AdminPage = () => {
   };
   const handleAllChange = (e) => {
     if (e.target.checked) {
-      let temp = data.map((item) => {
+      let temp = sales.map((item) => {
         return +item.id;
       });
       setCheckedItems(temp);
@@ -163,20 +185,20 @@ export const AdminPage = () => {
     navigate("/adminproducts/new");
   };
   const handleEdit = (id) => {
-    navigate(`/adminproducts/edit/${id}`);
+    // navigate(`/adminproducts/edit/${id}`);
   };
 
   useEffect(() => {
     dispatch(getSales());
     getCardData();
-    setProductData(data);
+    setProductData(sales);
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  // console.log(productData);
+  console.log(productData);
   return (
     <Box m={"1rem"} w={"100%"}>
       {scrollPosition > 500 && (
@@ -355,6 +377,43 @@ export const AdminPage = () => {
         </Accordion>
       </Flex>
 
+      <Modal isOpen={isEditOpen} onClose={onEditClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Select
+              value={changeStatus}
+              onChange={(e) => setChangeStatus(e.target.value)}
+            >
+              <option value="">select status</option>
+              <option value="Pending">Pending</option>
+              <option value="Shipped">Shipped</option>
+              <option value="In Transit">In Transit</option>
+              <option value="Delivered">Delivered</option>
+            </Select>
+          </ModalBody>
+
+          <ModalFooter>
+            <Button
+              variant="SimpleBlue"
+              mr={3}
+              onClick={() => {
+                if (status.currstatus !== changeStatus) {
+                  dispatch(
+                    updateSales({ id: status.id, status: changeStatus })
+                  );
+                }
+                onEditClose();
+              }}
+            >
+              Update
+            </Button>
+            {/* <Button variant="ghost">Secondary Action</Button> */}
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
       <TableContainer
         margin={"auto"}
         mt={"3rem"}
@@ -403,7 +462,13 @@ export const AdminPage = () => {
                   <Td>
                     <button
                       className="animatedbtn"
-                      onClick={() => handleEdit(product.id)}
+                      onClick={() => {
+                        onEditOpen();
+                        setStatus({
+                          id: product.id,
+                          currstatus: product.status,
+                        });
+                      }}
                     >
                       <span>Edit</span>
                     </button>

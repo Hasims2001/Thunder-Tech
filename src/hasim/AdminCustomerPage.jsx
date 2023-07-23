@@ -34,6 +34,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useToast } from "@chakra-ui/react";
 import {
+  deleteCustomer,
   deleteProduct,
   getCustomer,
   getProduct,
@@ -106,7 +107,7 @@ export const AdminCustomerPage = () => {
   const handleDelete = () => {
     if (checkedItems.length > 0) {
       checkedItems.map((id) => {
-        dispatch(deleteProduct(id));
+        dispatch(deleteCustomer(id));
       });
       toast({
         title: `${checkedItems} products deleted!`,
@@ -249,9 +250,9 @@ export const AdminCustomerPage = () => {
                     }}
                   >
                     <option value="">Search by</option>
-                    <option value="id">Id</option>
                     <option value="name">Name</option>
-                    <option value="category">Email</option>
+                    <option value="email">Email</option>
+                    <option value="address">Address</option>
                   </Select>
                   <Input
                     type="text"
