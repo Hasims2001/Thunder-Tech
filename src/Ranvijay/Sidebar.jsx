@@ -10,7 +10,7 @@ const Sidebar = () => {
     
     const [category,setcategory]=useState(initialcategory||[])
     const [company,setcompany]=useState(initialcompany||[])
-    const [order,setorder]=useState("")
+    const [order,setorder]=useState(searchparams.get("order")||"")
 
     useEffect(()=>{
         let obj2={
@@ -22,7 +22,7 @@ const Sidebar = () => {
         let params={
             category:category,
             company:company,
-            
+            ...obj2
         }
 
         setSearchparams(params)

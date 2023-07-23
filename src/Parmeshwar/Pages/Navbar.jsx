@@ -13,6 +13,7 @@ import { SearchBar } from '../Components/SearchBar'
 import { PhoneIcon } from '@chakra-ui/icons'
 import { AboutModal } from '../Components/AboutModal'
 import { DrawerComp } from '../Components/DrawerComp'
+import { Link } from 'react-router-dom/dist'
 
 
 
@@ -44,9 +45,9 @@ export const Navbar = () => {
                 </HStack> */}
                 <HStack>
                 <Box  h='0px'>
-                    <AbsoluteCenter p='4'  axis='both'>
+                    <Center p='4'  axis='both'>
                     <SearchBar />
-                    </AbsoluteCenter>
+                    </Center>
                 </Box>
                 </HStack>
             </div>
@@ -94,7 +95,7 @@ export const Navbar = () => {
 
                 <HStack className='cart'>
                     <Center>
-                        <CartLogo />
+                     <Link to="/products/cart" > <CartLogo  /></Link>
                     </Center>
                 </HStack>
 
