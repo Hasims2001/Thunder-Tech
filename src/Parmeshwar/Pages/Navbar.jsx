@@ -11,15 +11,17 @@ import { Hamberg } from '../Components/Hamberg'
 import { ShopByCategory } from '../Components/ShopByCategory'
 import { SearchBar } from '../Components/SearchBar'
 import { PhoneIcon } from '@chakra-ui/icons'
+import { AboutModal } from '../Components/AboutModal'
+import { DrawerComp } from '../Components/DrawerComp'
 
 
 
 export const Navbar = () => {
     const isAuth = false;
     return (
-        <DIV>
+        <DIV className='parentNavDiv'>
 
-            <HStack className='navbarItems'>
+            <HStack className='navbarItems techLogo'>
                 <Center className='cem' w='300px' h='50px' color='WHITE'>
 
                     <TechLogo />
@@ -27,24 +29,26 @@ export const Navbar = () => {
 
                 </Center>
 
-                <Center>
+                <Center className='contact'>
                     <ButtonComp text={"CONTACT"}/>
                     {/* <ShopByCategory /> */}
                 </Center>
             </HStack>
 
 
-            <div className='navbarItems'>
+            <div className='navbarItems searchBar'>
                 {/* <HStack>
                     <Center>
                         <SearchBar />
                     </Center>
                 </HStack> */}
+                <HStack>
                 <Box  h='0px'>
                     <AbsoluteCenter p='4'  axis='both'>
                     <SearchBar />
                     </AbsoluteCenter>
                 </Box>
+                </HStack>
             </div>
 
 
@@ -52,22 +56,25 @@ export const Navbar = () => {
 
             <div className='navbarItems loginItems'>
 
-                <HStack>
+                <HStack className='themeMode'>
                     <Center>
                         <Theme />
                     </Center>
                 </HStack>
 
-                <HStack>
+                
+                <HStack className='about'>
                     <Center>
-                        <ButtonComp text={"ABOUT US"} />
+                        {/* <ButtonComp text={"ABOUT US"} /> */}
+                        <AboutModal text={"ABOUT"}/>
                     </Center>
                 </HStack>
+                
 
 
 
 
-                <HStack >
+                <HStack className='login' >
                     <Center className='cem' w='190px' h='45px'>
 
                         {
@@ -85,17 +92,19 @@ export const Navbar = () => {
 
                 </HStack>
 
-                <HStack >
+                <HStack className='cart'>
                     <Center>
                         <CartLogo />
                     </Center>
                 </HStack>
 
+                <div className='hamburg'>
                 <HStack >
                     <Center>
-                        <Hamberg />
+                        <DrawerComp />
                     </Center>
                 </HStack>
+                </div>
 
 
 
@@ -126,8 +135,76 @@ justify-content: space-between;
 
 .loginItems{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  border: 2px solid red;
 }
+
+.hamburg{
+    display: none;
+}
+
+
+/* CSS for large devices */
+@media screen and (min-width: 1162px) {
+  /* Your styles for large devices go here */
+ 
+
+ 
+}
+
+
+/* CSS for small devices */
+@media screen and (max-width: 1162px) {
+  /* Your styles for small devices go here */
+  .about{
+    display: none;
+  }
+
+  .contact{
+    display: none;
+  }
+
+  .hamburg{
+    display: block;
+  }
+
+}
+
+
+/* CSS for small devices */
+@media screen and (max-width: 994px) {
+  /* Your styles for small devices go here */
+  .themeMode{
+    display: none;
+  }
+
+  .cart{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 776px) {
+  /* Your styles for small devices go here */
+  .login{
+    display: none;
+  }
+
+  .loginItems{
+    width: 10%;
+
+  }
+
+  
+  
+}
+
+@media screen and (max-width: 571px) {
+  /* Your styles for small devices go here */
+  
+  
+}
+
+
 
 `
 

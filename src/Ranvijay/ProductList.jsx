@@ -1,25 +1,48 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@chakra-ui/react";
 import { ProductCard } from "./ProductCard";
 import { styled } from "styled-components";
-
-import { getProductData } from "../redux/productRedux/action";
+import axios from "axios";
+import { getProduct } from "../redux/productRedux/action";
 import Sidebar from "./Sidebar";
+import { useSearchParams } from "react-router-dom/dist";
+
 
 
 export const ProductList = () => {
-  
+  const [searchparams]=useSearchParams()
   const dispatch = useDispatch()
   const data = useSelector((store) => store.productReducer.products);
- console.log(data)
+ console.log(data,"data")
+//  const [params,setparams]=useState({
+//     category:searchparams.getAll("category"),
+//     company:searchparams.getAll("company"),
+//     _sort: searchparams.get("order") && "price",
+//     _order: searchparams.get("order")
+//    })
 
-
+   let paramsObj={
+    params:{
+    category:searchparams.getAll("category"),
+    company:searchparams.getAll("company"),
+    // _sort: searchparams.get("order") && "price",
+    // _order: searchparams.get("order")
+     }
+   }
  
 
  useEffect(() => {
-    dispatch(getProductData());
-  }, []);
+    // setparams({
+    //     category:searchparams.getAll("category"),
+    //     company:searchparams.getAll("company"),
+    //     _sort: searchparams.get("order") && "price",
+    //     _order: searchparams.get("order")
+    //    })
+    // console.log(params);
+    dispatch(getProduct(paramsObj));
+
+  }, [searchparams]);
 
   return (
     <DIV >
@@ -28,11 +51,11 @@ export const ProductList = () => {
             <Sidebar/>
             </div>
         <div className="rt_card_sort">
-        <div className="ranvijay_sort">
+        {/* <div className="ranvijay_sort">
             <p>Sort :</p>
             <Button colorScheme='blue'>Low To High</Button>
             <Button colorScheme='blue'>High To Low</Button>
-        </div>
+        </div> */}
         <hr />
         <div className="rt_card_section">
       {/* Map through products with ProductCard component  */}
@@ -66,12 +89,12 @@ const DIV=styled.div`
     
 }
 
-.ranvijay_sort{
+/* .ranvijay_sort{
     display: flex;
     justify-content:space-around;
     align-items: center;
     margin-top: 30px;
-}
+} */
 
 .rt_card_section{
 display: grid;

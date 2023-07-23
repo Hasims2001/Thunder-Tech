@@ -1,31 +1,40 @@
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { styled } from "styled-components";
+import { Link } from "react-router-dom/dist";
+import { LeafyGreen } from "lucide-react";
 
-export const ProductCard = ({name,image, price, company,category,color}) =>{
-    console.log(color,"color")
-  
-  
-    const rand=Math.random()
-    const dis=rand*100;
-    const discount=Math.floor(price*dis/100);
+export const ProductCard = ({id,name,image, price, company,category,color}) =>{
+   //  console.log(color,"color")
+  let disc=Math.floor(price-(price*15)/100);
+  let pr=30%
+  useEffect(()=>{
+   // const rand=Math.random()*30
+   // const dis=rand*30;
+   // disc=Math.floor(price*rand/100);
+    //disc=discount
 
+  },[])
+    
 
+//console.log(id,name,image, price, company,category,color,"productcard line 20")
   return (
     <DIV className="product-card">
 
 
+<Link to={`/products/${id}`}>
 <div class="card">
-    
     <div class="card__body">
-    <img src={image} alt="" className='product-image'/>
+    <img src={`https://source.unsplash.com/featured/600x600?${name},products`} alt="name" className='product-image'/>
        <h3 className ='product-title'>{name}</h3>
        <p className='product-brand'>{company}</p>
-       <p className='product-price'>{discount}-{price}-{Math.ceil(rand)}</p>
+       <h5 style={{ fontWeight: "bold",fontSize:"22px",color:"lightblue" }}>₹{disc}</h5>
+       <p style={{textAlign: "center",textDecoration: "line-through",color: "#999", }}>{price} <span style={{color:"green"}}>{pr}</span></p>
        <p className='product-discount'>{category}</p>
     </div>
-    <span>View Details</span>
+    <span> View Details</span>
 </div>
+</Link>
     
      
     

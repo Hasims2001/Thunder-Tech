@@ -5,6 +5,10 @@ import styled from "styled-components";
 export const SearchBar = () => {
   return (
     <DIV>
+      <div>
+
+      </div>
+      <div className='search'>
           <form class="form">
       <button>
           <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
@@ -18,6 +22,7 @@ export const SearchBar = () => {
           </svg>
       </button>
   </form>
+  </div>
     </DIV>
   )
 }
@@ -25,6 +30,7 @@ export const SearchBar = () => {
 const DIV = styled.div`
 /* From uiverse.io by @satyamchaudharydev */
 /* removing default style of button */
+
 
 .form button {
   border: none;
@@ -105,4 +111,23 @@ input:not(:placeholder-shown) ~ .reset {
   width: 17px;
   margin-top: 3px;
 }
+
+@media screen and (max-width: 776px) {
+  /* Your styles for small devices go here */
+  .search{
+    margin-left: 150px;
+  
+  }
+  
+}
+
+@media screen and (max-width: 509px) {
+
+  .search{
+    display: none;
+  }
+  
+}
+
+
 `
