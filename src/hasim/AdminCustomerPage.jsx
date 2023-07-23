@@ -33,19 +33,24 @@ import { ArrowUpFromLine, CopyPlus, SearchCheck } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useToast } from "@chakra-ui/react";
-import { deleteProduct, getProduct } from "../redux/adminRedux/action";
+import {
+  deleteCustomer,
+  deleteProduct,
+  getCustomer,
+  getProduct,
+} from "../redux/adminRedux/action";
 import { Link, useNavigate } from "react-router-dom";
 const init = {
   type: "",
   searchVal: "",
 };
-export const AdminProductsPage = () => {
-  const data = useSelector((store) => store.adminReducer.products);
-  const [productData, setProductData] = useState([]);
+export const AdminCustomerPage = () => {
+  const data = useSelector((store) => store.adminReducer.customers);
   const [info, setInfo] = useState(init);
   const { type, searchVal } = info;
   const [checkedItems, setCheckedItems] = useState([]);
   const toast = useToast();
+  const [productData, setProductData] = useState(data);
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
@@ -102,7 +107,7 @@ export const AdminProductsPage = () => {
   const handleDelete = () => {
     if (checkedItems.length > 0) {
       checkedItems.map((id) => {
-        dispatch(deleteProduct(id));
+        dispatch(deleteCustomer(id));
       });
       toast({
         title: `${checkedItems} products deleted!`,
@@ -126,7 +131,7 @@ export const AdminProductsPage = () => {
     navigate(`/adminproducts/edit/${id}`);
   };
   useEffect(() => {
-    dispatch(getProduct());
+    dispatch(getCustomer());
     setProductData(data);
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -135,7 +140,6 @@ export const AdminProductsPage = () => {
     };
   }, []);
 
-  console.log(productData);
   return (
     <Flex flexDir={"column"} id="top" mt={"1rem"} w={"100%"}>
       {scrollPosition > 500 && (
@@ -159,7 +163,7 @@ export const AdminProductsPage = () => {
         alignItems={"center"}
       >
         <Heading as={"h4"} fontSize={"xl"} fontWeight={"normal"}>
-          Products
+          Customers
         </Heading>
         <Flex gap={".7rem"}>
           <button className="addnewbtn" onClick={handleAddNew}>
@@ -247,8 +251,8 @@ export const AdminProductsPage = () => {
                   >
                     <option value="">Search by</option>
                     <option value="name">Name</option>
-                    <option value="category">Category</option>
-                    <option value="company">Company</option>
+                    <option value="email">Email</option>
+                    <option value="address">Address</option>
                   </Select>
                   <Input
                     type="text"
@@ -298,9 +302,8 @@ export const AdminProductsPage = () => {
               </Th>
               <Th>Id</Th>
               <Th>Name</Th>
-              <Th>Category</Th>
-              <Th>Company</Th>
-              <Th isNumeric>Price</Th>
+              <Th>Email</Th>
+              <Th>address</Th>
               <Th>Edit</Th>
             </Tr>
           </Thead>
@@ -320,9 +323,8 @@ export const AdminProductsPage = () => {
                   </Td>
                   <Td>{product.id}</Td>
                   <Td>{product.name}</Td>
-                  <Td>{product.category}</Td>
-                  <Td>{product.company}</Td>
-                  <Td isNumeric>{product.price}</Td>
+                  <Td>{product.email}</Td>
+                  <Td>{product.address}</Td>
                   <Td>
                     <button
                       className="animatedbtn"
@@ -340,18 +342,3 @@ export const AdminProductsPage = () => {
     </Flex>
   );
 };
-
-// data = useSelector();
-
-// let company = searchparam.getAll("company");
-
-// let filteredData;
-// const filtercompany = () => {
-//   if (company !== null) {
-//     for (let i = 0; i < company.length; i++) {
-//       let filtered = data.filter((item) => item.company === company[i]);
-//       setFilterData(...filteredData, filtered);
-//     }
-//     setProdcutList(filteredData);
-//   }
-// };

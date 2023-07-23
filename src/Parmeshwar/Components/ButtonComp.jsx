@@ -6,15 +6,18 @@ import { AboutModal } from './AboutModal'
 
 
 
-export const ButtonComp = ({text}) => {
 
-  const { theme } = useContext(AppContent)
+
+export const ButtonComp = ({text}) => {
+  
+
+  const { theme , loginHandler} = useContext(AppContent)
 
   return (
 
     <DIV theme={theme}>
 
-      <button>
+      <button onClick={loginHandler}>
         <span>{text}</span>
       </button>
     </DIV>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
 
-export const TechLogo = () => {
+export const TechLogo = ({text}) => {
   return (
     <DIV>
             
@@ -10,7 +10,7 @@ export const TechLogo = () => {
             <button>
                 <span>
                     <Link to="/" className='home'>
-                        Thunder Tech
+                        {text}
                     </Link>
                 </span>
             </button>

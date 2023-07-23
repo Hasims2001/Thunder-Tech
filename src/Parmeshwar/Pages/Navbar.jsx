@@ -13,36 +13,52 @@ import { SearchBar } from '../Components/SearchBar'
 import { PhoneIcon } from '@chakra-ui/icons'
 import { AboutModal } from '../Components/AboutModal'
 import { DrawerComp } from '../Components/DrawerComp'
-import { Link } from 'react-router-dom/dist'
+
+
+
+import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { AppContent } from '../Contex/ContextApi'
+
 
 
 
 export const Navbar = () => {
-    const isAuth = false;
-    return (
-        <DIV className='parentNavDiv'>
+  
+  const {isAuth} = useContext(AppContent)
+  
+  return (
+    <DIV className='parentNavDiv'>
 
-            <HStack className='navbarItems techLogo'>
-                <Center className='cem' w='300px' h='50px' color='WHITE'>
+      <HStack className='navbarItems techLogo'>
+        <Center className='cem' w='300px' h='50px' color='WHITE' style={{ display: window.innerWidth <= 550 ?  'none' : 'block'}}>
 
-                    <TechLogo />
-
-
-                </Center>
-
-                <Center className='contact'>
-                    <ButtonComp text={"CONTACT"}/>
-                    {/* <ShopByCategory /> */}
-                </Center>
-            </HStack>
+          <TechLogo text={"Thunder Tech"} />
 
 
-            <div className='navbarItems searchBar'>
-                {/* <HStack>
+        </Center>
+
+        <Center className='cem' w='300px' h='50px' color='WHITE' style={{ display: window.innerWidth <= 550 ? 'block' : 'none' }} >
+
+          <TechLogo text={"TT"}/>
+
+
+        </Center>
+
+        <Center className='contact'>
+          <ButtonComp text={"CONTACT"} />
+          {/* <ShopByCategory /> */}
+        </Center>
+      </HStack>
+
+
+      <div className='navbarItems searchBar'>
+        {/* <HStack>
                     <Center>
                         <SearchBar />
                     </Center>
                 </HStack> */}
+
                 <HStack>
                 <Box  h='0px'>
                     <Center p='4'  axis='both'>
@@ -55,43 +71,48 @@ export const Navbar = () => {
 
 
 
-            <div className='navbarItems loginItems'>
 
-                <HStack className='themeMode'>
-                    <Center>
-                        <Theme />
-                    </Center>
-                </HStack>
+      <div className='navbarItems loginItems'>
 
+        <HStack className='themeMode'>
+          <Center>
+            <Theme />
+          </Center>
+        </HStack>
+
+
+        <HStack className='about'>
+          <Center>
+            {/* <ButtonComp text={"ABOUT US"} /> */}
+            <AboutModal text={"ABOUT"} />
+          </Center>
+        </HStack>
+
+
+
+
+
+        <HStack className='login' >
+          <Center className='cem' h={"50px"}>
+
+            {
+              isAuth ? <div >
+
+                <div >
+                  <Wrap>
+                    <WrapItem>
+                      <MenuComponent />
+                    </WrapItem>
+                  </Wrap>
+
+                  </div>
+      
                 
-                <HStack className='about'>
-                    <Center>
-                        {/* <ButtonComp text={"ABOUT US"} /> */}
-                        <AboutModal text={"ABOUT"}/>
-                    </Center>
-                </HStack>
-                
+              </div> : <ButtonComp text={"LOGIN"} />
+            }
 
+          </Center>
 
-
-
-                <HStack className='login' >
-                    <Center className='cem' w='190px' h='45px'>
-
-                        {
-                            isAuth ? <Wrap>
-                                <WrapItem>
-                                    <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
-                                </WrapItem>
-
-
-                            </Wrap> : <ButtonComp text={"LOGIN"} />
-                        }
-
-                    </Center>
-
-
-                </HStack>
 
                 <HStack className='cart'>
                     <Center>
@@ -99,20 +120,25 @@ export const Navbar = () => {
                     </Center>
                 </HStack>
 
-                <div className='hamburg'>
-                <HStack >
-                    <Center>
-                        <DrawerComp />
-                    </Center>
-                </HStack>
-                </div>
+
+     
+
+        
+
+        <div className='hamburg'>
+          <HStack >
+            <Center>
+              <DrawerComp />
+            </Center>
+          </HStack>
+        </div>
 
 
 
 
-            </div>
-        </DIV>
-    )
+      </div>
+    </DIV>
+  )
 }
 
 
@@ -137,7 +163,7 @@ justify-content: space-between;
 .loginItems{
   display: flex;
   justify-content: space-evenly;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .hamburg{
@@ -199,8 +225,9 @@ justify-content: space-between;
   
 }
 
-@media screen and (max-width: 571px) {
+@media screen and (max-width: 550px) {
   /* Your styles for small devices go here */
+
   
   
 }

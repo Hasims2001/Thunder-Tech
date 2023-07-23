@@ -6,10 +6,15 @@ import styled from 'styled-components'
 import WorkWithTheBest from "../Images/WorkWithTheBest.jpg"
 import LearnGrow from "../Images/LearnGrow.jpg"
 import { Footer } from "../Components/Footer"
+import { useContext } from 'react'
+import { AppContent } from '../Contex/ContextApi'
 
 export const About = () => {
+
+  const {theme} = useContext(AppContent)
+
   return (
-    <DIV>
+    <DIV theme={theme}>
       <div style={{ marginBottom: "50px" }}>
         <div >
           <img src={AboutUs} alt="AboutUsImage" />
@@ -22,13 +27,13 @@ export const About = () => {
       </div>
 
 
-      <div className='leaveAmark' style={{backgroundColor: "yellow"}} >
-        <div style={{ width: "40%" }}>
+      <div className='leaveAmark'  >
+        <div style={{ width: "40%" }} className='aboutUsImages'>
           <img src={aboutUs2} alt="" />
         </div>
-        <div style={{ textAlign: "center",  }}>
+        <div style={{ textAlign: "center", }}>
           <Text fontSize='3xl' fontWeight={"bolder"}>Leave a Mark</Text>
-          <p style={{ color: "#000", fontWeight: "600", textAlign: 'justify', fontSize: "18px", padding: "10px"}}>We're known more by the impact we create
+          <p style={{ fontWeight: "600", textAlign: 'justify', fontSize: "18px", padding: "10px" }}>We're known more by the impact we create
             than the titles we hold. Impact that is brought by
             working together on audacious challenges at scale
             with an aim to revolutionize for the Indian customer.
@@ -44,7 +49,7 @@ export const About = () => {
 
         <div style={{ textAlign: "center" }}>
           <Text fontSize='3xl' fontWeight={"bolder"}>Work With The Best</Text>
-          <p style={{ color: "#000", fontWeight: "600", textAlign: 'justify', fontSize: "18px", padding: "10px"}}>We're known more by the impact we create
+          <p style={{ fontWeight: "600", textAlign: 'justify', fontSize: "18px", padding: "10px" }}>We're known more by the impact we create
             The best people make the best teams. And we put all
             our efforts into finding the right people that fit into
             our high-performing inclusive teams. Everyone has a
@@ -55,7 +60,7 @@ export const About = () => {
             integrity and inclusion.</p>
         </div>
 
-        <div style={{ width: "40%" }}>
+        <div style={{ width: "40%" }} className='aboutUsImages'>
           <img src={WorkWithTheBest} alt="" />
         </div>
       </div>
@@ -63,13 +68,13 @@ export const About = () => {
 
       <div className='leaveAmark'>
 
-        <div style={{ width: "40%" }}>
-          <img src={LearnGrow} alt="" />
+        <div style={{ width: "40%" }} className='aboutUsImages'>
+          <img src={LearnGrow} alt=""  className='aboutUsImages'/>
         </div>
 
         <div style={{ textAlign: "center" }}>
           <Text fontSize='3xl' fontWeight={"bolder"}>Experiment Learn Grow</Text>
-          <p style={{ color: "#000", fontWeight: "600", textAlign: 'justify', fontSize: "18px", padding: "10px"}}>
+          <p style={{fontWeight: "600", textAlign: 'justify', fontSize: "18px", padding: "10px" }}>
             Our journey of building India's biggest unicorn
             start-up has been full of successes, but also failures
             and learning from them. That's why there's calculated
@@ -86,6 +91,56 @@ export const About = () => {
 
       {/* <Footer /> */}
 
+      <div >
+        <Text fontSize='4xl' fontWeight={"bolder"} textAlign={"center"}>Values</Text>
+      </div>
+
+      <div style={{display: "flex", justifyContent: "space-evenly", marginTop: "30px", flexWrap: "wrap"}}>
+
+        <div class="card" style={{ background: "rgb(255, 255, 114)"}}>
+        <div style={{ alignItems: "center", marginTop: "50px"}}>
+        <Text fontSize='2xl' fontWeight={"bolder"} textAlign={"center"} className='values'>Integrity</Text>
+        <Text fontSize='1xl' fontWeight={"bolder"} textAlign={"center"} className='values'>we strive to do what is right and do what we say we will do</Text>
+        </div>
+        </div>
+
+
+        <div class="card" style={{ background: "rgb(164, 254, 85)"}}>
+        <div style={{ alignItems: "center", marginTop: "50px"}}>
+        <Text fontSize='2xl' fontWeight={"bolder"} textAlign={"center"} className='values'>Customer First</Text>
+        <Text fontSize='1xl' fontWeight={"bolder"} textAlign={"center"} className='values'>we look at the world from our customers point of view</Text>
+        </div>
+        </div>
+
+
+
+        <div class="card" style={{ background: "rgb(255, 203, 106)"}}>
+        <div style={{ alignItems: "center", marginTop: "50px"}}>
+        <Text fontSize='2xl' fontWeight={"bolder"} textAlign={"center"} className='values'>Inclusion</Text>
+        <Text fontSize='1xl' fontWeight={"bolder"} textAlign={"center"} className='values'>we have the uniqueness in everyone, respect differences and a fi=oter a sense of belonging</Text>
+        </div>
+        </div>
+        
+
+
+        <div class="card" style={{ background: "rgb(115, 249, 249)"}}>
+        <div style={{ alignItems: "center", marginTop: "50px"}}>
+        <Text fontSize='2xl' fontWeight={"bolder"} textAlign={"center"} className='values'>Audacity</Text>
+        <Text fontSize='1xl' fontWeight={"bolder"} textAlign={"center"} className='values'>we think big and take bold bets. we change the paradagim</Text>
+        </div>
+        </div>
+
+
+        <div class="card" style={{ background: "rgb(251, 144, 255)"}}>
+        <div style={{ alignItems: "center", marginTop: "50px"}}>
+        <Text fontSize='2xl' fontWeight={"bolder"} textAlign={"center"} className='values'>Bias for Action</Text>
+        <Text fontSize='1xl' fontWeight={"bolder"} textAlign={"center"} className='values'>we strive to do what is right and do what we say we will do</Text>
+        </div>
+        </div>
+
+        
+      </div>
+
 
 
     </DIV>
@@ -93,18 +148,51 @@ export const About = () => {
 }
 
 const DIV = styled.div`
+
+background-color: ${props => (props.theme === "lightTheme" ?  "#ffffff" : "#1d1a1a")};
+color: ${props => (props.theme === "lightTheme" ? "#030303" : "#ffffff")};
+
 .leaveAmark{
   display: flex;
   width: 80%;
   margin: auto;
   justify-content: space-between;
   margin-bottom: 70px;
+  
+
+}
+
+@media screen and (max-width: 931px) {
+  /* Your styles for small devices go here */
+  .leaveAmark{
+    flex-direction: column;
+  }
+
+  .aboutUsImages{
+    width: 100%;
+  }
+
+  
+  
 }
 
 .leaveAmark > div{
 
   width: 70%;
-  border: 2px solid red;
+  
+}
+
+.card {
+  width: 190px;
+  padding: 10px;
+  height: 254px;
+  margin-bottom: 20px;
+ 
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.values{
+  color: black;
 }
   
 `
