@@ -6,7 +6,7 @@ import logo from './logo.svg';
 // import { SignInPage } from './hasim/SignInPage';
 // import { AdminHeader } from './hasim/AdminHeader';
 // import { AdminPage } from './hasim/AdminPage';
- import { ProductList } from './Ranvijay/ProductList';
+import { ProductList } from './Ranvijay/ProductList';
 
 import { Temp } from './hasim/Temp';
 import AllRouters from './AllRouters';
@@ -41,8 +41,8 @@ function App() {
     //     <Navbar />
     //   </div>
 
-    
-    
+
+
 
     // <div className='allRoutes'>
 
@@ -54,15 +54,6 @@ function App() {
     //   <Footer />
     // </DIV>
     <div className="App">
-
-      <AllRouters/>
-   {/* <ProductList/> */}
-      
-
-
-
-
-
 
 
     </div>
