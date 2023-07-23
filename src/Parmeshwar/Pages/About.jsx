@@ -14,7 +14,7 @@ export const About = () => {
   const {theme} = useContext(AppContent)
 
   return (
-    <DIV>
+    <DIV theme={theme}>
       <div style={{ marginBottom: "50px" }}>
         <div >
           <img src={AboutUs} alt="AboutUsImage" />
@@ -28,7 +28,7 @@ export const About = () => {
 
 
       <div className='leaveAmark'  >
-        <div style={{ width: "40%" }}>
+        <div style={{ width: "40%" }} className='aboutUsImages'>
           <img src={aboutUs2} alt="" />
         </div>
         <div style={{ textAlign: "center", }}>
@@ -60,7 +60,7 @@ export const About = () => {
             integrity and inclusion.</p>
         </div>
 
-        <div style={{ width: "40%" }}>
+        <div style={{ width: "40%" }} className='aboutUsImages'>
           <img src={WorkWithTheBest} alt="" />
         </div>
       </div>
@@ -68,8 +68,8 @@ export const About = () => {
 
       <div className='leaveAmark'>
 
-        <div style={{ width: "40%" }}>
-          <img src={LearnGrow} alt="" />
+        <div style={{ width: "40%" }} className='aboutUsImages'>
+          <img src={LearnGrow} alt=""  className='aboutUsImages'/>
         </div>
 
         <div style={{ textAlign: "center" }}>
@@ -95,7 +95,7 @@ export const About = () => {
         <Text fontSize='4xl' fontWeight={"bolder"} textAlign={"center"}>Values</Text>
       </div>
 
-      <div style={{display: "flex", justifyContent: "space-evenly", marginTop: "30px"}}>
+      <div style={{display: "flex", justifyContent: "space-evenly", marginTop: "30px", flexWrap: "wrap"}}>
 
         <div class="card" style={{ background: "rgb(255, 255, 114)"}}>
         <div style={{ alignItems: "center", marginTop: "50px"}}>
@@ -138,13 +138,6 @@ export const About = () => {
         </div>
         </div>
 
-
-
-        
-
-
-      
-        
         
       </div>
 
@@ -156,7 +149,7 @@ export const About = () => {
 
 const DIV = styled.div`
 
-background-color: ${props => (props.theme === "lightTheme" ? "#f9f9f9" : "#1d1a1a")};
+background-color: ${props => (props.theme === "lightTheme" ?  "#ffffff" : "#1d1a1a")};
 color: ${props => (props.theme === "lightTheme" ? "#030303" : "#ffffff")};
 
 .leaveAmark{
@@ -165,6 +158,22 @@ color: ${props => (props.theme === "lightTheme" ? "#030303" : "#ffffff")};
   margin: auto;
   justify-content: space-between;
   margin-bottom: 70px;
+  
+
+}
+
+@media screen and (max-width: 931px) {
+  /* Your styles for small devices go here */
+  .leaveAmark{
+    flex-direction: column;
+  }
+
+  .aboutUsImages{
+    width: 100%;
+  }
+
+  
+  
 }
 
 .leaveAmark > div{
@@ -177,6 +186,7 @@ color: ${props => (props.theme === "lightTheme" ? "#030303" : "#ffffff")};
   width: 190px;
   padding: 10px;
   height: 254px;
+  margin-bottom: 20px;
  
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

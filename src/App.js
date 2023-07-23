@@ -55,6 +55,16 @@ function App() {
     // </DIV>
     <div className="App">
 
+      <Navbar/>
+      <AllRouters/>
+   {/* <ProductList/> */}
+      
+
+
+
+
+
+
 
     </div>
 

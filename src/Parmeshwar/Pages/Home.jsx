@@ -18,6 +18,7 @@ import { Review } from '../Components/Review'
 import { Desktop } from '../Components/Desktop'
 import { ReviewSlideShow } from '../Components/ReviewSlideShow'
 import { AboutModal } from '../Components/AboutModal'
+import { CartComponent } from '../Components/CartComponent'
 
 
 export const Home = () => {
@@ -28,7 +29,7 @@ export const Home = () => {
 
       <div className='categoryContainer'>
 
-        <div className='categoryImages'>
+        <div className='categoryImages smartPhones'>
 
           <div>
             <img className="image" src="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/0a0243119f02f7a5.png?q=100" alt="" />
@@ -37,17 +38,17 @@ export const Home = () => {
 
         </div>
 
-        <div className='categoryImages'>
+        <div className='categoryImages desktops '>
 
           <div>
             <img className="image" src="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/da4491af4ee551d6.png?q=100" alt="" />
-            <h3>Smart Watches </h3>
+            <h3>Desktops </h3>
           </div>
 
 
         </div>
 
-        <div className='categoryImages'>
+        <div className='categoryImages televisions'>
 
           <div>
             <img className="image" src="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/3a39bad95503b051.png?q=100" alt="" />
@@ -56,7 +57,7 @@ export const Home = () => {
 
         </div>
 
-        <div className='categoryImages' >
+        <div className='categoryImages speakers' >
 
           <div style={{ width: "100%", marginLeft: "25px" }}>
             <img className="image" src="https://rukminim2.flixcart.com/image/416/416/kingqkw0-0/speaker/mobile-tablet-speaker/s/8/i/stone-350-boat-original-imafyebfuaumdezs.jpeg?q=70" alt="" style={{ height: "80px" }} />
@@ -65,7 +66,7 @@ export const Home = () => {
 
         </div>
 
-        <div className='categoryImages'>
+        <div className='categoryImages headphones'>
 
           <div style={{ width: "100%", marginLeft: "50px", marginTop: "10px" }}>
             <img src={headphone} alt="" className="headphone image" />
@@ -74,11 +75,11 @@ export const Home = () => {
 
         </div>
 
-        <div className='categoryImages' >
+        <div className='categoryImages smartWatches' >
 
           <div style={{ width: "100%", marginLeft: "55px" }}>
             <img className="image" src="https://rukminim2.flixcart.com/image/612/612/k1zbssw0pkrrdj/watch-refurbished/u/v/c/c-fs4662-fossil-original-imafhcgdmbvgefhx.jpeg?q=70" alt="" style={{ height: "82px" }} />
-            <h3>Speakers</h3>
+            <h3>SmartWatches</h3>
           </div>
 
         </div>
@@ -88,7 +89,7 @@ export const Home = () => {
 
       </div>
 
-      <div style={{ marginBottom: "50px" }}>
+      <div style={{ marginBottom: "50px", marginTop: "30px" }}>
         <SlideShowComponent />
       </div>
 
@@ -107,12 +108,62 @@ export const Home = () => {
       </div>
 
       <div className='watchComp'>
+        <div style={{marginBottom: "20px"}}>
+        
+        <div style={{paddingLeft: "25px", marginBottom: "10px"}}>
         <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/e/b/a/-original-imagrdzfqsjsv4v6.jpeg?q=70"} />
+        </div>
+       <div>
+         <CartComponent text={"Analog watch"} price={"264"}/>
+       </div>
+        </div>
+
+        <div style={{marginBottom: "20px"}}>
+        <div style={{paddingLeft: "35px", marginBottom: "10px"}}>
         <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/a/k/e/-original-imagnydrewxe5qeg.jpeg?q=70"} />
-        <WatchComp image={"https://rukminim2.flixcart.com/image/2000/2000/xif0q/watch/n/d/w/-original-imagrk9smhqfrndu.jpeg?q=70"} />
-        <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/l/6/7/-original-imagrk9sggffgvdg.jpeg?q=70"} />
+        </div>
+       <div>
+       <CartComponent text={"FastTrack"} price={"850"}/>
+       </div>
+        </div>
+
+       <div style={{marginBottom: "20px"}}>
+       <div style={{paddingLeft: "25px", marginBottom: "10px"}}>
+       <WatchComp image={"https://rukminim2.flixcart.com/image/2000/2000/xif0q/watch/n/d/w/-original-imagrk9smhqfrndu.jpeg?q=70"} />
+       </div>
+      <div>
+      <CartComponent text={"Royal Blue"} price={"249"}/>
+      </div>
+       </div>
+       
+       <div style={{marginBottom: "20px"}}>
+       <div style={{paddingLeft: "25px", marginBottom: "10px"}}>
+       <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/l/6/7/-original-imagrk9sggffgvdg.jpeg?q=70"} />
+       </div>
+       <div>
+       <CartComponent text={"FastTrack"} price={"499"}/>
+       </div>
+       </div>
+        
+        <div style={{marginBottom: "20px"}}>
+
+        <div style={{paddingLeft: "25px", marginBottom: "10px"}}>
         <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/x/d/u/1-jxrm2119-jaxer-men-original-imagr2dwpr2upfqk.jpeg?q=70"} />
-        <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/k/1/g/-original-imagrdzezm63ms83.jpeg?q=70"} />
+        </div>
+        
+        <div>
+        <CartComponent text={"Jaxer"} price={"287"}/>
+        </div>
+        </div>
+       
+
+       <div style={{marginBottom: "20px"}}>
+       
+       <div style={{paddingLeft: "25px", marginBottom: "10px"}}>
+       <WatchComp image={"https://rukminim2.flixcart.com/image/612/612/xif0q/watch/k/1/g/-original-imagrdzezm63ms83.jpeg?q=70"} />
+       </div>
+       <CartComponent text={"Titan"} price={"999"}/>
+       </div>
       
       </div>
 
@@ -237,8 +288,6 @@ margin-top: 80px;
   display: flex;
   border-bottom:${props => (props.theme === "lightTheme" ? "2px solid #131313" : "2px solid #fff")};
   padding-bottom: 10px;
-  margin-bottom: 20px;
-
 
 
 }
@@ -308,6 +357,30 @@ h3{
 
 .reviews > div{
   margin-bottom: 20px;
+}
+
+@media screen and (max-width: 776px) {
+  /* Your styles for small devices go here */
+  .smartWatches{
+    display: none;
+  }
+
+  
+  
+}
+
+@media screen and (max-width: 568px) {
+  /* Your styles for small devices go here */
+  .speakers{
+    display: none;
+  }
+
+  .headphones{
+    display: none;
+  }
+
+  
+  
 }
 
 `
