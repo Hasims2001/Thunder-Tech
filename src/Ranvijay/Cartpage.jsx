@@ -28,7 +28,7 @@ const Cartpage = () => {
 
     const handleCartAmt = () => {
         dispatch(getCartTotal(totalamount))
-        navigate("/payment")
+        navigate("/products/payment")
         
     }
 

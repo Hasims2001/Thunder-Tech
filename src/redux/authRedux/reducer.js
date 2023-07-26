@@ -1,4 +1,4 @@
-import { ERROR_PRODUCTS, GET_PRODUCTS, LOADING_PRODUCTS } from "../actionType";
+import { ERROR_PRODUCTS, GET_PRODUCTS, ISAUTH, LOADING_PRODUCTS } from "../actionType";
 
 const init = {
     products: [],
@@ -20,6 +20,11 @@ export const reducer = (state = init, { type, payload }) => {
                 isError: payload,
                 isLoading: false,
             };
+        case ISAUTH:
+            return {
+                ...state,
+                isAuth: true
+            }
         case GET_PRODUCTS:
             return {
                 ...state,

@@ -22,7 +22,7 @@ export const AdminRouter = () => {
         <Route path="/admin" element={<AdminLogin />}></Route>
       </Routes>
 
-      {
+      {isAuth && (
         <>
           <AdminHeader setIsOpen={setIsOpen} isOpen={isOpen} />
 
@@ -50,7 +50,7 @@ export const AdminRouter = () => {
             </Routes>
           </Flex>
         </>
-      }
+      )}
     </>
   );
 };
