@@ -95,15 +95,24 @@ export const AdminPage = () => {
     let shippedCount = 0;
     let inTransitCount = 0;
     let deliveredCount = 0;
-    sales.map((item) => {
-      if (item.status === "Pending") {
-        ++pendingCount;
-      } else if (item.status === "Shipped") {
-        ++shippedCount;
-      } else if (item.status === "In Transit") {
-        ++inTransitCount;
-      } else if (item.status === "Delivered") {
-        ++deliveredCount;
+    productData.map((item) => {
+      if (item.status !== undefined) {
+        switch (item.status) {
+          case "Pending":
+            ++pendingCount;
+            break;
+          case "Shipped":
+            ++shippedCount;
+            break;
+          case "In Transit":
+            ++inTransitCount;
+            break;
+          case "Delivered":
+            ++deliveredCount;
+            break;
+          default:
+            break;
+        }
       }
     });
 
@@ -115,10 +124,8 @@ export const AdminPage = () => {
       delivered: deliveredCount,
     });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(info);
     let { type, searchVal } = info;
 
     if (searchVal === "") {
@@ -139,7 +146,6 @@ export const AdminPage = () => {
           return item;
         }
       });
-      console.log(filtered);
       setProductData(filtered);
     }
   };
@@ -197,8 +203,8 @@ export const AdminPage = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-  console.log(productData);
+  }, [sales]);
+
   return (
     <Box m={"1rem"} w={"100%"}>
       {scrollPosition > 500 && (
@@ -440,42 +446,44 @@ export const AdminPage = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {productData.map((product) => {
-              return (
-                <Tr key={product.id} borderColor={"1px solid black"}>
-                  <Td>
-                    <Checkbox
-                      id={product.id}
-                      onChange={(e) => {
-                        handleChange(e);
-                      }}
-                      checked={checkedItems.includes(product.id) ? true : false}
-                      colorScheme="red"
-                    ></Checkbox>
-                  </Td>
-                  <Td isNumeric>{product.id}</Td>
-                  <Td isNumeric>{product.userId}</Td>
-                  <Td>{product.userEmail}</Td>
-                  <Td isNumeric>{product.orderItem}</Td>
-                  <Td isNumeric>{product.quantity}</Td>
-                  <Td>{product.status}</Td>
-                  <Td>
-                    <button
-                      className="animatedbtn"
-                      onClick={() => {
-                        onEditOpen();
-                        setStatus({
-                          id: product.id,
-                          currstatus: product.status,
-                        });
-                      }}
-                    >
-                      <span>Edit</span>
-                    </button>
-                  </Td>
-                </Tr>
-              );
-            })}
+            {productData.length > 0 &&
+              productData.map((product) => {
+                return (
+                  <Tr key={product.id} borderColor={"1px solid black"}>
+                    <Td>
+                      <Checkbox
+                        onChange={(e) => {
+                          handleChange(e);
+                        }}
+                        checked={
+                          checkedItems.includes(product.id) ? true : false
+                        }
+                        colorScheme="red"
+                      ></Checkbox>
+                    </Td>
+                    <Td isNumeric>{product.id}</Td>
+                    <Td isNumeric>{product.userId}</Td>
+                    <Td>{product.userEmail}</Td>
+                    <Td isNumeric>{product.orderItem}</Td>
+                    <Td isNumeric>{product.quantity}</Td>
+                    <Td>{product.status}</Td>
+                    <Td>
+                      <button
+                        className="animatedbtn"
+                        onClick={() => {
+                          onEditOpen();
+                          setStatus({
+                            id: product.id,
+                            currstatus: product.status,
+                          });
+                        }}
+                      >
+                        <span>Edit</span>
+                      </button>
+                    </Td>
+                  </Tr>
+                );
+              })}
           </Tbody>
         </Table>
       </TableContainer>

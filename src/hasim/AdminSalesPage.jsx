@@ -140,7 +140,7 @@ export const AdminSalesPage = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [data]);
   return (
     <Flex flexDir={"column"} id="top" mt={"1rem"} w={"100%"}>
       {scrollPosition > 500 && (

@@ -15,7 +15,6 @@ import { useSelector } from "react-redux";
 export const AdminRouter = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isAuth = useSelector((store) => store.adminReducer.isAuth);
-  console.log(isAuth);
   return (
     <>
       <Routes>
