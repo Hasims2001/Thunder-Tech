@@ -15,14 +15,13 @@ import { useSelector } from "react-redux";
 export const AdminRouter = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isAuth = useSelector((store) => store.adminReducer.isAuth);
-  console.log(isAuth);
   return (
     <>
       <Routes>
         <Route path="/admin" element={<AdminLogin />}></Route>
       </Routes>
 
-      {
+      {isAuth && (
         <>
           <AdminHeader setIsOpen={setIsOpen} isOpen={isOpen} />
 
@@ -50,7 +49,7 @@ export const AdminRouter = () => {
             </Routes>
           </Flex>
         </>
-      }
+      )}
     </>
   );
 };

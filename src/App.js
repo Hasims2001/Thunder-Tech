@@ -37,9 +37,9 @@ function App() {
 
   return (
     // <DIV className="App" theme={theme}>
-    //   <div className='nav'>
-    //     <Navbar />
-    //   </div>
+    // <div className='nav'>
+    //   <Navbar />
+    // </div>
 
 
 
@@ -53,20 +53,12 @@ function App() {
 
     //   <Footer />
     // </DIV>
-    <div className="App">
+    <DIV className="App" theme={theme}>
 
-      <Navbar/>
-      <AllRouters/>
-   {/* <ProductList/> */}
-      
+      <AllRouters />
+      <AdminRouter />
 
-
-
-
-
-
-
-    </div>
+    </DIV>
 
 
   );
@@ -77,7 +69,7 @@ export default App;
 const DIV = styled.div`
 
 background-color: ${props => (props.theme === "lightTheme" ? "#e8e8e8" : "#212121")};
-
+color: ${props => (props.theme === "lightTheme" ? "#000" : "#fff")};
 .nav{
   /* margin-bottom: 800px; */
   /* border: 2px solid red; */

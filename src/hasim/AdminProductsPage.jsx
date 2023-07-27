@@ -41,7 +41,7 @@ const init = {
 };
 export const AdminProductsPage = () => {
   const data = useSelector((store) => store.adminReducer.products);
-  const [productData, setProductData] = useState([]);
+  const [productData, setProductData] = useState(data);
   const [info, setInfo] = useState(init);
   const { type, searchVal } = info;
   const [checkedItems, setCheckedItems] = useState([]);
@@ -133,7 +133,7 @@ export const AdminProductsPage = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [data]);
 
   console.log(productData);
   return (

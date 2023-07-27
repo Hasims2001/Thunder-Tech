@@ -21,7 +21,6 @@ export const postNewProduct = (newdata) => async (dispatch) => {
     try {
         let res = await axios.post(productAPI, newdata);
         res = await res.data;
-
         dispatch({ type: ADD_PRODUCTS, payload: res });
     } catch (error) {
         dispatch({ type: ERROR_PRODUCTS, payload: error.message });

@@ -6,6 +6,9 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firbase/firebase";
 import { useToast } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router";
+import { singIn } from "../redux/authRedux/action";
+import { ISAUTH } from "../redux/actionType";
 const loginInit = {
   email: "",
   paasword: "",
@@ -19,7 +22,9 @@ const registerInit = {
 const Login = () => {
   const [data, setData] = useState(loginInit);
   const toast = useToast();
+  const dispatch = useDispatch();
   const { email, paasword } = data;
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -41,8 +46,10 @@ const Login = () => {
       await signInWithEmailAndPassword(auth, email, paasword)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+          localStorage.setItem("username", JSON.stringify(email));
           setData(loginInit);
+          dispatch({ type: ISAUTH });
+          navigate("/");
         })
         .catch((error) => {
           let errorCode = error.code;
@@ -94,6 +101,8 @@ const Register = () => {
   const [data, setData] = useState(registerInit);
   const { email, name, paasword } = data;
   const toast = useToast();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
@@ -117,7 +126,10 @@ const Register = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          localStorage.setItem("username", JSON.stringify(name));
           setData(registerInit);
+          dispatch({ type: ISAUTH });
+          navigate("/");
         })
         .catch((error) => {
           let errorCode = error.code;

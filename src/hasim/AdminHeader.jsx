@@ -11,6 +11,7 @@ export const AdminHeader = ({ setIsOpen, isOpen }) => {
     { name: "Products", path: "/products" },
     { name: "Logout", path: "/logout" },
   ];
+  const [state, setState] = useState(0);
   return (
     <Box p={".5rem 1.5rem"} bg={"brand.800"}>
       <Flex justifyContent={"space-between"}>
@@ -34,7 +35,9 @@ export const AdminHeader = ({ setIsOpen, isOpen }) => {
               <Link to={ele.path}>{ele.name}</Link>
             </Text>
           ))} */}
-          <Text>Welcome, Admin!</Text>
+          <Text cursor={"pointer"} onClick={() => setState((prev) => prev + 1)}>
+            Welcome, Admin!
+          </Text>
           <Text _hover={{ borderBottom: "1px solid blue" }}>
             <Link to={"/admin"}>Logout</Link>
           </Text>

@@ -44,6 +44,7 @@ export const reducer = (state = init, { type, payload }) => {
                 isError: "",
             }
         case ADD_PRODUCTS:
+            console.log([...state.products, payload]);
             return {
                 ...state,
                 isLoading: false,

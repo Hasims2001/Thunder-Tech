@@ -100,6 +100,7 @@ export const AdminSingleProductsPage = ({ text }) => {
       console.log(data);
       dispatch(postEditProduct(data));
     } else {
+      console.log(data);
       dispatch(postNewProduct(data));
     }
     toast({
