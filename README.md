@@ -4,6 +4,11 @@
 
 Welcome to our e-commerce project website! This repository houses the codebase for our innovative online shopping platform, Thunder Tech. Here, we'll outline what our project is all about, how to set it up, and how to contribute to its development.
 
+## Link
+Deployed User Side: https://thundertech.vercel.app/
+Deployed Admin Side: https://thundertech.vercel.app/admin
+Admin Login:  Email => admin@admin.com Password => admin
+
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [ScreenShot](#screenshot)
