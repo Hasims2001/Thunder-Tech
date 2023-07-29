@@ -1,14 +1,15 @@
-import { Box, Button, Flex, Image, Input } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Input, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import loginVector from "../images/loginVector.jpg";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firbase/firebase";
+import { auth, googleProvider } from "../firbase/firebase";
 import { useToast } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
 import { singIn } from "../redux/authRedux/action";
 import { ISAUTH } from "../redux/actionType";
+import google from "../images/google.png";
 const loginInit = {
   email: "",
   paasword: "",
@@ -101,6 +102,7 @@ const Register = () => {
   const [data, setData] = useState(registerInit);
   const { email, name, paasword } = data;
   const toast = useToast();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleChange = (e) => {
@@ -187,7 +189,9 @@ const Register = () => {
 };
 export const SignInPage = () => {
   const [clicks, setClicks] = useState(true);
-
+  const toast = useToast();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleClick = (e) => {
     const { value } = e.target;
     if (value === "login") {
@@ -196,6 +200,28 @@ export const SignInPage = () => {
       setClicks(false);
     }
   };
+  const signInWithGoogle = async () => {
+    await signInWithPopup(auth, googleProvider)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        // console.log(user);
+        localStorage.setItem("username", JSON.stringify(user.email));
+        // setData(registerInit);
+        dispatch({ type: ISAUTH });
+        navigate("/");
+      })
+      .catch((error) => {
+        let errorCode = error.code;
+        errorCode = errorCode.split("/");
+        const errorMessage = error.message;
+        toast({
+          title: errorCode[1],
+          status: "error",
+          isClosable: true,
+        });
+      });
+  };
+
   return (
     <Flex
       minHeight={"100vh"}
@@ -234,6 +260,22 @@ export const SignInPage = () => {
           </Button>
         </Flex>
         <Box mt={"1rem"}>{clicks ? <Login /> : <Register />}</Box>
+
+        <Flex
+          mt={"3rem"}
+          fontSize={"lg"}
+          fontWeight={"bold"}
+          gap={"1rem"}
+          alignItems={"center"}
+        >
+          <Text>Login With</Text>
+          <Image
+            src={google}
+            w={"4rem"}
+            cursor={"pointer"}
+            onClick={signInWithGoogle}
+          />
+        </Flex>
       </Box>
     </Flex>
   );
