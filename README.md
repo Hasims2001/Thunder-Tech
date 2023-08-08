@@ -17,31 +17,40 @@ Welcome to our e-commerce project website! This repository houses the codebase f
 
 
 ## Project Overview
-Thunder Tech is a state-of-the-art e-commerce website that aims to provide customers with a seamless and enjoyable online shopping experience. Our platform offers a vast range of high-quality products across various categories, from electronics and fashion to home essentials and unique gifts.
+Elevate your online electronics shopping experience with our cutting-edge React.js and Chakra UI-powered platform. Explore a vast array of products, effortlessly filter and sort, while our Firebase backend ensures seamless user authentication and dynamic data management.
 
-With a user-centric design, secure payment processing, and excellent customer support, we strive to create a convenient and safe environment for our shoppers.
+With admin-side controls, Google and GitHub logins, and comprehensive CRUD functionality, Thunder Tech empowers you to shape your electronics store with unparalleled convenience and control.
 
-Team: [Md. Hasim Shaikh](https://github.com/Hasims2001), [Parmeshwar Murmu](https://github.com/ParmeshwarMurmu), [Ranvijay Tiwari](https://github.com/RanvijayTiwari)
+Team: [Mohammad Hasim Shaikh](https://github.com/Hasims2001), [Parmeshwar Murmu](https://github.com/ParmeshwarMurmu), [Ranvijay Tiwari](https://github.com/RanvijayTiwari)
 
 
 
 ## ScreenShot
 #Home
-![1](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/69b51c7e-f018-4b51-8832-3095ed116fb8)
+![1](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/9d4584d1-2c12-4d1f-b6a1-638a334f4e47)
 
-![2](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/3b55771c-4693-4950-8b7a-64e5d0078523)
+![2](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/31ae2225-65aa-4200-869e-4de4888a16a2)
+
+
 
 #login/register
-![3](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/4ebb8d6a-e9b6-4aaf-8e7f-3478746f8367)
+![3](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/15822b84-c21f-4ac5-8b18-3898b72ef123)
+
 
 #product
-![4](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/4cccf5cb-cfba-4e40-ab55-c5bc1c84ca1d)
+![4](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/cf001b18-f81e-4677-a294-1386c0d3f5f7)
 
+![5](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/5436cc57-968c-4c76-86c5-68814dac0cbf)
+
+![6](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/661ee8aa-80a8-4890-927f-bd68ed27bca7)
 
 #Admin
-![5](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/280675e0-cdb8-4f80-ad6b-4d657a69467c)
+![7](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/c2bbb00c-4286-4b0e-957f-071c1efeb0fe)
 
-![6](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/9490c3a0-8318-46c8-9c19-52f4df5a5e13)
+![8](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/c1c48632-b1fd-4aad-9427-6793a72ca653)
+
+![9](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/9f51a838-f666-41e2-a7a4-294bcd59e44a)
+
 
 
 ## Features
