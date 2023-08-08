@@ -1,6 +1,7 @@
 # synonymous-nose-6503
 
-![logo](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/9f95e267-873d-4de6-8131-ca385df1a7e4)
+<img src="https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/9f95e267-873d-4de6-8131-ca385df1a7e4" width="10%" height="10%">
+
 
 Welcome to our e-commerce project website! This repository houses the codebase for our innovative online shopping platform, Thunder Tech. Here, we'll outline what our project is all about, how to set it up, and how to contribute to its development.
 
