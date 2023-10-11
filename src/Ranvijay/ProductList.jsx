@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@chakra-ui/react";
 import { ProductCard } from "./ProductCard";
@@ -12,19 +12,29 @@ export const ProductList = () => {
   const [searchparams] = useSearchParams();
   const dispatch = useDispatch();
   const data = useSelector((store) => store.productReducer.products);
+  const [paramsObj, setParamObj] = useState({ params: {
+    category: searchparams.getAll("category"),
+    company: searchparams.getAll("company"),
+    _sort: searchparams.get("order") && "price",
+    _order: searchparams.get("order"),
+  }});
+  useEffect(()=>{
+    setParamObj({
+      params: {
+        category: searchparams.getAll("category"),
+        company: searchparams.getAll("company"),
+        _sort: searchparams.get("order") && "price",
+        _order: searchparams.get("order"),
+      },
+    });
 
-  let paramsObj = {
-    params: {
-      category: searchparams.getAll("category"),
-      company: searchparams.getAll("company"),
-      _sort: searchparams.get("order") && "price",
-      _order: searchparams.get("order"),
-    },
-  };
+  }, [searchparams])
 
   useEffect(() => {
+    console.log('called api');
     dispatch(getProduct(paramsObj));
-  }, [searchparams]);
+    
+  }, [paramsObj.params]);
 
   return (
     <DIV>
@@ -33,9 +43,8 @@ export const ProductList = () => {
           <Sidebar />
         </div>
         <div className="rt_card_sort">
-          <hr />
           <div className="rt_card_section">
-            {data.map((item) => (
+            {data.length > 0 && data.map((item) => (
               <ProductCard key={item.id} {...item} />
             ))}
           </div>
@@ -54,20 +63,20 @@ const DIV = styled.div`
 
   .rt_filter {
     margin-left: 20px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 15%;
   }
 
   .rt_card_sort {
-    margin: auto 140px auto auto;
+    margin: 0 auto ;
   }
 
   .rt_card_section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 2rem;
     margin: auto;
-    margin-top: 40px;
+    /* margin-top: 40px; */
   }
 
   /* @media (min-width:300px) {

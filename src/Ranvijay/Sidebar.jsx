@@ -63,7 +63,7 @@ const Sidebar = () => {
 
   return (
     <div>
-       <Accordion defaultIndex={[1]} allowMultiple>
+       <Accordion defaultIndex={[0, 1, 2]} allowMultiple>
 
        <AccordionItem>
     <h2>
@@ -75,12 +75,12 @@ const Sidebar = () => {
       </AccordionButton>
     </h2> 
     <AccordionPanel pb={4}>
-    <input onChange={handleorder} value={"asc"} type="radio" name="sort" />
-    <label>Ascending</label>
+    <input onChange={handleorder} value={"asc"} type="radio" name="sort" /> &nbsp;
+    <label>Low to High</label>
     </AccordionPanel>
     <AccordionPanel pb={4}>
-    <input onChange={handleorder} value={"desc"} type="radio" name="sort" />
-                <label>Descending</label>
+    <input onChange={handleorder} value={"desc"} type="radio" name="sort" />&nbsp;
+                <label>High to Low</label>
     </AccordionPanel>
   </AccordionItem>
   <AccordionItem>
@@ -94,37 +94,37 @@ const Sidebar = () => {
     </h2>
     <AccordionPanel pb={4}>
         <input value={"Apple"} onChange={handlechangecompany} checked={company.includes("Apple")} type="checkbox" />
-        <label>Apple</label>
+        &nbsp; <label>Apple</label>
      
     </AccordionPanel>
     <AccordionPanel pb={4}>
         <input value={"Samsung"} onChange={handlechangecompany} checked={company.includes("Samsung")} type="checkbox" />
-        <label>Samsung</label>
+        &nbsp; <label>Samsung</label>
      
     </AccordionPanel>
     <AccordionPanel pb={4}>
         <input value={"Sony"} onChange={handlechangecompany} checked={company.includes("Sony")} type="checkbox" />
-        <label>Sony</label>
+        &nbsp; <label>Sony</label>
      
     </AccordionPanel>
     <AccordionPanel pb={4}>
         <input value={"Dell"} onChange={handlechangecompany} checked={company.includes("Dell")} type="checkbox" />
-        <label>Dell</label>
+        &nbsp;  <label>Dell</label>
      
     </AccordionPanel>
     <AccordionPanel pb={4}>
         <input value={"Bose"} onChange={handlechangecompany} checked={company.includes("Bose")} type="checkbox" />
-        <label>Bose</label>
+        &nbsp; <label>Bose</label>
      
     </AccordionPanel>
     <AccordionPanel pb={4}>
         <input value={"LG"} onChange={handlechangecompany} checked={company.includes("LG")} type="checkbox" />
-        <label>LG</label>
+        &nbsp; <label>LG</label>
      
     </AccordionPanel>
     <AccordionPanel pb={4}>
         <input value={"Canon"} onChange={handlechangecompany} checked={company.includes("Canon")} type="checkbox" />
-        <label>Canon</label>
+        &nbsp; <label>Canon</label>
      
     </AccordionPanel>
   </AccordionItem>
@@ -140,23 +140,23 @@ const Sidebar = () => {
     </h2>
     <AccordionPanel pb={4}>
       <input value={"television"} onChange={handlechangcategory} checked={category.includes("television")} type="checkbox"/>
-      <label >Television</label>
+      &nbsp; <label >Television</label>
     </AccordionPanel>
     <AccordionPanel pb={4}>
       <input  value={"camera"} onChange={handlechangcategory} checked={category.includes("camera")} type="checkbox"/>
-      <label >Camera</label>
+      &nbsp;<label >Camera</label>
     </AccordionPanel>
     <AccordionPanel pb={4}>
       <input value={"laptop"} onChange={handlechangcategory} checked={category.includes("laptop")} type="checkbox"/>
-      <label >Laptop</label>
+      &nbsp;<label >Laptop</label>
     </AccordionPanel>
     <AccordionPanel pb={4}>
       <input value={"mobile"} onChange={handlechangcategory} checked={category.includes("mobile")} type="checkbox"/>
-      <label >Mobile</label>
+      &nbsp;<label >Mobile</label>
     </AccordionPanel>
     <AccordionPanel pb={4}>
       <input value={"headphones"} onChange={handlechangcategory} checked={category.includes("headphones")} type="checkbox"/>
-      <label >Headphone</label>
+      &nbsp;<label >Headphone</label>
     </AccordionPanel>
   </AccordionItem>
 </Accordion>
