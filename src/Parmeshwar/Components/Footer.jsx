@@ -87,7 +87,7 @@ export const Footer = () => {
             </a>
           </li>
         </ul>
-        <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+        <p>&copy;2023 Thunder Tech | All Rights Reserved</p>
       </footer>
     </DIV>
   );
