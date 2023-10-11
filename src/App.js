@@ -36,29 +36,17 @@ function App() {
   const { theme } = useContext(AppContent)
 
   return (
-    // <DIV className="App" theme={theme}>
-    // <div className='nav'>
-    //   <Navbar />
-    // </div>
-
-
-
-
-    // <div className='allRoutes'>
-
-
-    //     <AllRoutes />
-    //   </div>
-
-
-    //   <Footer />
-    // </DIV>
-    <DIV className="App" theme={theme}>
-
+    <div className='App'>
       <AllRouters />
       <AdminRouter />
+    </div>
+  
+    // <DIV className="App" theme={theme}>
 
-    </DIV>
+      // <AllRouters />
+      // <AdminRouter />
+
+    // </DIV>
 
 
   );

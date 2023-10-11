@@ -26,8 +26,8 @@ export const Home = () => {
 
   return (
     <DIV theme={theme}>
-      <Link to="/products">
         <div className="categoryContainer">
+          <Link to={"/products?category=smartphone"}>
           <div className="categoryImages smartPhones">
             <div>
               <img
@@ -38,18 +38,20 @@ export const Home = () => {
               <h3>Smart Phones</h3>
             </div>
           </div>
-
-          <div className="categoryImages desktops ">
+          </Link>
+          <Link to={"/products?category=laptop"}>
+          <div className="categoryImages Laptop ">
             <div>
               <img
                 className="image"
                 src="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/da4491af4ee551d6.png?q=100"
                 alt=""
               />
-              <h3>Desktops </h3>
+              <h3>Laptops</h3>
             </div>
           </div>
-
+          </Link>
+          <Link to={"/products?category=television"}>
           <div className="categoryImages televisions">
             <div>
               <img
@@ -57,44 +59,48 @@ export const Home = () => {
                 src="https://rukminim2.flixcart.com/fk-p-flap/128/128/image/3a39bad95503b051.png?q=100"
                 alt=""
               />
-              <h3>Televisions</h3>
+              <h3>TV</h3>
             </div>
           </div>
-
+          </Link>
+          <Link to={"/products?category=speaker"}>
           <div className="categoryImages speakers">
             <div style={{ width: "100%", marginLeft: "25px" }}>
               <img
                 className="image"
-                src="https://rukminim2.flixcart.com/image/416/416/kingqkw0-0/speaker/mobile-tablet-speaker/s/8/i/stone-350-boat-original-imafyebfuaumdezs.jpeg?q=70"
+                src="https://rukminim2.flixcart.com/image/416/416/xif0q/speaker/u/g/u/-original-imagrzjrdbhjsvgz.jpeg?q=70"
                 alt=""
                 style={{ height: "80px" }}
               />
               <h3>Speakers</h3>
             </div>
           </div>
-
+          </Link>
+          <Link to={"/products?category=headphones"}>
           <div className="categoryImages headphones">
             <div
               style={{ width: "100%", marginLeft: "50px", marginTop: "10px" }}
             >
-              <img src={headphone} alt="" className="headphone image" />
+              <img src={"https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/j/t/c/-original-imaghbdup9jbrdzh.jpeg?q=70"} alt="" className="headphone image" />
               <h3>Headphones</h3>
             </div>
           </div>
-
+          </Link>
+          <Link to={"/products?category=smartwatch"}>
           <div className="categoryImages smartWatches">
             <div style={{ width: "100%", marginLeft: "55px" }}>
               <img
                 className="image"
-                src="https://rukminim2.flixcart.com/image/612/612/k1zbssw0pkrrdj/watch-refurbished/u/v/c/c-fs4662-fossil-original-imafhcgdmbvgefhx.jpeg?q=70"
+                src="https://rukminim2.flixcart.com/image/416/416/l5ld8y80/smartwatch/r/q/t/-original-imagg8dksgct9hxg.jpeg?q=70"
                 alt=""
                 style={{ height: "82px" }}
               />
               <h3>SmartWatches</h3>
             </div>
           </div>
+          </Link>
         </div>
-      </Link>
+   
 
       <div style={{ marginBottom: "50px", marginTop: "30px" }}>
         <SlideShowComponent />
@@ -319,9 +325,9 @@ export const Home = () => {
 };
 
 const DIV = styled.div`
-  margin-top: 80px;
-
+  margin: 0 1rem;
   .categoryContainer {
+  padding-top: 1.5rem;
     display: flex;
     border-bottom: ${(props) =>
       props.theme === "lightTheme" ? "2px solid #131313" : "2px solid #fff"};
@@ -348,6 +354,7 @@ const DIV = styled.div`
   .image {
     width: 100%;
     border-radius: 80px;
+    object-fit: contain;
     border: ${(props) =>
       props.theme === "lightTheme" ? "" : "2px solid #fff"};
   }

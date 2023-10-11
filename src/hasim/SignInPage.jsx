@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import loginVector from "../images/loginVector.jpg";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth, googleProvider } from "../firbase/firebase";
+import { auth, githubProvider, googleProvider } from "../firbase/firebase";
 import { useToast } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router";
 import { singIn } from "../redux/authRedux/action";
 import { ISAUTH } from "../redux/actionType";
 import google from "../images/google.png";
+import github from "../images/github.png";
 const loginInit = {
   email: "",
   paasword: "",
@@ -222,6 +223,27 @@ export const SignInPage = () => {
       });
   };
 
+  const signInWithGithub = async () => {
+    await signInWithPopup(auth, githubProvider)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        // console.log(user);
+        localStorage.setItem("username", JSON.stringify(user.email));
+        // setData(registerInit);
+        dispatch({ type: ISAUTH });
+        navigate("/");
+      })
+      .catch((error) => {
+        let errorCode = error.code;
+        errorCode = errorCode.split("/");
+        const errorMessage = error.message;
+        toast({
+          title: errorCode[1],
+          status: "error",
+          isClosable: true,
+        });
+      });
+  };
   return (
     <Flex
       minHeight={"100vh"}
@@ -274,6 +296,21 @@ export const SignInPage = () => {
             w={"4rem"}
             cursor={"pointer"}
             onClick={signInWithGoogle}
+          />
+          <Box
+            w={".3rem"}
+            borderRadius={"full"}
+            height={"100%"}
+            bg={"brand.300"}
+            color="brand.300"
+          >
+            |
+          </Box>
+          <Image
+            src={github}
+            w={"3.5rem"}
+            cursor={"pointer"}
+            onClick={signInWithGithub}
           />
         </Flex>
       </Box>

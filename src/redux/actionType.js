@@ -10,7 +10,8 @@ export const ERROR_AUTH = "ERROR_AUTH";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 
-
+export const LOADING = "LOADING";
+export const ERROR = "ERROR";
 
 
 // admin

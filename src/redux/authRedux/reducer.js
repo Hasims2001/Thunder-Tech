@@ -1,14 +1,28 @@
-import { ERROR_PRODUCTS, GET_PRODUCTS, ISAUTH, LOADING_PRODUCTS } from "../actionType";
+import { ERROR, ERROR_PRODUCTS, GET_PRODUCTS, ISAUTH, LOADING, LOADING_PRODUCTS } from "../actionType";
 
 const init = {
-    products: [],
+    // products: [],
     isLoading: false,
     isError: "",
-    isAuth: false
+    isAuth: false,
+    userName: "",
+    userEmail: "",
+
 };
 
 export const reducer = (state = init, { type, payload }) => {
     switch (type) {
+        case LOADING:
+            return{
+                ...state,
+                isLoading: true,
+            }
+        case ERROR:
+            return {
+                ...state,
+                isError: payload,
+                isLoading: false,
+            };
         case LOADING_PRODUCTS:
             return {
                 ...state,
@@ -23,7 +37,11 @@ export const reducer = (state = init, { type, payload }) => {
         case ISAUTH:
             return {
                 ...state,
-                isAuth: true
+                isError: "",
+                isLoading: false,
+                isAuth: true,
+                userName: payload.name,
+                userEmail: payload.email
             }
         case GET_PRODUCTS:
             return {

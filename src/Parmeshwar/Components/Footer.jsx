@@ -15,7 +15,7 @@ export const Footer = () => {
           <li class="social-icon__item">
             <a
               class="social-icon__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
@@ -23,7 +23,7 @@ export const Footer = () => {
           <li class="social-icon__item">
             <a
               class="social-icon__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
@@ -31,7 +31,7 @@ export const Footer = () => {
           <li class="social-icon__item">
             <a
               class="social-icon__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
@@ -39,7 +39,7 @@ export const Footer = () => {
           <li class="social-icon__item">
             <a
               class="social-icon__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
@@ -49,7 +49,7 @@ export const Footer = () => {
           <li class="menu__item">
             <a
               class="menu__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               Home
             </a>
@@ -57,7 +57,7 @@ export const Footer = () => {
           <li class="menu__item">
             <a
               class="menu__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               About
             </a>
@@ -65,7 +65,7 @@ export const Footer = () => {
           <li class="menu__item">
             <a
               class="menu__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               Services
             </a>
@@ -73,7 +73,7 @@ export const Footer = () => {
           <li class="menu__item">
             <a
               class="menu__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               Team
             </a>
@@ -81,13 +81,13 @@ export const Footer = () => {
           <li class="menu__item">
             <a
               class="menu__link"
-              href="https://chakra-ui.com/docs/components/grid/usage"
+              href="/"
             >
               Contact
             </a>
           </li>
         </ul>
-        <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+        <p>&copy;2023 Thunder Tech | All Rights Reserved</p>
       </footer>
     </DIV>
   );
