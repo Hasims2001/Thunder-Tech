@@ -9,6 +9,8 @@ import { addproductaction } from '../redux/cartRedux/action'
 import { useRef } from 'react'
 import Swal from 'sweetalert2'
 import { ProductCard } from './ProductCard'
+import { Text,Box, Stack, Flex, Button, useToast } from '@chakra-ui/react'
+import { BadgePercent } from 'lucide-react'
 
 const SingleProductpage = () => {
     // check swal
@@ -16,6 +18,8 @@ const SingleProductpage = () => {
     const [images,setImages]=useState([])
      const [sendcardata,setcarddata]=useState("")
     const [data,setData]=useState()
+    const toast =useToast();
+    const {isAuth} = useSelector(store=> store.authReducer);
     const AllData=useSelector((store)=>store.productReducer.products)
     const [extraData,setextraData]=useState([])
     const dataproductaddedtotal = useSelector((store) => store.cartReducer.cartproduct)
@@ -41,43 +45,51 @@ const SingleProductpage = () => {
         //    finding more data of same category
           let a=AllData.filter((el)=>el.category==res.category)
           setextraData(a)
-          console.log(extraData,"extraDataaaa",2)
         } catch (error) {
             console.log(error,"err")
             
         }
             
     }
-    console.log(extraData,"extraDataaaa",1)
 
 
     const handleAddProduct = () => {
         let flag = false
+        if(isAuth){
+
+       
         for (let i = 0; i <= dataproductaddedtotal.length - 1; i++) {
             if (dataproductaddedtotal[i].id === Number(id)) {
                 flag = true
-            Swal.fire({
-  icon: 'error',
-  title: 'Oops...',
-  text: 'Product already in cart',
-
-})
+                toast({
+                    title: "Product is already in cart!",
+                    isClosable: true,
+                    duration: 9000,
+                    status: 'info'
+                })
                 break;
             }
         }
-
+       
         if (flag === false) {
-            Swal.fire(
-          'Good job!',
-        'Product Added to cart',
-        'success'
-            )
-            console.log("checking")
-            console.log({ ...sendcardata, quantity: 1 },"checking2")
+            toast({
+                title: "Product Added to cart!",
+                isClosable: true,
+                duration: 9000,
+                status: 'success'
+            })
+           
             dispatch(addproductaction({ ...sendcardata, quantity: 1 }))
         }
+        }else{
+            toast({
+                title: "Please login first!",
+                isClosable: true,
+                duration: 9000,
+                status: 'error'
+            })
+        }
     }
-    console.log(sendcardata,"cart data2 single")
 
     const store_images=(category)=>{
         let arr = [];
@@ -88,7 +100,6 @@ const SingleProductpage = () => {
         setImages(arr);
 
     }
-    console.log(images,"images")
     const handletab=(index)=>{
         setindex(index)
         const imagest=myRef.current.children
@@ -126,11 +137,20 @@ const SingleProductpage = () => {
                     <h2>{data.name}</h2>
                     <span>₹{data.price}</span>
                 </div>
-                <div className='colors'>
+                {/* <div className='colors'>
                     {Custom_color.map((colo,index)=>(
                         <button style={{background:colo}} key={index}></button>
                     ))}
-                </div>  
+                </div>   */}
+                <Stack gap={".5em"}>
+                    <Text fontWeight={'bold'}>Available offers</Text>
+                    <Box>
+                    <Flex gap={".2rem"}  alignItems={'flex-start'}><BadgePercent /><Text > Bank Offer5% off on Flipkart Axis Bank Credit Card, up to ₹500 on orders of ₹5,000 and above T&C</Text></Flex>
+                    <Flex gap={".2rem"}  alignItems={'flex-start'}><BadgePercent /><Text > Bank Offer5% off on Flipkart Axis Bank Credit Card EMI Txns, up to ₹500 on orders of ₹5,000 and aboveT&C</Text></Flex>
+                    <Flex gap={".2rem"}  alignItems={'flex-start'}><BadgePercent /><Text >Bank Offer10% off on ICICI Bank Debit Card, up to ₹750 on orders of ₹5,000 and aboveT&C</Text></Flex>
+                    <Flex gap={".2rem"}  alignItems={'flex-start'}><BadgePercent /><Text > Special PriceGet extra ₹6000 off (price inclusive of cashback/coupon)T&C</Text></Flex>
+                    </Box>
+                </Stack>
                  <ul>
                     {data.Highlights.map((el,ind)=><li key={ind}>{el}</li>)}
                  </ul>
@@ -140,7 +160,7 @@ const SingleProductpage = () => {
                         images.map((img,index)=>(<img src={img} key={index} alt="" onClick={()=>handletab(index)} />))
                     }
                 </div>
-                <button className='cart' style={{ cursor: "pointer" }} onClick={handleAddProduct}>Add to Cart</button>
+                <Button variant={"SimpleBlue"} mt={"2rem"}  style={{ cursor: "pointer" }} onClick={handleAddProduct}>Add to Cart</Button>
             </div>
         </div>
         </div>}
@@ -163,10 +183,11 @@ export default SingleProductpage
 const DIV=styled.div`
 .DIV{
 
-    max-width: 1200px;
+    /* max-width: 1200px; */
     width: 90%;
-    margin:100px auto;
-    box-shadow: 0 0 5px #ccc;
+    margin: 0 auto;
+    /* margin:100px auto; */
+    /* box-shadow: 0 0 5px #ccc; */
 }
 
  .details{
@@ -174,7 +195,6 @@ const DIV=styled.div`
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 30px 0;
-
  }
 
  .details .big-img{
@@ -182,6 +202,7 @@ const DIV=styled.div`
     min-width:290px ;
     overflow: hidden;
     margin: 25px;
+    /* box-shadow: 0 0 5px #ccc; */
  }
 
  .big-img img{
@@ -200,19 +221,26 @@ const DIV=styled.div`
 
  .box .row{
     display:flex;
-    justify-content: space-around;
-    margin-bottom: 15px;
+    justify-content: space-between;
+    margin-bottom: 2rem;
  }
 
  .box .row h2{
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-size: 2rem;
  }
 
  .box .row span{
-    color: crimson;
- }
+    color: #377ffd;
+    font-size: 2rem;
 
+ }
+ .box ul{
+    line-height: 1.5;
+    margin: 15px 0;
+    margin-bottom:2rem ;
+ }
  .box .colors button{
     width: 30px;
     height: 30px;
@@ -222,10 +250,10 @@ const DIV=styled.div`
     cursor: pointer;
  }
 
- .box p{
+ /* .box p{
     line-height: 1.5;
     margin: 15px 0;
- }
+ } */
 
  .thumb{
 width: 100%;
