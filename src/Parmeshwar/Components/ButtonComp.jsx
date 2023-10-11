@@ -8,7 +8,6 @@ import { useLocation } from "react-router";
 export const ButtonComp = ({ text }) => {
   const location = useLocation();
   const { theme, loginHandler } = useContext(AppContent);
-  console.log(location);
   return (
     <DIV theme={theme}>
       <button onClick={loginHandler}>

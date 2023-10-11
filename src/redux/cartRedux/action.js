@@ -6,7 +6,7 @@ export  const addproductaction = (payload) => {
 
 
 export const incresequantityaction = (id, quantity) => {
-    console.log(quantity, "here action")
+ 
     return { type: INCREASE_QUANTITY, id, quantity }
 }
 

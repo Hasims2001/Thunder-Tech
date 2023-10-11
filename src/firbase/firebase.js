@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 // import { getFirestore } from '@firebase/firestore';
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
 
 // import firebase from 'firebase/database/compat/app';
 // import firebase from 'firebase/compat/app';
@@ -23,6 +23,8 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+export const githubProvider = new GithubAuthProvider();
+
 // const database = firebase.database();
 // firebase.initializeApp(firebaseConfig);
 // var db = firebase.firestore();

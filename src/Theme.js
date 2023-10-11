@@ -5,7 +5,7 @@ const changingBorder = {
         filled: {
             field: {
                 backgroundColor: 'brand.400',
-                borderColor: 'brand.100',
+                borderColor: 'brand.800',
                 rounded: 'md',
                 color: "brand.300",
                 _hover: 'disabled',
