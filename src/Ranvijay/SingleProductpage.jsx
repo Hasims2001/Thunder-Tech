@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 import { ProductCard } from './ProductCard'
 import { Text,Box, Stack, Flex, Button, useToast } from '@chakra-ui/react'
 import { BadgePercent } from 'lucide-react'
+import {useNavigate} from 'react-router-dom';
 
 const SingleProductpage = () => {
     // check swal
@@ -25,7 +26,7 @@ const SingleProductpage = () => {
     const dataproductaddedtotal = useSelector((store) => store.cartReducer.cartproduct)
     const dispatch=useDispatch()
     const myRef = React.createRef();
-
+    const navigate = useNavigate();
 
 
     const [index,setindex]=useState(0)
@@ -161,6 +162,7 @@ const SingleProductpage = () => {
                     }
                 </div>
                 <Button variant={"SimpleBlue"} mt={"2rem"}  style={{ cursor: "pointer" }} onClick={handleAddProduct}>Add to Cart</Button>
+                <Button variant={"SimpleGreen"} mt={"2rem"} ml={"1rem"} onClick={()=> navigate("/products/cart")}>View Cart</Button>
             </div>
         </div>
         </div>}

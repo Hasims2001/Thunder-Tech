@@ -144,7 +144,7 @@ export const Navbar = () => {
   return (
     <DIV>
       <Flex
-        p={".5rem 1.5rem"}
+        p={"0rem 1.5rem"}
         alignItems={"center"}
         justifyContent={"space-between"}
       >
@@ -162,6 +162,7 @@ export const Navbar = () => {
               {!isAuth && <Button variant={"SimpleBlue"} onClick={onOpen}>Login/Register</Button>}
               {isAuth && <Button variant={"SimpleGreen"}>Profile</Button>}
               <Link to={""}>About</Link>
+              <Link to={""}>Contact</Link>
             </Flex>
           </>
         ) : (
@@ -173,6 +174,7 @@ export const Navbar = () => {
     <MenuItem>{!isAuth && <Link className="sideMenu" to={"/"}>Login/Register</Link>}{isAuth && <Link className="sideMenu" to={"/"}>Profile</Link>}</MenuItem>
     <MenuItem><Link className="sideMenu" to={"/products"}>Products</Link></MenuItem>
     <MenuItem><Link className="sideMenu" to={"/"}>About</Link></MenuItem>
+    <MenuItem><Link className="sideMenu" to={"/"}>Contact</Link></MenuItem>
   </MenuList>
           </Menu>
         )}

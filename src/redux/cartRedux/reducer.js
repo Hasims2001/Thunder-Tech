@@ -14,7 +14,6 @@ export const reducer = (state = initState, { type, payload, id, quantity }) => {
     switch (type) {
 
         case ADD_TO_CART: {
-            console.log(payload,"reducer cart")
             return {
                 ...state,
                 cartproduct:[...state.cartproduct, payload]
@@ -31,7 +30,6 @@ export const reducer = (state = initState, { type, payload, id, quantity }) => {
                     return element
                 }
             })
-            console.log(dataafterinccrese, "here")
             return {
                 ...state,
                 cartproduct: dataafterinccrese
@@ -41,14 +39,11 @@ export const reducer = (state = initState, { type, payload, id, quantity }) => {
         case DECREASE_QUANTITY: {
             let dataafterdecrease = state.cartproduct.map((element, index) => {
                 if (element.id === id) {
-                    console.log(quantity, "inside fikter")
-                    console.log(element.id, "hereid")
                     return { ...element, quantity }
                 } else {
                     return element
                 }
             })
-            console.log(dataafterdecrease, "here")
             return {
                 ...state,
                 cartproduct: dataafterdecrease

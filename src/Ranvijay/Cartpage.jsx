@@ -4,13 +4,13 @@ import Cartcard from "./Cartcard"
 import { useNavigate,Link} from "react-router-dom"
 import { deleteaction, getCartTotal } from '../redux/cartRedux/action'
 import styled from "styled-components"
+import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react'
 
 const Cartpage = () => {
 
     const getCartData = useSelector((store) => store.cartReducer.cartproduct)
     const dispatch = useDispatch()
   const navigate = useNavigate()
-  console.log(getCartData,"cart data")
 
 
 
@@ -33,20 +33,20 @@ const Cartpage = () => {
     }
 
     return (
-        <WRAPPER style={{ position: "relative",marginTop:"50px" }}>
-            <div style={{ width: "75%", textAlign: "center", top: "40px", position: "absolute", left: "10%",marginBottom:"50px" }}>
-                <h2 style={{marginBottom:"10px"}}><span style={{ color: "green",fontSize:"20px",letterSpacing:"8px" }}> WELCOME !!  TO  YOUR  CART  SECTION </span></h2>
+        <WRAPPER >
+            <Flex alignItems={'center'} justifyContent={'space-between'} m={"0 5rem"}>
+                <Text fontSize={'2xl'}>Cart Items</Text>
                 <h3 >Total <span style={{ color: "red",fontSize:"28px"  , marginBottom:"15px"}}>{getCartData.length}</span> items in your cart</h3>
-            </div>
+            </Flex>
             {
-                getCartData.length === 0 ? <div style={{ display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "25px", width: "40%", position: "absolute", top: "150px", left: "18%", boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px", height: "320px" }} >
+                getCartData.length === 0 ? <Stack alignItems={'center'} justifyContent={'center'}>
                     <img width={"320px"} height={"100%"} src="https://vividparts.com/site_assets/images/empty_cart.gif" alt="" />
-                   <Link to={"/products"}><button style={{padding:"15px 40px 15px 15px",borderRadius:"14px",fontWeight:"600",fontSize:"16px", backgroundColor: "#51f351",color:"black",border:"0px",cursor:"pointer",textAlign:"center"}}>Shop Now</button></Link>
-                </div>
+                   <Link to={"/products"}><Button variant={"SimpleGreen"}>Shop Now</Button></Link>
+                </Stack>
                     :
 
                     <div style={{ width: "75%", position: "absolute",  top: "150px", left: "10%" }}>
-                        <div style={{ padding: "10px 0px 10px 40px", display: "grid", gridTemplateColumns: "repeat(5,1fr" , backgroundColor:"#377ffd" }}>
+                        <div style={{ borderRadius: "1rem", padding: "10px 0px 10px 40px", display: "grid", gridTemplateColumns: "repeat(5,1fr" , backgroundColor:"#377ffd" }}>
                             <p style={{color:"white"}}>ITEM</p>
                             <p style={{color:"white"}}>NAME</p>
                             <p style={{color:"white"}}>QUANTITY</p>
@@ -68,10 +68,16 @@ const Cartpage = () => {
                                     )
                                 })
                             }
+                           
+                             <Flex justifyContent={"space-between"} p={".5rem 2rem"} bg={"rgb(224, 241, 224)"} fontSize={"2xl"} pr={"5rem"}>
+                             <Text>Total Amount:</Text>
+                             <Text>Rs {totalamount}</Text>
+                             </Flex>
                         </div>
-                        <div style={{ width: "55%", marginTop: "14px",display:"flex",justifyContent:"space-between" }}>
-                            <button style={{ padding:"20px 20px 20px 20px",borderRadius: "12px", textAlign: "start", backgroundColor: "rgb(224, 241, 224)", color: "black", marginBottom: "10px" }}>Total Amount: Rs {totalamount}</button>
-                            <button className='checkout-btn' style={{ borderRadius: "12px", fontSize: "18px",  width: "150px", textAlign: "center",  padding: "12px 8px", cursor :"pointer" ,fontWeight:"600"}} onClick={handleCartAmt} >Checkout</button>
+                        <div style={{  margin: "2rem 0",display:"flex",justifyContent:"center" }}>
+                           
+                        <Button variant={"SimpleBlue"} fontSize={"xl"} padding={"1.5rem 2rem"} onClick={handleCartAmt} >Checkout</Button>
+                            {/* <button className='checkout-btn' style={{ borderRadius: "12px", fontSize: "18px",  width: "150px", textAlign: "center",  padding: "12px 8px", cursor :"pointer" ,fontWeight:"600"}} onClick={handleCartAmt} >Checkout</button> */}
                         </div>
                     </div>
             }
@@ -83,7 +89,7 @@ const Cartpage = () => {
 export default Cartpage
 
 const WRAPPER = styled.div`
-   
+     margin-top: 1rem;
 
 
     .checkout-btn{
