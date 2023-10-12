@@ -144,7 +144,7 @@ export const Navbar = () => {
   return (
     <DIV>
       <Flex
-        p={".5rem 1.5rem"}
+        p={"0rem 1.5rem"}
         alignItems={"center"}
         justifyContent={"space-between"}
       >
