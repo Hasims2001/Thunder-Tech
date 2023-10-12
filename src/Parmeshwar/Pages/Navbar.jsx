@@ -162,6 +162,7 @@ export const Navbar = () => {
               {!isAuth && <Button variant={"SimpleBlue"} onClick={onOpen}>Login/Register</Button>}
               {isAuth && <Button variant={"SimpleGreen"}>Profile</Button>}
               <Link to={""}>About</Link>
+              <Link to={""}>Contact</Link>
             </Flex>
           </>
         ) : (
