@@ -173,6 +173,7 @@ export const Navbar = () => {
     <MenuItem>{!isAuth && <Link className="sideMenu" to={"/"}>Login/Register</Link>}{isAuth && <Link className="sideMenu" to={"/"}>Profile</Link>}</MenuItem>
     <MenuItem><Link className="sideMenu" to={"/products"}>Products</Link></MenuItem>
     <MenuItem><Link className="sideMenu" to={"/"}>About</Link></MenuItem>
+    <MenuItem><Link className="sideMenu" to={"/"}>Contact</Link></MenuItem>
   </MenuList>
           </Menu>
         )}
