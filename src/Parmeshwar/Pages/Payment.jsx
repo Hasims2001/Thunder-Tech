@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PaymentImage from "../Images/PaymentImage.png";
-import { Text } from "@chakra-ui/react";
+import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
@@ -77,28 +77,26 @@ export const Payment = () => {
 
   return (
     <DIV>
-      <div className="payment">
-        <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-          <div style={{ width: "30%" }}>
-            <img src={PaymentImage} alt="" style={{ marginTop: "70px" }} />
-          </div>
-
-          <div style={{ width: "30%" }} className="paymentFields">
-            <Text
+      <div className="">
+      <Text
               fontSize="5xl"
               fontWeight={"bolder"}
-              textAlign={"left"}
-              className="values pay"
+              textAlign={'center'}
+              // className="values pay"
             >
               Payment
             </Text>
-            <div>
-              <Text fontSize="xl" textAlign={"left"} className="values">
+        <Flex justifyContent={"center"} gap={"2rem"}   marginLeft={"5rem"} alignItems={"center"}>
+          <Stack justifyContent={'center'} alignItems={'flex-end'} >
+            <img src={PaymentImage} alt="" width={"50%"}  />
+          </Stack>
+
+          <Stack gap={"1rem"} w={"100%"}>
+           
+              <Text fontSize="xl" className="">
                 Accepted Card
               </Text>
-              <div style={{ width: "30%" }} className="paymentFields">
-                <img src="https://logodix.com/logo/845851.png" alt="" />
-              </div>
+                <img src="https://logodix.com/logo/845851.png" width={"30%"} alt="" />
 
               {/* Payment Options */}
 
@@ -106,7 +104,7 @@ export const Payment = () => {
                 onChange={(e) => {
                   setPayment(e.target.value);
                 }}
-                style={{ display: "flex", justifyContent: "space-between" }}
+                style={{ display: "flex", gap:"1rem" }}
               >
                 <div>
                   <input
@@ -115,12 +113,12 @@ export const Payment = () => {
                     value={"cod"}
                     checked={payment === "cod"}
                   />
-                  <label htmlFor="">Cash On Delivery</label>
+                  &nbsp;<label htmlFor="">Cash On Delivery</label>
                 </div>
 
                 <div>
                   <input type="radio" name="paymentOptions" value={"cards"} />
-                  <label htmlFor="">Debit Card / Credit Cards / VISA</label>
+                  &nbsp;<label htmlFor="">Debit Card / Credit Cards </label>
                 </div>
               </div>
 
@@ -203,7 +201,7 @@ export const Payment = () => {
                       <div
                         style={{
                           display: "flex",
-                          justifyContent: "space-between",
+                          gap: "2rem"
                         }}
                       >
                         <div>
@@ -348,7 +346,7 @@ export const Payment = () => {
                   )}
 
                   <Button
-                    colorScheme="blue"
+                    variant={"SimpleBlue"}
                     className="cvv"
                     onClick={successHandler}
                   >
@@ -356,10 +354,9 @@ export const Payment = () => {
                   </Button>
                 </form>
               </div>
-            </div>
-          </div>
+          </Stack>
 
-          <div style={{ width: "20%" }} className="visaCard">
+          {/* <div style={{ width: "20%" }} className="visaCard">
             <div class="card">
               <div class="card__info">
                 <div class="card__logo">MasterCard</div>
@@ -459,8 +456,8 @@ export const Payment = () => {
                 <div class="card__texture"></div>
               </div>
             </div>
-          </div>
-        </div>
+          </div> */}
+        </Flex>
       </div>
     </DIV>
   );
@@ -470,7 +467,7 @@ const DIV = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  margin: 1rem 0 ;
   .cvv {
   }
 
@@ -480,7 +477,7 @@ const DIV = styled.div`
 
   .payment {
     width: 100%;
-    margin-top: 100px;
+    /* margin-top: 100px; */
   }
 
   .paymentForm > div {
