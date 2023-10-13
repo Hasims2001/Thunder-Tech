@@ -59,6 +59,7 @@ function AllRouters() {
           path="/products/payment"
           element={
             <PrivateRoute>
+              <Navbar />
               <Payment />
             </PrivateRoute>
           }

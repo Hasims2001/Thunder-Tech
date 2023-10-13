@@ -5,6 +5,7 @@ import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 
 const initialCod = {
   email: "",
@@ -33,14 +34,14 @@ export const Payment = () => {
   const navigate = useNavigate();
 
   const [payment, setPayment] = useState("cod");
-
-  // console.log(payment)
+  const {cartproduct} = useSelector(store => store.cartReducer);
+  const {userEmail, userName} = useSelector(store=> store.authReducer);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (payment === "cod") {
       setCod((prev) => {
-        return { ...cod, [name]: name === "pincode" ? +value : value };
+        return { ...prev, [name]: name === "pincode" ? +value : value };
       });
     } else if (payment === "cards") {
       setCard((prev) => {
@@ -60,32 +61,50 @@ export const Payment = () => {
   };
 
   const successHandler = () => {
-    console.log("cod", cod);
-    console.log("card", card);
+    
+    if(payment === "cards"){
+      if(!card.email || !card.address || !card.state || !card.district || !card.pincode || !card.cardNumber || !card.expMonth || !card.expYear || !card.cvv){
+        toast({
+          title: `All fields are require`,
+          status: "error",
+          isClosable: true,
+          duration: 9000
+        });
+      }else{
 
-    // if()
-    toast({
-      title: `Your order has been placed`,
-      status: "success",
+      }
+    }else if(payment === 'cod'){
+      if(!cod.email || !cod.address || !cod.state || !cod.district || !cod.pincode){
+        
+        toast({
+          title: `All fields are require`,
+          status: "error",
+          isClosable: true,
+          duration: 9000
+        });
+      }else{
+        let postObj = {
+          products: cartproduct,
+          userEmail,
+          userName,
+          status: "pending",
+          address: cod
+        }
+
+      }
+    }else{
+      toast({
+      title: `Choose to correct payment option`,
+      status: "error",
       isClosable: true,
     });
-
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
+    }
   };
 
   return (
     <DIV>
       <div className="">
-      <Text
-              fontSize="5xl"
-              fontWeight={"bolder"}
-              textAlign={'center'}
-              // className="values pay"
-            >
-              Payment
-            </Text>
+      
         <Flex justifyContent={"center"} gap={"2rem"}   marginLeft={"5rem"} alignItems={"center"}>
           <Stack justifyContent={'center'} alignItems={'flex-end'} >
             <img src={PaymentImage} alt="" width={"50%"}  />
