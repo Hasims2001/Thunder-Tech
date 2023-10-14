@@ -164,7 +164,7 @@ export const AdminSalesPage = () => {
         alignItems={"center"}
       >
         <Heading as={"h4"} fontSize={"xl"} fontWeight={"normal"}>
-          Customers
+          Sales
         </Heading>
         <Flex gap={".7rem"}>
           <button className="addnewbtn" onClick={handleAddNew}>

@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PaymentImage from "../Images/PaymentImage.png";
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { postOrder } from "../../redux/productRedux/action";
+import { clearcartaction } from "../../redux/cartRedux/action";
 
 const initialCod = {
   email: "",
@@ -32,10 +34,33 @@ export const Payment = () => {
   const [cod, setCod] = useState(initialCod);
   const [card, setCard] = useState(initialCard);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const [payment, setPayment] = useState("cod");
   const {cartproduct} = useSelector(store => store.cartReducer);
+  const {orders} = useSelector(store => store.productReducer);
   const {userEmail, userName} = useSelector(store=> store.authReducer);
+
+  useEffect(()=>{
+    for(let i=0; i<cartproduct.length; i++){
+      let pro = cartproduct[i];
+      orders.forEach((item)=>{
+        let orderProduct = item.products;
+        for(let i=0; i<orderProduct.length; i++){
+          if(pro.name === orderProduct[i].name){
+            toast({
+              title: `Order has been placed!`,
+              status: "success",
+              isClosable: true,
+              duration: 9000
+            })
+            dispatch(clearcartaction());
+            navigate('/');
+          }
+        }
+      
+      })
+    }
+  }, [orders]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,9 +103,9 @@ export const Payment = () => {
           status: "Pending",
           address: card,
           payment: "card",
-
+          quantity: cartproduct.length
         }
-        console.log(postObj);
+        dispatch(postOrder(postObj));
       }
     }else if(payment === 'cod'){
       if(!cod.email || !cod.address || !cod.state || !cod.district || !cod.pincode){
@@ -99,9 +124,10 @@ export const Payment = () => {
           status: "Pending",
           address: cod,
           payment: "cod",
-
+          quantity: cartproduct.length
         }
-        console.log(postObj);
+        dispatch(postOrder(postObj));
+       
       }
     }else{
       toast({

@@ -29,7 +29,6 @@ export const AdminSideMenu = ({ isOpen }) => {
       style={{
         height: "100%",
         padding: "1rem 0",
-        backgroundColor: "#f5f5f5",
       }}
     >
       {links.map(({ iconName, name, path }) => {

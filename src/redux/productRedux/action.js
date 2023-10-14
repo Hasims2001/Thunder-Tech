@@ -1,6 +1,6 @@
 import { collection, getDocs } from "firebase/firestore/lite";
 import { db } from "../../firbase/firebase";
-import { ERROR_PRODUCTS, GET_PRODUCTS, LOADING_PRODUCTS } from "../actionType";
+import { ERROR_PRODUCTS, GET_PRODUCTS, LOADING_PRODUCTS, POST_ORDER } from "../actionType";
 import axios from "axios";
 
 // export const getProductData = () => async (dispatch) => {
@@ -16,7 +16,7 @@ import axios from "axios";
 //   }
 // };
 
-import { productAPI } from "../api";
+import { productAPI, saleAPI } from "../api";
 import { async } from "@firebase/util";
 
 
@@ -38,7 +38,6 @@ export const getProduct=(params)=> async(dispatch)=>{
   try {
     let res = await axios.get(productAPI, params);
     res = await res.data;
-    console.log(res);
     dispatch({ type: GET_PRODUCTS, payload: res })
   } catch (error) {
     dispatch({ type: ERROR_PRODUCTS, payload: error.message })
@@ -46,7 +45,16 @@ export const getProduct=(params)=> async(dispatch)=>{
 
 }
 
-
+export const postOrder = (order)=> async(dispatch)=>{
+  dispatch({ type: LOADING_PRODUCTS })
+  try {
+    let res = await axios.post(saleAPI, order);
+    res = await res.data;
+    dispatch({type: POST_ORDER, payload: res})
+  } catch (error) {
+    dispatch({ type: ERROR_PRODUCTS, payload: error.message })
+  }
+}
 
 
 // export const getProductData = () => async (dispatch) => {

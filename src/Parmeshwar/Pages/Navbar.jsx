@@ -46,13 +46,14 @@ import { PhoneIcon } from "@chakra-ui/icons";
 import { AboutModal } from "../Components/AboutModal";
 import { DrawerComp } from "../Components/DrawerComp";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AppContent } from "../Contex/ContextApi";
 import { AlignJustify, LogIn } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import { getLogin, postRegister } from "../../redux/authRedux/action";
+import { ADMIN_LOGIN, ISAUTH } from "../../redux/actionType";
 
 export const Navbar = () => {
   // const { isAuth } = useContext(AppContent);
@@ -61,6 +62,7 @@ export const Navbar = () => {
   const dispatch = useDispatch();
   const formRef = useRef(null);
   const toast = useToast();
+  const navigate = useNavigate();
   const isSmall = useMediaQuery("only screen and (max-width: 426px)");
   const [auth, setAuth] = useState({
     title : "Login Now!",
@@ -96,7 +98,11 @@ export const Navbar = () => {
           status: "error",
           duration: 9000
         })
-      }else{
+      }else if(email === "admin@admin.com" && password === "admin"){
+        dispatch({type: ADMIN_LOGIN})
+        navigate("/adminorders");
+      }
+      else{
         // login
         dispatch(getLogin({email, password}));
       }
