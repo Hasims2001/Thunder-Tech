@@ -23,7 +23,7 @@ export const getLogin = (userData) =>async (dispatch) => {
             
             if(obj.email === userData.email && obj.password === userData.password){
                 flag = true;
-                dispatch({type: ISAUTH, payload: res});
+                dispatch({type: ISAUTH, payload: {email: obj.email, name: obj.name}});
             }
         }
         if(!flag){

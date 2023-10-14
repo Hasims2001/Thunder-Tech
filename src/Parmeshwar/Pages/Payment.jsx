@@ -46,7 +46,7 @@ export const Payment = () => {
     } else if (payment === "cards") {
       setCard((prev) => {
         return {
-          ...cod,
+          ...prev,
           [name]:
             name === "pincode" ||
             name === "cardNumber" ||
@@ -61,9 +61,9 @@ export const Payment = () => {
   };
 
   const successHandler = () => {
-    
     if(payment === "cards"){
-      if(!card.email || !card.address || !card.state || !card.district || !card.pincode || !card.cardNumber || !card.expMonth || !card.expYear || !card.cvv){
+   
+      if(!card.email || !card.address || !card.state || !card.district || !card.pincode || !card.expYear || !card.cardNumber || !card.expMonth || !card.cvv){
         toast({
           title: `All fields are require`,
           status: "error",
@@ -71,7 +71,16 @@ export const Payment = () => {
           duration: 9000
         });
       }else{
+        let postObj = {
+          products: cartproduct,
+          userEmail,
+          userName,
+          status: "Pending",
+          address: card,
+          payment: "card",
 
+        }
+        console.log(postObj);
       }
     }else if(payment === 'cod'){
       if(!cod.email || !cod.address || !cod.state || !cod.district || !cod.pincode){
@@ -87,10 +96,12 @@ export const Payment = () => {
           products: cartproduct,
           userEmail,
           userName,
-          status: "pending",
-          address: cod
-        }
+          status: "Pending",
+          address: cod,
+          payment: "cod",
 
+        }
+        console.log(postObj);
       }
     }else{
       toast({
@@ -232,7 +243,7 @@ export const Payment = () => {
                               type="text"
                               placeholder="Enter Your Email"
                               onChange={(e) => {
-                                cod.email = e.target.value;
+                                card.email = e.target.value;
                               }}
                               aria-required
                             />
@@ -246,7 +257,7 @@ export const Payment = () => {
                               type="text"
                               placeholder="Enter Your Address"
                               onChange={(e) => {
-                                cod.address = e.target.value;
+                                card.address = e.target.value;
                               }}
                               aria-required
                             />
@@ -260,7 +271,7 @@ export const Payment = () => {
                               type="text"
                               placeholder="Enter Your State"
                               onChange={(e) => {
-                                cod.state = e.target.value;
+                                card.state = e.target.value;
                               }}
                               aria-required
                             />
@@ -274,7 +285,7 @@ export const Payment = () => {
                               type="text"
                               placeholder="Enter Your District"
                               onChange={(e) => {
-                                cod.district = e.target.value;
+                                card.district = e.target.value;
                               }}
                               aria-required
                             />
@@ -288,7 +299,7 @@ export const Payment = () => {
                               type="number"
                               placeholder="Enter Your Pincode"
                               onChange={(e) => {
-                                cod.pincode = e.target.value;
+                                card.pincode = e.target.value;
                               }}
                               aria-required
                             />

@@ -193,9 +193,11 @@ export const AdminPage = () => {
   const handleEdit = (id) => {
     // navigate(`/adminproducts/edit/${id}`);
   };
-
-  useEffect(() => {
+  useEffect(()=>{
     dispatch(getSales());
+  },[])
+  useEffect(() => {
+   
     getCardData();
     setProductData(sales);
     window.addEventListener("scroll", handleScroll, { passive: true });
