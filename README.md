@@ -27,29 +27,38 @@ Team: [Mohammad Hasim Shaikh](https://github.com/Hasims2001), [Parmeshwar Murmu]
 
 ## ScreenShot
 #Home
-![1](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/9d4584d1-2c12-4d1f-b6a1-638a334f4e47)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/dad88c1e-997b-46a8-bd73-30bc7f2c9511)
 
-![2](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/31ae2225-65aa-4200-869e-4de4888a16a2)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/72a8a891-0a85-4d9b-92a1-6ce1c5a51cc4)
 
 
 
 #login/register
-![3](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/15822b84-c21f-4ac5-8b18-3898b72ef123)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/8b8f267d-a664-4011-be93-79a6e04feb1d)
 
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/381c4b33-348c-4326-82f4-cfe00f71c92a)
+
+#profile
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/b3742de5-9527-4913-abdc-de1f72302559)
 
 #product
-![4](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/cf001b18-f81e-4677-a294-1386c0d3f5f7)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/384a2188-9227-4596-9ae3-d3fb950357bd)
 
-![5](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/5436cc57-968c-4c76-86c5-68814dac0cbf)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/918e8be3-9055-412e-92eb-0abc7314c90f)
 
-![6](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/661ee8aa-80a8-4890-927f-bd68ed27bca7)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/5eaf9f97-1483-4607-9d53-880e62ee58f7)
+
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/de7e2416-dd29-4539-8744-ad51b7b74683)
+
+
 
 #Admin
-![7](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/c2bbb00c-4286-4b0e-957f-071c1efeb0fe)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/de6d9486-1bb9-4c7d-8623-dafd9170d39c)
 
-![8](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/c1c48632-b1fd-4aad-9427-6793a72ca653)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/95154896-f202-45a6-9935-60872611492d)
 
-![9](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/9f51a838-f666-41e2-a7a4-294bcd59e44a)
+![image](https://github.com/Hasims2001/synonymous-nose-6503/assets/58412185/59ce8441-8b49-4293-b836-c581623d8751)
+
 
 
 
