@@ -7,7 +7,6 @@ Welcome to our e-commerce project website! This repository houses the codebase f
 
 ## Link
 - Deployed User Side: https://thundertech.vercel.app/
-- Deployed Admin Side: https://thundertech.vercel.app/admin
 - Admin Login:  Email => admin@admin.com Password => admin
 
 ## Table of Contents
