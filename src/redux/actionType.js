@@ -14,6 +14,8 @@ export const LOADING = "LOADING";
 export const ERROR = "ERROR";
 
 
+export const POST_ORDER = "POST_ORDER";
+
 // admin
 export const LOADING_ADD_PRODUCTS = "LOADING_ADD_PRODUCTS";
 export const ERROR_ADD_PRODUCTS = "ERROR_ADD_PRODUCTS";

@@ -11,7 +11,7 @@ export const FeaturedProducts = () => {
     const data = useSelector((store) => store.productReducer.products);
 
     useEffect(() => {
-        dispatch(getProductData());
+        // dispatch(getProductData());
     }, []);
 
     console.log("data", data)

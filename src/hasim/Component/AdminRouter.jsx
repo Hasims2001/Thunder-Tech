@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { AdminPage } from "../AdminPage";
 import { AdminProductsPage } from "../AdminProductsPage";
 import { AdminSideMenu } from "../AdminSideMenu";
@@ -17,9 +17,10 @@ export const AdminRouter = () => {
   const isAuth = useSelector((store) => store.adminReducer.isAuth);
   return (
     <>
-      <Routes>
+      {/* <Routes>
         <Route path="/admin" element={<AdminLogin />}></Route>
-      </Routes>
+       
+      </Routes> */}
 
       {isAuth && (
         <>
@@ -49,7 +50,7 @@ export const AdminRouter = () => {
             </Routes>
           </Flex>
         </>
-      )}
+      ) }
     </>
   );
 };

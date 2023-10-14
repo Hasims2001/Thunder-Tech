@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PaymentImage from "../Images/PaymentImage.png";
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { postOrder } from "../../redux/productRedux/action";
+import { clearcartaction } from "../../redux/cartRedux/action";
 
 const initialCod = {
   email: "",
@@ -31,21 +34,44 @@ export const Payment = () => {
   const [cod, setCod] = useState(initialCod);
   const [card, setCard] = useState(initialCard);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const [payment, setPayment] = useState("cod");
+  const {cartproduct} = useSelector(store => store.cartReducer);
+  const {orders} = useSelector(store => store.productReducer);
+  const {userEmail, userName} = useSelector(store=> store.authReducer);
 
-  // console.log(payment)
+  useEffect(()=>{
+    for(let i=0; i<cartproduct.length; i++){
+      let pro = cartproduct[i];
+      orders.forEach((item)=>{
+        let orderProduct = item.products;
+        for(let i=0; i<orderProduct.length; i++){
+          if(pro.name === orderProduct[i].name){
+            toast({
+              title: `Order has been placed!`,
+              status: "success",
+              isClosable: true,
+              duration: 9000
+            })
+            dispatch(clearcartaction());
+            navigate('/');
+          }
+        }
+      
+      })
+    }
+  }, [orders]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (payment === "cod") {
       setCod((prev) => {
-        return { ...cod, [name]: name === "pincode" ? +value : value };
+        return { ...prev, [name]: name === "pincode" ? +value : value };
       });
     } else if (payment === "cards") {
       setCard((prev) => {
         return {
-          ...cod,
+          ...prev,
           [name]:
             name === "pincode" ||
             name === "cardNumber" ||
@@ -60,32 +86,62 @@ export const Payment = () => {
   };
 
   const successHandler = () => {
-    console.log("cod", cod);
-    console.log("card", card);
-
-    // if()
-    toast({
-      title: `Your order has been placed`,
-      status: "success",
+    if(payment === "cards"){
+   
+      if(!card.email || !card.address || !card.state || !card.district || !card.pincode || !card.expYear || !card.cardNumber || !card.expMonth || !card.cvv){
+        toast({
+          title: `All fields are require`,
+          status: "error",
+          isClosable: true,
+          duration: 9000
+        });
+      }else{
+        let postObj = {
+          products: cartproduct,
+          userEmail,
+          userName,
+          status: "Pending",
+          address: card,
+          payment: "card",
+          quantity: cartproduct.length
+        }
+        dispatch(postOrder(postObj));
+      }
+    }else if(payment === 'cod'){
+      if(!cod.email || !cod.address || !cod.state || !cod.district || !cod.pincode){
+        
+        toast({
+          title: `All fields are require`,
+          status: "error",
+          isClosable: true,
+          duration: 9000
+        });
+      }else{
+        let postObj = {
+          products: cartproduct,
+          userEmail,
+          userName,
+          status: "Pending",
+          address: cod,
+          payment: "cod",
+          quantity: cartproduct.length
+        }
+        dispatch(postOrder(postObj));
+       
+      }
+    }else{
+      toast({
+      title: `Choose to correct payment option`,
+      status: "error",
       isClosable: true,
     });
-
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
+    }
   };
 
   return (
     <DIV>
       <div className="">
-      <Text
-              fontSize="5xl"
-              fontWeight={"bolder"}
-              textAlign={'center'}
-              // className="values pay"
-            >
-              Payment
-            </Text>
+      
         <Flex justifyContent={"center"} gap={"2rem"}   marginLeft={"5rem"} alignItems={"center"}>
           <Stack justifyContent={'center'} alignItems={'flex-end'} >
             <img src={PaymentImage} alt="" width={"50%"}  />
@@ -213,7 +269,7 @@ export const Payment = () => {
                               type="text"
                               placeholder="Enter Your Email"
                               onChange={(e) => {
-                                cod.email = e.target.value;
+                                card.email = e.target.value;
                               }}
                               aria-required
                             />
@@ -227,7 +283,7 @@ export const Payment = () => {
                               type="text"
                               placeholder="Enter Your Address"
                               onChange={(e) => {
-                                cod.address = e.target.value;
+                                card.address = e.target.value;
                               }}
                               aria-required
                             />
@@ -241,7 +297,7 @@ export const Payment = () => {
                               type="text"
                               placeholder="Enter Your State"
                               onChange={(e) => {
-                                cod.state = e.target.value;
+                                card.state = e.target.value;
                               }}
                               aria-required
                             />
@@ -255,7 +311,7 @@ export const Payment = () => {
                               type="text"
                               placeholder="Enter Your District"
                               onChange={(e) => {
-                                cod.district = e.target.value;
+                                card.district = e.target.value;
                               }}
                               aria-required
                             />
@@ -269,7 +325,7 @@ export const Payment = () => {
                               type="number"
                               placeholder="Enter Your Pincode"
                               onChange={(e) => {
-                                cod.pincode = e.target.value;
+                                card.pincode = e.target.value;
                               }}
                               aria-required
                             />

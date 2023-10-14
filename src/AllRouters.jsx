@@ -9,6 +9,7 @@ import { SignInPage } from "./hasim/SignInPage";
 import { Navbar } from "./Parmeshwar/Pages/Navbar";
 import { Footer } from "./Parmeshwar/Components/Footer";
 import { PrivateRoute } from "./PrivateRoute";
+import { Profile } from "./hasim/Profile";
 
 function AllRouters() {
   return (
@@ -23,6 +24,14 @@ function AllRouters() {
           element={
             <>
               <Navbar /> <Home /> <Footer />
+            </>
+          }
+        ></Route>
+          <Route
+          path="/profile"
+          element={
+            <>
+              <Navbar /> <Profile /> <Footer />
             </>
           }
         ></Route>
@@ -59,6 +68,7 @@ function AllRouters() {
           path="/products/payment"
           element={
             <PrivateRoute>
+              <Navbar />
               <Payment />
             </PrivateRoute>
           }

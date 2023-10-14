@@ -73,15 +73,17 @@ export const reducer = (state = init, { type, payload }) => {
                 products: state.products.filter((product) => product.id !== payload),
             }
         case UPDATE_SALES:
+            let saleArr = state.sales;
+            for(let i=0; i<saleArr.length; i++){
+                if(saleArr[i].id === payload.id){
+                    saleArr[i].status = payload.status;
+                }
+            }
             return {
                 ...state,
                 isLoading: false,
                 isError: "",
-                sales: state.sales.map((sales) => {
-                    if (sales.id === payload.id) {
-                        sales.status = payload.status;
-                    }
-                }),
+                sales: saleArr,
             }
         case DELETE_SALES:
             return {

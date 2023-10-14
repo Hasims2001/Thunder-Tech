@@ -80,7 +80,7 @@ export const AdminPage = () => {
   const [changeStatus, setChangeStatus] = useState(status.currstatus || "");
 
   const cancelRef = React.useRef();
-  const [productData, setProductData] = useState(sales);
+  const [productData, setProductData] = useState(sales || []);
   const [info, setInfo] = useState(init);
   const { type, searchVal } = info;
 
@@ -90,12 +90,12 @@ export const AdminPage = () => {
     inTransit: 0,
     delivered: 0,
   });
-  const getCardData = () => {
+  const getCardData = (data) => {
     let pendingCount = 0;
     let shippedCount = 0;
     let inTransitCount = 0;
     let deliveredCount = 0;
-    productData.map((item) => {
+    data.map((item) => {
       if (item.status !== undefined) {
         switch (item.status) {
           case "Pending":
@@ -115,9 +115,8 @@ export const AdminPage = () => {
         }
       }
     });
-
+    console.log(pendingCount, shippedCount, inTransitCount, deliveredCount);
     setOrderData({
-      ...orderData,
       pending: pendingCount,
       shipped: shippedCount,
       inTransit: inTransitCount,
@@ -193,11 +192,14 @@ export const AdminPage = () => {
   const handleEdit = (id) => {
     // navigate(`/adminproducts/edit/${id}`);
   };
-
+  useEffect(()=>{
+    if(sales.length === 0){
+      dispatch(getSales());
+    }
+  },[])
   useEffect(() => {
-    dispatch(getSales());
-    getCardData();
     setProductData(sales);
+    getCardData(sales);
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
@@ -206,7 +208,7 @@ export const AdminPage = () => {
   }, [sales]);
 
   return (
-    <Box m={"1rem"} w={"100%"}>
+    <Box m={"1rem"} >
       {scrollPosition > 500 && (
         <a href="#top">
           <Box
@@ -244,7 +246,7 @@ export const AdminPage = () => {
           <Text>In Transit Orders</Text>
           <Text>{orderData.inTransit}</Text>
         </Box>
-        <Box p={"2rem"} borderRadius={"1rem"} bg={"brand.100"}>
+        <Box p={"2rem"} borderRadius={"1rem"} bg={"brand.600"}>
           <Text>Delivered Orders</Text>
           <Text>{orderData.delivered}</Text>
         </Box>
@@ -386,7 +388,7 @@ export const AdminPage = () => {
       <Modal isOpen={isEditOpen} onClose={onEditClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>Change Status</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Select
@@ -416,17 +418,16 @@ export const AdminPage = () => {
             >
               Update
             </Button>
-            {/* <Button variant="ghost">Secondary Action</Button> */}
           </ModalFooter>
         </ModalContent>
       </Modal>
-      <TableContainer
+      {/* <TableContainer
         margin={"auto"}
         mt={"3rem"}
         maxW={["84vw", "84vw", "84vw", "84vw", "90vw"]}
-      >
-        <Table colorScheme="brand.100" textAlign={"center"}>
-          <Thead bg={"brand.800"}>
+      > */}
+        <Table  mt={"3rem"} colorScheme="brand.100">
+          <Thead bg={"brand.800"} textAlign={'center'}>
             <Tr>
               <Th>
                 <Checkbox
@@ -439,7 +440,6 @@ export const AdminPage = () => {
               <Th>Id</Th>
               <Th>User Id</Th>
               <Th>User Email</Th>
-              <Th>Order Item</Th>
               <Th>quantity</Th>
               <Th>Status</Th>
               <Th>Edit</Th>
@@ -449,7 +449,7 @@ export const AdminPage = () => {
             {productData.length > 0 &&
               productData.map((product) => {
                 return (
-                  <Tr key={product.id} borderColor={"1px solid black"}>
+                  <Tr key={product.id} >
                     <Td>
                       <Checkbox
                         onChange={(e) => {
@@ -461,21 +461,22 @@ export const AdminPage = () => {
                         colorScheme="red"
                       ></Checkbox>
                     </Td>
-                    <Td isNumeric>{product.id}</Td>
-                    <Td isNumeric>{product.userId}</Td>
+                    <Td >{product.id}</Td>
+                    <Td >{product.userId}</Td>
                     <Td>{product.userEmail}</Td>
-                    <Td isNumeric>{product.orderItem}</Td>
-                    <Td isNumeric>{product.quantity}</Td>
+                    <Td >{product.quantity}</Td>
                     <Td>{product.status}</Td>
                     <Td>
                       <button
                         className="animatedbtn"
                         onClick={() => {
-                          onEditOpen();
+                          setChangeStatus(product.status)
                           setStatus({
                             id: product.id,
                             currstatus: product.status,
                           });
+                          onEditOpen();
+                         
                         }}
                       >
                         <span>Edit</span>
@@ -486,7 +487,7 @@ export const AdminPage = () => {
               })}
           </Tbody>
         </Table>
-      </TableContainer>
+      {/* </TableContainer> */}
     </Box>
   );
 };

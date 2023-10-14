@@ -23,8 +23,7 @@ export const reducer = (state = initState, { type, payload, id, quantity }) => {
         case INCREASE_QUANTITY: {
             let dataafterinccrese = state.cartproduct.map((element, index) => {
                 if (element.id === id) {
-                    console.log(quantity, "inside fikter")
-                    console.log(element.id, "hereid")
+                
                     return { ...element, quantity }
                 } else {
                     return element

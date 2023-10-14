@@ -13,7 +13,7 @@ export const AdminHeader = ({ setIsOpen, isOpen }) => {
   ];
   const [state, setState] = useState(0);
   return (
-    <Box p={".5rem 1.5rem"} bg={"brand.800"}>
+    <Box p={".5rem 1.5rem"} bg={"brand.600"} color={'brand.400'}>
       <Flex justifyContent={"space-between"}>
         <Flex gap={"1rem"} alignItems={"center"}>
           {!isOpen && (
@@ -26,20 +26,15 @@ export const AdminHeader = ({ setIsOpen, isOpen }) => {
           {isOpen && (
             <X cursor={"pointer"} onClick={() => setIsOpen((prev) => !prev)} />
           )}
-          {/* <Image src={logo} width={"3rem"} /> */}
           <Heading fontWeight={"medium"}>Thunder Tech</Heading>
         </Flex>
         <Flex alignItems={"center"} gap={"2rem"} fontSize={"lg"}>
-          {/* {links.map((ele) => (
-            <Text padding={".3rem"} _hover={{ borderBottom: "1px solid blue" }}>
-              <Link to={ele.path}>{ele.name}</Link>
-            </Text>
-          ))} */}
+      
           <Text cursor={"pointer"} onClick={() => setState((prev) => prev + 1)}>
             Welcome, Admin!
           </Text>
           <Text _hover={{ borderBottom: "1px solid blue" }}>
-            <Link to={"/admin"}>Logout</Link>
+            <Link to={"/"}>Logout</Link>
           </Text>
         </Flex>
       </Flex>
