@@ -418,7 +418,6 @@ export const AdminPage = () => {
             >
               Update
             </Button>
-            {/* <Button variant="ghost">Secondary Action</Button> */}
           </ModalFooter>
         </ModalContent>
       </Modal>
@@ -471,11 +470,13 @@ export const AdminPage = () => {
                       <button
                         className="animatedbtn"
                         onClick={() => {
-                          onEditOpen();
+                          setChangeStatus(product.status)
                           setStatus({
                             id: product.id,
                             currstatus: product.status,
                           });
+                          onEditOpen();
+                         
                         }}
                       >
                         <span>Edit</span>

@@ -166,7 +166,7 @@ export const Navbar = () => {
             <Flex alignItems={"center"} gap={"1rem"}>
             <CartLogo />
               {!isAuth && <Button variant={"SimpleBlue"} onClick={onOpen}>Login/Register</Button>}
-              {isAuth && <Button variant={"SimpleGreen"}>Profile</Button>}
+              {isAuth && <Button variant={"SimpleGreen"} onClick={ ()=> navigate("/profile")}>Profile</Button>}
               <Link to={""}>About</Link>
               <Link to={""}>Contact</Link>
             </Flex>
